@@ -1,0 +1,82 @@
+{
+    "button": {
+        "background_color": {
+            ".stButton > button": {
+                "background-color": null
+            }
+        }
+    },
+    "title": {
+        "background_color": {
+            ".stHeading > div > div > h1": {
+                "background-color": null
+            }
+        }
+    },
+    "table": {
+        "background_color": {
+            ".stTable": {
+                "background-color": null
+            }
+        }
+    },
+    "download_button": {
+        "background_color": {
+            ".stDownloadButton > button": {
+                "background-color": null
+            }
+        }
+    },
+    "multiselect": {
+        "background_color": {
+            ".stMultiSelect > div > div > div": {
+                "background-color": null
+            }
+        }
+    },
+    "selectbox": {
+        "background_color": {
+            ".stSelectbox > div > div": {
+                "background-color": null
+            }
+        }
+    },
+    "pills": {
+        "background_color": {
+            ".stButtonGroup button[kind=\"pills\"]": {
+                "background-color": null
+            }
+        }
+    },
+    "toggle": {
+        "background_color": {
+            ".stCheckbox > label > div:not(:has(div[data-testid=\"stWidgetLabel\"]))": {
+                "background-color": null
+            }
+        }
+    },
+    "number_input": {
+        "background_color": {
+            ".stNumberInput > div > div > div": {
+                "background-color": null
+            },
+            ".stNumberInput > div > div button": {
+                "background-color": null
+            }
+        }
+    },
+    "text_area": {
+        "background_color": {
+            ".stTextArea > div > div > textarea": {
+                "background-color": null
+            }
+        }
+    },
+    "text_input": {
+        "background_color": {
+            ".stTextInput > div > div > input": {
+                "background-color": null
+            }
+        }
+    }
+}
