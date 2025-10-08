@@ -40,10 +40,7 @@ def subheader(*args, **kwargs):
     return cont.subheader(*args, **kwargs)
 
 def badge(*args, **kwargs):
-    kwargs = styler.apply_component_css("badge", kwargs)
-    key = kwargs.pop("key", None)
-    cont = st.container(key=key)
-    return cont.badge(*args, **kwargs)
+    return st.badge(*args, **kwargs)
 
 def caption(*args, **kwargs):
     kwargs = styler.apply_component_css("caption", kwargs)
@@ -80,11 +77,9 @@ def html(*args, **kwargs):
 # ==============================================================================
 
 def dataframe(*args, **kwargs):
-    kwargs = styler.apply_component_css("dataframe", kwargs)
     return st.dataframe(*args, **kwargs)
 
 def data_editor(*args, **kwargs):
-    kwargs = styler.apply_component_css("data_editor", kwargs)
     return st.data_editor(*args, **kwargs)
 
 def table(*args, **kwargs):
