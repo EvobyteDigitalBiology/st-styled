@@ -14,6 +14,21 @@
             ".stButton > button p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stButton > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButton > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButton > button": {
+                "border-width": null
+            }
         }
     },
     "title": {
@@ -115,6 +130,21 @@
             ".stTable p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stTable > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stTable div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stTable > div": {
+                "border-width": null
+            }
         }
     },
     "metric": {
@@ -162,6 +192,21 @@
             ".stDownloadButton > button p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stDownloadButton > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDownloadButton > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDownloadButton > button": {
+                "border-width": null
+            }
         }
     },
     "link_button": {
@@ -190,6 +235,21 @@
         "font_size": {
             ".stCheckbox label p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stCheckbox label span": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stCheckbox label span": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stCheckbox label span": {
+                "border-width": null
             }
         }
     },
@@ -228,6 +288,21 @@
             ".stMultiSelect label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stMultiSelect > div > div > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stMultiSelect > div > div > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stMultiSelect > div > div > div": {
+                "border-width": null
+            }
         }
     },
     "selectbox": {
@@ -254,6 +329,21 @@
             ".stSelectbox div": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stSelectbox > div > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stSelectbox > div > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stSelectbox > div > div": {
+                "border-width": null
+            }
         }
     },
     "pills": {
@@ -277,6 +367,21 @@
             ".stButtonGroup label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stButtonGroup button[kind=\"pills\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButtonGroup button[kind=\"pills\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButtonGroup button[kind=\"pills\"]": {
+                "border-width": null
+            }
         }
     },
     "segmented_control": {
@@ -299,6 +404,21 @@
             },
             ".stButtonGroup div button p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stButtonGroup div button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButtonGroup div button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButtonGroup div button": {
+                "border-width": null
             }
         }
     },
@@ -399,6 +519,21 @@
             },
             ".stNumberInput label p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                "border-width": null
             }
         }
     },
@@ -553,6 +688,21 @@
             ".stFileUploader button": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stFileUploader section": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stFileUploader section": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stFileUploader section": {
+                "border-width": null
+            }
         }
     },
     "color_picker": {
@@ -564,6 +714,21 @@
         "font_size": {
             ".stColorPicker label p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stColorPicker > div > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stColorPicker > div > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stColorPicker > div > div": {
+                "border-width": null
             }
         }
     },
@@ -590,6 +755,42 @@
             ".stCameraInput label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                "border-top-style": null,
+                "border-right-style": null,
+                "border-left-style": null
+            },
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                "border-bottom-style": null,
+                "border-right-style": null,
+                "border-left-style": null
+            }
+        },
+        "border_color": {
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                "border-top-color": null,
+                "border-right-color": null,
+                "border-left-color": null
+            },
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                "border-bottom-color": null,
+                "border-right-color": null,
+                "border-left-color": null
+            }
+        },
+        "border_width": {
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                "border-top-width": null,
+                "border-right-width": null,
+                "border-left-width": null
+            },
+            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                "border-bottom-width": null,
+                "border-right-width": null,
+                "border-left-width": null
+            }
         }
     },
     "audio_input": {
@@ -605,6 +806,21 @@
             ".stAudioInput label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stAudioInput > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stAudioInput  > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stAudioInput  > div": {
+                "border-width": null
+            }
         }
     },
     "success": {
@@ -616,6 +832,21 @@
         "font_size": {
             ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                "border-width": null
             }
         }
     },
@@ -629,6 +860,21 @@
             ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                "border-width": null
+            }
         }
     },
     "warning": {
@@ -641,6 +887,21 @@
             ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                "border-width": null
+            }
         }
     },
     "error": {
@@ -652,6 +913,21 @@
         "font_size": {
             ".stAlert div[data-testid=\"stAlertContentError\"] p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                "border-width": null
             }
         }
     },
@@ -672,6 +948,21 @@
             ".stFormSubmitButton > button p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stFormSubmitButton > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stFormSubmitButton > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stFormSubmitButton > button": {
+                "border-width": null
+            }
         }
     },
     "expander": {
@@ -683,6 +974,21 @@
         "font_size": {
             ".stExpander > details > summary p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stExpander > details": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stExpander > details": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stExpander > details": {
+                "border-width": null
             }
         }
     },
@@ -704,9 +1010,29 @@
                 "color": null
             }
         },
+        "background_color": {
+            ".stChatMessage": {
+                "background-color": null
+            }
+        },
         "font_size": {
             ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stChatMessage": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stChatMessage": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stChatMessage": {
+                "border-width": null
             }
         }
     },
@@ -728,6 +1054,53 @@
             },
             ".stExpander > details > summary p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stExpander details": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stExpander details": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stExpander details": {
+                "border-width": null
+            }
+        }
+    },
+    "code": {
+        "color": {
+            ".stCode code": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stCode pre": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stCode code": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stCode pre": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stCode pre": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stCode pre": {
+                "border-width": null
             }
         }
     }
