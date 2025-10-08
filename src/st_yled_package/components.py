@@ -16,7 +16,10 @@ def write_stream(*args, **kwargs):
 # ==============================================================================
 
 def markdown(*args, **kwargs):
-    return st.markdown(*args, **kwargs)
+    kwargs = styler.apply_component_css("markdown", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.markdown(*args, **kwargs)
 
 def title(*args, **kwargs):
     kwargs = styler.apply_component_css("title", kwargs)
@@ -25,25 +28,46 @@ def title(*args, **kwargs):
     return cont.title(*args, **kwargs)
 
 def header(*args, **kwargs):
-    return st.header(*args, **kwargs)
+    kwargs = styler.apply_component_css("header", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.header(*args, **kwargs)
 
 def subheader(*args, **kwargs):
-    return st.subheader(*args, **kwargs)
+    kwargs = styler.apply_component_css("subheader", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.subheader(*args, **kwargs)
 
 def badge(*args, **kwargs):
-    return st.badge(*args, **kwargs)
+    kwargs = styler.apply_component_css("badge", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.badge(*args, **kwargs)
 
 def caption(*args, **kwargs):
-    return st.caption(*args, **kwargs)
+    kwargs = styler.apply_component_css("caption", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.caption(*args, **kwargs)
 
 def code(*args, **kwargs):
-    return st.code(*args, **kwargs)
+    kwargs = styler.apply_component_css("code", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.code(*args, **kwargs)
 
 def latex(*args, **kwargs):
-    return st.latex(*args, **kwargs)
+    kwargs = styler.apply_component_css("latex", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.latex(*args, **kwargs)
 
 def text(*args, **kwargs):
-    return st.text(*args, **kwargs)
+    kwargs = styler.apply_component_css("text", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.text(*args, **kwargs)
 
 def divider(*args, **kwargs):
     return st.divider(*args, **kwargs)
@@ -56,9 +80,11 @@ def html(*args, **kwargs):
 # ==============================================================================
 
 def dataframe(*args, **kwargs):
+    kwargs = styler.apply_component_css("dataframe", kwargs)
     return st.dataframe(*args, **kwargs)
 
 def data_editor(*args, **kwargs):
+    kwargs = styler.apply_component_css("data_editor", kwargs)
     return st.data_editor(*args, **kwargs)
 
 def table(*args, **kwargs):
@@ -68,10 +94,16 @@ def table(*args, **kwargs):
     return cont.table(*args, **kwargs)
 
 def metric(*args, **kwargs):
-    return st.metric(*args, **kwargs)
+    kwargs = styler.apply_component_css("metric", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.metric(*args, **kwargs)
 
 def json(*args, **kwargs):
-    return st.json(*args, **kwargs)
+    kwargs = styler.apply_component_css("json", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.json(*args, **kwargs)
 
 # ==============================================================================
 # Chart Elements
@@ -126,18 +158,24 @@ def download_button(*args, **kwargs):
     return st.download_button(*args, **kwargs)
 
 def link_button(*args, **kwargs):
-    return st.link_button(*args, **kwargs)
+    kwargs = styler.apply_component_css("link_button", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.link_button(*args, **kwargs)
 
 def page_link(*args, **kwargs):
     return st.page_link(*args, **kwargs)
 
 def checkbox(*args, **kwargs):
+    kwargs = styler.apply_component_css("checkbox", kwargs)
     return st.checkbox(*args, **kwargs)
 
 def color_picker(*args, **kwargs):
+    kwargs = styler.apply_component_css("color_picker", kwargs)
     return st.color_picker(*args, **kwargs)
 
 def feedback(*args, **kwargs):
+    kwargs = styler.apply_component_css("feedback", kwargs)
     return st.feedback(*args, **kwargs)
 
 def multiselect(*args, **kwargs):
@@ -149,9 +187,11 @@ def pills(*args, **kwargs):
     return st.pills(*args, **kwargs)
 
 def radio(*args, **kwargs):
+    kwargs = styler.apply_component_css("radio", kwargs)
     return st.radio(*args, **kwargs)
 
 def segmented_control(*args, **kwargs):
+    kwargs = styler.apply_component_css("segmented_control", kwargs)
     return st.segmented_control(*args, **kwargs)
 
 def selectbox(*args, **kwargs):
@@ -159,6 +199,7 @@ def selectbox(*args, **kwargs):
     return st.selectbox(*args, **kwargs)
 
 def select_slider(*args, **kwargs):
+    kwargs = styler.apply_component_css("select_slider", kwargs)
     return st.select_slider(*args, **kwargs)
 
 def toggle(*args, **kwargs):
@@ -170,12 +211,15 @@ def number_input(*args, **kwargs):
     return st.number_input(*args, **kwargs)
 
 def slider(*args, **kwargs):
+    kwargs = styler.apply_component_css("slider", kwargs)
     return st.slider(*args, **kwargs)
 
 def date_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("date_input", kwargs)
     return st.date_input(*args, **kwargs)
 
 def time_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("time_input", kwargs)
     return st.time_input(*args, **kwargs)
 
 def text_area(*args, **kwargs):
@@ -187,15 +231,19 @@ def text_input(*args, **kwargs):
     return st.text_input(*args, **kwargs)
 
 def chat_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("chat_input", kwargs)
     return st.chat_input(*args, **kwargs)
 
 def audio_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("audio_input", kwargs)
     return st.audio_input(*args, **kwargs)
 
 def file_uploader(*args, **kwargs):
+    kwargs = styler.apply_component_css("file_uploader", kwargs)
     return st.file_uploader(*args, **kwargs)
 
 def camera_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("camera_input", kwargs)
     return st.camera_input(*args, **kwargs)
 
 # ==============================================================================
@@ -231,33 +279,48 @@ def empty(*args, **kwargs):
     return st.empty(*args, **kwargs)
 
 def expander(*args, **kwargs):
-    return st.expander(*args, **kwargs)
+    kwargs = styler.apply_component_css("expander", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.expander(*args, **kwargs)
 
 def popover(*args, **kwargs):
     return st.popover(*args, **kwargs)
 
 def tabs(*args, **kwargs):
-    return st.tabs(*args, **kwargs)
+    kwargs = styler.apply_component_css("tabs", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.tabs(*args, **kwargs)
 
 # ==============================================================================
 # Chat Elements
 # ==============================================================================
 
 def chat_message(*args, **kwargs):
-    return st.chat_message(*args, **kwargs)
+    kwargs = styler.apply_component_css("chat_message", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.chat_message(*args, **kwargs)
 
 # ==============================================================================
 # Status Elements
 # ==============================================================================
 
 def progress(*args, **kwargs):
-    return st.progress(*args, **kwargs)
+    kwargs = styler.apply_component_css("progress", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.progress(*args, **kwargs)
 
 def spinner(*args, **kwargs):
     return st.spinner(*args, **kwargs)
 
 def status(*args, **kwargs):
-    return st.status(*args, **kwargs)
+    kwargs = styler.apply_component_css("status", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.status(*args, **kwargs)
 
 def toast(*args, **kwargs):
     return st.toast(*args, **kwargs)
@@ -269,16 +332,28 @@ def snow(*args, **kwargs):
     return st.snow(*args, **kwargs)
 
 def success(*args, **kwargs):
-    return st.success(*args, **kwargs)
+    kwargs = styler.apply_component_css("success", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.success(*args, **kwargs)
 
 def info(*args, **kwargs):
-    return st.info(*args, **kwargs)
+    kwargs = styler.apply_component_css("info", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.info(*args, **kwargs)
 
 def warning(*args, **kwargs):
-    return st.warning(*args, **kwargs)
+    kwargs = styler.apply_component_css("warning", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.warning(*args, **kwargs)
 
 def error(*args, **kwargs):
-    return st.error(*args, **kwargs)
+    kwargs = styler.apply_component_css("error", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.error(*args, **kwargs)
 
 def exception(*args, **kwargs):
     return st.exception(*args, **kwargs)
@@ -294,7 +369,10 @@ def form(*args, **kwargs):
     return st.form(*args, **kwargs)
 
 def form_submit_button(*args, **kwargs):
-    return st.form_submit_button(*args, **kwargs)
+    kwargs = styler.apply_component_css("form_submit_button", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.form_submit_button(*args, **kwargs)
 
 def rerun(*args, **kwargs):
     return st.rerun(*args, **kwargs)
@@ -334,4 +412,3 @@ def help(*args, **kwargs):
 
 def echo(*args, **kwargs):
     return st.echo(*args, **kwargs)
-
