@@ -4,12 +4,99 @@
             ".stButton > button": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stButton > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stButton > button p": {
+                "font-size": null
+            }
         }
     },
     "title": {
-        "background_color": {
-            ".stHeading > div > div > h1": {
-                "background-color": null
+        "color": {
+            "h1": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "h1": {
+                "font-size": null
+            }
+        }
+    },
+    "header": {
+        "color": {
+            "h2": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "h2": {
+                "font-size": null
+            }
+        }
+    },
+    "subheader": {
+        "color": {
+            "h3": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "h3": {
+                "font-size": null
+            }
+        }
+    },
+    "markdown": {
+        "color": {
+            ".stMarkdown": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stMarkdown": {
+                "font-size": null
+            }
+        }
+    },
+    "text": {
+        "color": {
+            ".stText div": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stText div": {
+                "font-size": null
+            }
+        }
+    },
+    "caption": {
+        "color": {
+            "div[data-testid=\"stCaptionContainer\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "div[data-testid=\"stCaptionContainer\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "latex": {
+        "color": {
+            ".katex-html": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".katex-html": {
+                "font-size": null
             }
         }
     },
@@ -18,12 +105,108 @@
             ".stTable": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stTable p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stTable p": {
+                "font-size": null
+            }
+        }
+    },
+    "metric": {
+        "color": {
+            ".stMetric label div": {
+                "color": null
+            },
+            ".stMetric div[data-testid=\"stMetricValue\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stMetric label div": {
+                "font-size": null
+            },
+            ".stMetric div[data-testid=\"stMetricValue\"]": {
+                "font-size": null
+            }
+        }
+    },
+    "json": {
+        "color": {
+            ".stJson span": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stJson span": {
+                "font-size": null
+            }
         }
     },
     "download_button": {
         "background_color": {
             ".stDownloadButton > button": {
                 "background-color": null
+            }
+        },
+        "color": {
+            ".stDownloadButton > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stDownloadButton > button p": {
+                "font-size": null
+            }
+        }
+    },
+    "link_button": {
+        "color": {
+            ".stLinkButton > a": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stLinkButton > a p": {
+                "font-size": null
+            }
+        }
+    },
+    "checkbox": {
+        "color": {
+            ".stCheckbox label p": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stCheckbox label span": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stCheckbox label p": {
+                "font-size": null
+            }
+        }
+    },
+    "radio": {
+        "color": {
+            ".stRadio label p": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stRadio > div[role=\"radiogroup\"] > label > div:has( + input)": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stRadio label p": {
+                "font-size": null
             }
         }
     },
@@ -32,12 +215,44 @@
             ".stMultiSelect > div > div > div": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stMultiSelect label p": {
+                "color": null
+            },
+            ".stMultiSelect div svg": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stMultiSelect label p": {
+                "font-size": null
+            }
         }
     },
     "selectbox": {
         "background_color": {
             ".stSelectbox > div > div": {
                 "background-color": null
+            }
+        },
+        "color": {
+            ".stSelectbox label p": {
+                "color": null
+            },
+            ".stSelectbox div svg": {
+                "color": null
+            },
+            ".stSelectbox div": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stSelectbox label p": {
+                "font-size": null
+            },
+            ".stSelectbox div": {
+                "font-size": null
             }
         }
     },
@@ -46,12 +261,115 @@
             ".stButtonGroup button[kind=\"pills\"]": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stButtonGroup button[kind=\"pills\"]": {
+                "color": null
+            },
+            ".stButtonGroup label p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stButtonGroup button[kind=\"pills\"] p": {
+                "font-size": null
+            },
+            ".stButtonGroup label p": {
+                "font-size": null
+            }
+        }
+    },
+    "segmented_control": {
+        "color": {
+            ".stButtonGroup label p": {
+                "color": null
+            },
+            ".stButtonGroup div button p": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stButtonGroup div button": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stButtonGroup label p": {
+                "font-size": null
+            },
+            ".stButtonGroup div button p": {
+                "font-size": null
+            }
+        }
+    },
+    "slider": {
+        "color": {
+            ".stSlider label": {
+                "color": null
+            },
+            ".stSlider div[role=\"slider\"]": {
+                "color": null
+            },
+            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                "color": null
+            },
+            ".stSlider div[data-testid=\"stSliderTickBar\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stSlider label p": {
+                "font-size": null
+            },
+            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                "font-size": null
+            },
+            ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                "font-size": null
+            }
+        }
+    },
+    "select_slider": {
+        "color": {
+            ".stSlider label": {
+                "color": null
+            },
+            ".stSlider div[role=\"slider\"]": {
+                "color": null
+            },
+            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                "color": null
+            },
+            ".stSlider div[data-testid=\"stSliderTickBar\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stSlider label p": {
+                "font-size": null
+            },
+            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                "font-size": null
+            },
+            ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                "font-size": null
+            }
         }
     },
     "toggle": {
         "background_color": {
-            ".stCheckbox > label > div:not(:has(div[data-testid=\"stWidgetLabel\"]))": {
+            ".stCheckbox > label > div:not(:has(div[data-testid=\"stWidgetLabel\"])):has(+ input[aria-checked=\"true\"])": {
                 "background-color": null
+            }
+        },
+        "color": {
+            ".stCheckbox label p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stCheckbox label p": {
+                "font-size": null
             }
         }
     },
@@ -63,6 +381,80 @@
             ".stNumberInput > div > div button": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stNumberInput input": {
+                "color": null
+            },
+            ".stNumberInput label p": {
+                "color": null
+            },
+            ".stNumberInput button svg": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stNumberInput input": {
+                "font-size": null
+            },
+            ".stNumberInput label p": {
+                "font-size": null
+            }
+        }
+    },
+    "date_input": {
+        "color": {
+            ".stDateInput input": {
+                "color": null
+            },
+            ".stDateInput label p": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stDateInput > div > div > div": {
+                "background-color": null
+            },
+            ".stDateInput > div > div button": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stDateInput input": {
+                "font-size": null
+            },
+            ".stDateInput label p": {
+                "font-size": null
+            }
+        }
+    },
+    "time_input": {
+        "color": {
+            ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
+                "color": null
+            },
+            ".stTimeInput label p": {
+                "color": null
+            },
+            ".stTimeInput svg[data-baseweb=\"icon\"]": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stTimeInput > div > div > div": {
+                "background-color": null
+            },
+            ".stTimeInput > div > div button": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
+                "font-size": null
+            },
+            ".stTimeInput label p": {
+                "font-size": null
+            }
         }
     },
     "text_area": {
@@ -70,12 +462,272 @@
             ".stTextArea > div > div > textarea": {
                 "background-color": null
             }
+        },
+        "color": {
+            ".stTextArea textarea": {
+                "color": null
+            },
+            ".stTextArea label p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stTextArea textarea": {
+                "font-size": null
+            },
+            ".stTextArea label p": {
+                "font-size": null
+            }
         }
     },
     "text_input": {
         "background_color": {
             ".stTextInput > div > div > input": {
                 "background-color": null
+            }
+        },
+        "color": {
+            ".stTextInput input": {
+                "color": null
+            },
+            ".stTextInput label p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stTextInput input": {
+                "font-size": null
+            },
+            ".stTextInput label p": {
+                "font-size": null
+            }
+        }
+    },
+    "chat_input": {
+        "color": {
+            ".stChatInput textarea": {
+                "color": null
+            },
+            ".stChatInput button[data-testid=\"stChatInputSubmitButton\"] svg": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stChatInput > div": {
+                "background-color": null
+            },
+            ".stChatInput > div textarea": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stChatInput textarea": {
+                "font-size": null
+            }
+        }
+    },
+    "file_uploader": {
+        "color": {
+            ".stFileUploader label p": {
+                "color": null
+            },
+            ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
+                "color": null
+            },
+            ".stFileUploader button": {
+                "color": null
+            }
+        },
+        "background_color": {
+            ".stFileUploader section": {
+                "background-color": null
+            }
+        },
+        "font_size": {
+            ".stFileUploader label p": {
+                "font-size": null
+            },
+            ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
+                "font-size": null
+            },
+            ".stFileUploader button": {
+                "font-size": null
+            }
+        }
+    },
+    "color_picker": {
+        "color": {
+            ".stColorPicker label": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stColorPicker label p": {
+                "font-size": null
+            }
+        }
+    },
+    "feedback": {
+        "color": {
+            ".stButtonGroup button[data-testid=\"stBaseButton-borderlessIcon\"] span": {
+                "color": null
+            }
+        }
+    },
+    "camera_input": {
+        "color": {
+            ".stCameraInput": {
+                "color": null
+            },
+            ".stCameraInput label p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stCameraInput": {
+                "font-size": null
+            },
+            ".stCameraInput label p": {
+                "font-size": null
+            }
+        }
+    },
+    "audio_input": {
+        "color": {
+            ".stAudioInput label p": {
+                "color": null
+            },
+            ".stAudioInput button svg": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stAudioInput label p": {
+                "font-size": null
+            }
+        }
+    },
+    "success": {
+        "color": {
+            ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "info": {
+        "color": {
+            ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "warning": {
+        "color": {
+            ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "error": {
+        "color": {
+            ".stAlert div[data-testid=\"stAlertContentError\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stAlert div[data-testid=\"stAlertContentError\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "progress": {
+        "background_color": {
+            ".stProgress div[data-baseweb=\"progress-bar\"] > div > div > div": {
+                "background-color": null
+            }
+        }
+    },
+    "form_submit_button": {
+        "color": {
+            ".stFormSubmitButton > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stFormSubmitButton > button p": {
+                "font-size": null
+            }
+        }
+    },
+    "expander": {
+        "color": {
+            ".stExpander > details > summary": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stExpander > details > summary p": {
+                "font-size": null
+            }
+        }
+    },
+    "tabs": {
+        "color": {
+            ".stTabs button div p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stTabs button div p": {
+                "font-size": null
+            }
+        }
+    },
+    "chat_message": {
+        "color": {
+            ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
+                "font-size": null
+            }
+        }
+    },
+    "status": {
+        "color": {
+            ".stExpander > details > summary span": {
+                "color": null
+            },
+            ".stExpander > details > summary p": {
+                "color": null
+            },
+            ".stExpander > details > summary svg": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stExpander > details > summary span": {
+                "font-size": null
+            },
+            ".stExpander > details > summary p": {
+                "font-size": null
             }
         }
     }
