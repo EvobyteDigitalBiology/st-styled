@@ -52,7 +52,7 @@ def get_css_properties_from_args(component_type: str, component_kwargs: dict):
                         css_properties[sel] = new_sel_css
 
     else:
-        raise ValueError(f"Component type '{component_type}' not found in COMPONENT_STYLES.")
+        raise ValueError(f"Component type '{component_type}' not found. Are you sure this component exists?")
 
     # Remove any args that were used for styling
     for arg in args_to_remove:
@@ -61,7 +61,7 @@ def get_css_properties_from_args(component_type: str, component_kwargs: dict):
     return css_properties
 
 
-def generate_component_css(component_type: str, component_kwargs: dict, component_key: str):
+def generate_component_css(component_type: str, component_kwargs: dict, component_key: str | None):
     
     css_properties = get_css_properties_from_args(component_type, component_kwargs)
     
@@ -70,9 +70,12 @@ def generate_component_css(component_type: str, component_kwargs: dict, componen
         css_rules = []
         for selector, properties in css_properties.items():
             
-            selector_plus_key = '.st-key-' + component_key + ' ' + selector
-            
-            rules = [f"    {prop}: {val};" for prop, val in properties.items()]
+            if component_key is None:
+                selector_plus_key = selector
+            else:
+                selector_plus_key = '.st-key-' + component_key + ' ' + selector
+
+            rules = [f"    {prop}: {val} !important;" for prop, val in properties.items()]
             rules_str = "\n".join(rules)
             css_rule = f"{selector_plus_key} {{\n{rules_str}\n}}"
             css_rules.append(css_rule)
@@ -94,3 +97,22 @@ def apply_component_css(component_type: str, kwargs: dict):
         st.html(f"<style>{css}</style>")
 
     return kwargs
+
+def apply_component_css_global(component_type: str, component_kwargs: dict):
+    """Apply global CSS styles to all components."""
+    
+    for styled_prop, value in component_kwargs.items():
+        component_kwargs = {styled_prop: value}
+        css = generate_component_css(component_type, component_kwargs, None)
+        if css:
+            # Apply CSS globally without key
+            # This will affect all components of this type
+            st.html(f"<style>{css}</style>")
+        else:
+            if '-' in styled_prop:
+                did_you_mean_ext = styled_prop.replace('-', '_')
+                did_you_mean_ext = f"Did you mean '{did_you_mean_ext}'?"
+            else:
+                did_you_mean_ext = ''
+
+            raise ValueError(f"No st_yled property {styled_prop} found for component type '{component_type}'. {did_you_mean_ext}")
