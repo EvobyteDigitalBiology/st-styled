@@ -547,7 +547,7 @@
             }
         },
         "background_color": {
-            ".stDateInput > div > div > div": {
+            ".stDateInput > div > div[data-baseweb=\"input\"]": {
                 "background-color": null
             },
             ".stDateInput > div > div button": {
@@ -560,6 +560,21 @@
             },
             ".stDateInput label p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                "border-width": null
             }
         }
     },
@@ -590,6 +605,21 @@
             ".stTimeInput label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stTimeInput > div > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stTimeInput > div > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stTimeInput > div > div": {
+                "border-width": null
+            }
         }
     },
     "text_area": {
@@ -612,6 +642,27 @@
             },
             ".stTextArea label p": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
+                "border-color": null
+            },
+            ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
+                "border-width": null
+            },
+            ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                "border-width": null
             }
         }
     },
@@ -636,6 +687,21 @@
             ".stTextInput label p": {
                 "font-size": null
             }
+        },
+        "border_style": {
+            ".stTextInput > div[data-baseweb=\"input\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stTextInput > div[data-baseweb=\"input\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stTextInput > div[data-baseweb=\"input\"]": {
+                "border-width": null
+            }
         }
     },
     "chat_input": {
@@ -658,6 +724,21 @@
         "font_size": {
             ".stChatInput textarea": {
                 "font-size": null
+            }
+        },
+        "border_style": {
+            ".stChatInput > div": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stChatInput > div": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stChatInput > div": {
+                "border-width": null
             }
         }
     },
