@@ -33,6 +33,7 @@ def init(css_path: str = None):
     # If no CSS file found, apply no styles
     # TODO: Potentially raise a warning here
 
+
 def set(component, property, value):
     
     styler.apply_component_css_global(component, {property: value})
