@@ -1,5 +1,5 @@
 import streamlit as st
-import styler
+from . import styler
 
 # ==============================================================================
 # Display and Magic Components

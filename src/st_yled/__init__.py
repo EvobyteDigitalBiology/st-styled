@@ -1,6 +1,11 @@
+"""st_yled - Advanced styling and custom components for Streamlit applications."""
 import os
+import streamlit as st
+
 from components import *
 import styler
+
+__version__ = "0.1.0"
 
 # Extra Components
 

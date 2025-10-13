@@ -216,4 +216,9 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# Custom additions for st-yled project
+.venv/
+
 *.lock
+
+.surveillance
