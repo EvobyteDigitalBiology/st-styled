@@ -1,6 +1,6 @@
 [project]
 name = "st-styled"
-version = "0.1.0"
+version = "0.1.1"
 description = "Advanced styling and custom components for Streamlit applications"
 authors = [
     {name = "JonathanAlles", email = "Jonathan.Alles@evo-byte.com"}
@@ -26,6 +26,11 @@ dependencies = [
     "streamlit>=1.42.0",  # Add Streamlit peer dependency (minimum version 1.42)
     "pandas>=2.0.0,<3.0.0",
     "openpyxl>=3.1.5,<4.0.0"
+]
+
+[tool.poetry]
+packages = [
+    { include = "st_yled", from = "src" },
 ]
 
 [project.optional-dependencies]
