@@ -43,18 +43,9 @@ Repository = "https://github.com/EvobyteDigitalBiology/st-styled"  # Note: proje
 Issues = "https://github.com/EvobyteDigitalBiology/st-styled/issues"
 Documentation = "https://github.com/EvobyteDigitalBiology/st-styled#readme"
 
-[project.scripts]
-st-styled = "st_yled.cli:main"  # CLI script name uses hyphen, imports snake_case module
-
 [build-system]
 requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-streamlit = "^1.42.0"
-pandas = "^2.0.0"
-openpyxl = "^3.1.5"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0.0"
