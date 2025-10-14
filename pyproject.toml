@@ -1,5 +1,5 @@
 [project]
-name = "st-yled"  # Project name with hyphen (PyPI package name)
+name = "st-styled"  # Project name with hyphen (PyPI package name)
 version = "0.1.0"
 description = "Advanced styling and custom components for Streamlit applications"
 authors = [
@@ -38,13 +38,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/EvobyteDigitalBiology/st-yled"  # Note: project repo uses hyphen
-Repository = "https://github.com/EvobyteDigitalBiology/st-yled"  # Note: project repo uses hyphen
-Issues = "https://github.com/EvobyteDigitalBiology/st-yled/issues"
-Documentation = "https://github.com/EvobyteDigitalBiology/st-yled#readme"
-
-[project.scripts]
-st-yled = "st_yled.cli:main"  # CLI script name uses hyphen, imports snake_case module
+Homepage = "https://github.com/EvobyteDigitalBiology/st-styled"  # Note: project repo uses hyphen
+Repository = "https://github.com/EvobyteDigitalBiology/st-styled"  # Note: project repo uses hyphen
+Issues = "https://github.com/EvobyteDigitalBiology/st-styled/issues"
+Documentation = "https://github.com/EvobyteDigitalBiology/st-styled#readme"
 
 [build-system]
 requires = ["poetry-core>=2.0.0"]
