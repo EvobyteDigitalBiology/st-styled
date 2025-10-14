@@ -44,7 +44,7 @@ jobs:
 
     - name: Install project
       run: |
-        poetry install --no-interaction
+        poetry install --no-interaction --no-directory
         poetry run pip install streamlit==${{ matrix.streamlit-version }}
 
     - name: Run linting
