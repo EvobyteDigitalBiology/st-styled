@@ -1,7 +1,11 @@
 """Tests for styler module."""
 
 import pytest
+import sys
+import os
 
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src", "st_yled"))
 
 def test_styler_module_exists():
     """Test that styler module can be imported."""
