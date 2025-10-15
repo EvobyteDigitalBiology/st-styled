@@ -1,6 +1,6 @@
 import streamlit as st
 
-from . import styler
+import styler
 
 # ==============================================================================
 # Display and Magic Components
@@ -8,7 +8,10 @@ from . import styler
 
 
 def write(*args, **kwargs):
-    return st.write(*args, **kwargs)
+    kwargs = styler.apply_component_css("write", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.write(*args, **kwargs)
 
 
 def write_stream(*args, **kwargs):
@@ -82,7 +85,6 @@ def text(*args, **kwargs):
 
 def divider(*args, **kwargs):
     return st.divider(*args, **kwargs)
-
 
 def html(*args, **kwargs):
     return st.html(*args, **kwargs)
@@ -336,6 +338,7 @@ def columns(*args, **kwargs):
 
 
 def container(*args, **kwargs):
+    kwargs = styler.apply_component_css("container", kwargs)
     return st.container(*args, **kwargs)
 
 
@@ -351,7 +354,10 @@ def expander(*args, **kwargs):
 
 
 def popover(*args, **kwargs):
-    return st.popover(*args, **kwargs)
+    kwargs = styler.apply_component_css("popover", kwargs)
+    key = kwargs.pop("key", None)
+    cont = st.container(key=key)
+    return cont.popover(*args, **kwargs)
 
 
 def tabs(*args, **kwargs):
@@ -475,7 +481,6 @@ def stop(*args, **kwargs):
 
 def navigation(*args, **kwargs):
     return st.navigation(*args, **kwargs)
-
 
 def switch_page(*args, **kwargs):
     return st.switch_page(*args, **kwargs)
