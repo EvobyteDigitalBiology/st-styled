@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Any, Optional
 
 import streamlit as st
-from validation import validate_styling_kwargs, ValidationConfig
+
+from validation import validate_styling_kwargs, ValidationConfig # type: ignore
 
 dirpath = Path(__file__).parent
 
@@ -80,6 +81,7 @@ def generate_component_css(
         return "\n".join(css_rules)
     return ""
 
+
 def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str, Any]:
     """
     Apply CSS to a specific component with parameter validation.
@@ -100,13 +102,12 @@ def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str
 
     # Validate styling parameters if not bypassed
     if not bypass_validation:
-
         # TODO: Cache validation results
         kwargs = validate_styling_kwargs(
             component_type=component_type,
             kwargs=kwargs,
             strict=strict_mode,
-            bypass_validation=False
+            bypass_validation=False,
         )
 
     # Generate unique key if not provided
@@ -147,7 +148,7 @@ def apply_component_css_global(
             component_type=component_type,
             kwargs=component_kwargs,
             strict=strict_mode,
-            bypass_validation=False
+            bypass_validation=False,
         )
     else:
         validated_kwargs = component_kwargs
