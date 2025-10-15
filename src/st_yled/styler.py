@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import streamlit as st
+from validation import validate_styling_kwargs, ValidationConfig
 
 dirpath = Path(__file__).parent
 
@@ -79,12 +80,41 @@ def generate_component_css(
         return "\n".join(css_rules)
     return ""
 
-
 def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str, Any]:
-    """Apply CSS to a specific component."""
+    """
+    Apply CSS to a specific component with parameter validation.
+
+    Args:
+        component_type: Type of component (e.g., 'button', 'text')
+        kwargs: Component keyword arguments including styling properties
+
+    Returns:
+        Validated kwargs with CSS applied via st.html()
+
+    Raises:
+        ValidationError: If validation is in strict mode and validation fails
+    """
+    # Check if validation should be bypassed
+    bypass_validation = ValidationConfig.is_validation_bypassed()
+    strict_mode = ValidationConfig.get_strict_mode()
+
+    # Validate styling parameters if not bypassed
+    if not bypass_validation:
+
+        # TODO: Cache validation results
+        kwargs = validate_styling_kwargs(
+            component_type=component_type,
+            kwargs=kwargs,
+            strict=strict_mode,
+            bypass_validation=False
+        )
+
+    # Generate unique key if not provided
     if "key" not in kwargs:
         kwargs["key"] = f"st-yler-{uuid.uuid4()}"
 
+    # Generate and apply CSS
+    # component kwargs are removed of styling properties
     css = generate_component_css(component_type, kwargs, kwargs["key"])
 
     if css:
@@ -96,8 +126,33 @@ def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str
 def apply_component_css_global(
     component_type: str, component_kwargs: dict[str, Any]
 ) -> None:
-    """Apply global CSS styles to all components."""
-    for styled_prop, value in component_kwargs.items():
+    """
+    Apply global CSS styles to all components with parameter validation.
+
+    Args:
+        component_type: Type of component to style globally
+        component_kwargs: Styling properties to apply
+
+    Raises:
+        ValidationError: If validation fails in strict mode
+        ValueError: If component type or properties are invalid
+    """
+    # Check if validation should be bypassed
+    bypass_validation = ValidationConfig.is_validation_bypassed()
+    strict_mode = ValidationConfig.get_strict_mode()
+
+    # Validate styling parameters if not bypassed
+    if not bypass_validation:
+        validated_kwargs = validate_styling_kwargs(
+            component_type=component_type,
+            kwargs=component_kwargs,
+            strict=strict_mode,
+            bypass_validation=False
+        )
+    else:
+        validated_kwargs = component_kwargs
+
+    for styled_prop, value in validated_kwargs.items():
         single_prop_kwargs = {styled_prop: value}
         css = generate_component_css(component_type, single_prop_kwargs, None)
         if css:
