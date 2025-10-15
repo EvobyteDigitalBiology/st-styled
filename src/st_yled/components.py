@@ -1,6 +1,6 @@
 import streamlit as st
 
-import styler
+import styler # type: ignore
 
 # ==============================================================================
 # Display and Magic Components
@@ -85,6 +85,7 @@ def text(*args, **kwargs):
 
 def divider(*args, **kwargs):
     return st.divider(*args, **kwargs)
+
 
 def html(*args, **kwargs):
     return st.html(*args, **kwargs)
@@ -481,6 +482,7 @@ def stop(*args, **kwargs):
 
 def navigation(*args, **kwargs):
     return st.navigation(*args, **kwargs)
+
 
 def switch_page(*args, **kwargs):
     return st.switch_page(*args, **kwargs)
