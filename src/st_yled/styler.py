@@ -5,7 +5,7 @@ from typing import Any, Optional
 
 import streamlit as st
 
-from validation import validate_styling_kwargs, ValidationConfig # type: ignore
+from validation import validate_styling_kwargs, ValidationConfig  # type: ignore
 
 dirpath = Path(__file__).parent
 

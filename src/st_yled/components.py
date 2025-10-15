@@ -1,6 +1,6 @@
 import streamlit as st
 
-import styler # type: ignore
+import styler  # type: ignore
 
 # ==============================================================================
 # Display and Magic Components

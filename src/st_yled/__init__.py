@@ -5,7 +5,7 @@ from typing import Optional
 
 import streamlit as st
 
-import styler # type: ignore
+import styler  # type: ignore
 from components import *  # type: ignore # noqa: F403
 
 __version__ = "0.1.0"
