@@ -91,6 +91,18 @@
             }
         }
     },
+    "write": {
+        "color": {
+            "div[data-testid=\"stMarkdownContainer\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "div[data-testid=\"stMarkdownContainer\"]": {
+                "font-size": null
+            }
+        }
+    },
     "caption": {
         "color": {
             "div[data-testid=\"stCaptionContainer\"] p": {
@@ -1181,6 +1193,60 @@
         },
         "border_width": {
             ".stCode pre": {
+                "border-width": null
+            }
+        }
+    },
+    "container": {
+        "background_color": {
+            "": {
+                "background-color": null
+            }
+        },
+        "border_style": {
+            "": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            "": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            "": {
+                "border-width": null
+            }
+        }
+    },
+    "popover": {
+        "background_color": {
+            "button[data-testid=\"stPopoverButton\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            "button[data-testid=\"stPopoverButton\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            "button[data-testid=\"stPopoverButton\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            "button[data-testid=\"stPopoverButton\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            "button[data-testid=\"stPopoverButton\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            "button[data-testid=\"stPopoverButton\"]": {
                 "border-width": null
             }
         }
