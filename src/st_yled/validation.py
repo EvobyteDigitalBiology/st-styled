@@ -1,20 +1,17 @@
 """Parameter validation for styling properties."""
 
 import re
-from typing import Any, Dict, List, Optional, Union, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import warnings
 import os
 
-import streamlit as st
 
 class ValidationError(ValueError):
     """Raised when validation fails for styling parameters."""
-    pass
 
 
 class ValidationWarning(UserWarning):
     """Warning for potential issues with styling parameters."""
-    pass
 
 
 class CSSValidator:
@@ -22,39 +19,236 @@ class CSSValidator:
 
     # Common CSS color formats (improved patterns)
     COLOR_PATTERNS = {
-        'hex_short': re.compile(r'^#[0-9a-fA-F]{3}$'),
-        'hex_long': re.compile(r'^#[0-9a-fA-F]{6}$'),
-        'rgb': re.compile(r'^rgb\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*\)$'),
-        'rgba': re.compile(r'^rgba\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$'),
-        'hsl': re.compile(r'^hsl\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)$'),
-        'hsla': re.compile(r'^hsla\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$'),
+        "hex_short": re.compile(r"^#[0-9a-fA-F]{3}$"),
+        "hex_long": re.compile(r"^#[0-9a-fA-F]{6}$"),
+        "rgb": re.compile(
+            r"^rgb\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*\)$"
+        ),
+        "rgba": re.compile(
+            r"^rgba\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$"
+        ),
+        "hsl": re.compile(r"^hsl\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)$"),
+        "hsla": re.compile(
+            r"^hsla\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$"
+        ),
     }
 
     # CSS named colors (expanded set including CSS keywords) CSS4 colors
     NAMED_COLORS = {
-        'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray',
-        'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'green', 'greenyellow', 'grey', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightgrey',
-        'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightslategrey', 'lightsteelblue', 'lightyellow', 'lime', 'limegreen', 'linen', 'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred',
-        'papayawhip', 'peachpuff', 'peru', 'pink', 'plum', 'powderblue', 'purple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow', 'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen','transparent'
+        "aliceblue",
+        "antiquewhite",
+        "aqua",
+        "aquamarine",
+        "azure",
+        "beige",
+        "bisque",
+        "black",
+        "blanchedalmond",
+        "blue",
+        "blueviolet",
+        "brown",
+        "burlywood",
+        "cadetblue",
+        "chartreuse",
+        "chocolate",
+        "coral",
+        "cornflowerblue",
+        "cornsilk",
+        "crimson",
+        "cyan",
+        "darkblue",
+        "darkcyan",
+        "darkgoldenrod",
+        "darkgray",
+        "darkgreen",
+        "darkgrey",
+        "darkkhaki",
+        "darkmagenta",
+        "darkolivegreen",
+        "darkorange",
+        "darkorchid",
+        "darkred",
+        "darksalmon",
+        "darkseagreen",
+        "darkslateblue",
+        "darkslategray",
+        "darkslategrey",
+        "darkturquoise",
+        "darkviolet",
+        "deeppink",
+        "deepskyblue",
+        "dimgray",
+        "dimgrey",
+        "dodgerblue",
+        "firebrick",
+        "floralwhite",
+        "forestgreen",
+        "fuchsia",
+        "gainsboro",
+        "ghostwhite",
+        "gold",
+        "goldenrod",
+        "gray",
+        "green",
+        "greenyellow",
+        "grey",
+        "honeydew",
+        "hotpink",
+        "indianred",
+        "indigo",
+        "ivory",
+        "khaki",
+        "lavender",
+        "lavenderblush",
+        "lawngreen",
+        "lemonchiffon",
+        "lightblue",
+        "lightcoral",
+        "lightcyan",
+        "lightgoldenrodyellow",
+        "lightgray",
+        "lightgreen",
+        "lightgrey",
+        "lightpink",
+        "lightsalmon",
+        "lightseagreen",
+        "lightskyblue",
+        "lightslategray",
+        "lightslategrey",
+        "lightsteelblue",
+        "lightyellow",
+        "lime",
+        "limegreen",
+        "linen",
+        "magenta",
+        "maroon",
+        "mediumaquamarine",
+        "mediumblue",
+        "mediumorchid",
+        "mediumpurple",
+        "mediumseagreen",
+        "mediumslateblue",
+        "mediumspringgreen",
+        "mediumturquoise",
+        "mediumvioletred",
+        "midnightblue",
+        "mintcream",
+        "mistyrose",
+        "moccasin",
+        "navajowhite",
+        "navy",
+        "oldlace",
+        "olive",
+        "olivedrab",
+        "orange",
+        "orangered",
+        "orchid",
+        "palegoldenrod",
+        "palegreen",
+        "paleturquoise",
+        "palevioletred",
+        "papayawhip",
+        "peachpuff",
+        "peru",
+        "pink",
+        "plum",
+        "powderblue",
+        "purple",
+        "red",
+        "rosybrown",
+        "royalblue",
+        "saddlebrown",
+        "salmon",
+        "sandybrown",
+        "seagreen",
+        "seashell",
+        "sienna",
+        "silver",
+        "skyblue",
+        "slateblue",
+        "slategray",
+        "slategrey",
+        "snow",
+        "springgreen",
+        "steelblue",
+        "tan",
+        "teal",
+        "thistle",
+        "tomato",
+        "turquoise",
+        "violet",
+        "wheat",
+        "white",
+        "whitesmoke",
+        "yellow",
+        "yellowgreen",
+        "transparent",
     }
 
     # CSS units
-    LENGTH_UNITS = {'px', 'em', 'rem', '%', 'vh', 'vw', 'pt', 'cm', 'mm', 'in', 'pc', 'ex', 'ch'}
+    LENGTH_UNITS = {
+        "px",
+        "em",
+        "rem",
+        "%",
+        "vh",
+        "vw",
+        "pt",
+        "cm",
+        "mm",
+        "in",
+        "pc",
+        "ex",
+        "ch",
+    }
 
     # CSS border styles
-    BORDER_STYLES = {'none', 'solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset'}
+    BORDER_STYLES = {
+        "none",
+        "solid",
+        "dashed",
+        "dotted",
+        "double",
+        "groove",
+        "ridge",
+        "inset",
+        "outset",
+    }
 
     # CSS font weights
-    FONT_WEIGHTS = {'normal', 'bold', 'bolder', 'lighter', '100', '200', '300', '400', '500', '600', '700', '800', '900'}
+    FONT_WEIGHTS = {
+        "normal",
+        "bold",
+        "bolder",
+        "lighter",
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "900",
+    }
 
     # CSS text align values
-    TEXT_ALIGN_VALUES = {'left', 'center', 'right', 'justify', 'start', 'end'}
+    TEXT_ALIGN_VALUES = {"left", "center", "right", "justify", "start", "end"}
 
     # CSS display values
-    DISPLAY_VALUES = {'block', 'inline', 'inline-block', 'flex', 'inline-flex', 'grid', 'inline-grid', 'none'}
+    DISPLAY_VALUES = {
+        "block",
+        "inline",
+        "inline-block",
+        "flex",
+        "inline-flex",
+        "grid",
+        "inline-grid",
+        "none",
+    }
 
     # CSS position values
-    POSITION_VALUES = {'static', 'relative', 'absolute', 'fixed', 'sticky'}
+    POSITION_VALUES = {"static", "relative", "absolute", "fixed", "sticky"}
 
     @staticmethod
     def is_valid_color(value: str) -> bool:
@@ -90,11 +284,13 @@ class CSSValidator:
             return all(CSSValidator.is_valid_length(part) for part in parts)
 
         # Check for 0 (unitless)
-        if value == '0':
+        if value == "0":
             return True
 
         # Check for number with unit
-        length_pattern = re.compile(r'^-?\d*\.?\d+(' + '|'.join(CSSValidator.LENGTH_UNITS) + ')$')
+        length_pattern = re.compile(
+            r"^-?\d*\.?\d+(" + "|".join(CSSValidator.LENGTH_UNITS) + ")$"
+        )
         return bool(length_pattern.match(value))
 
     @staticmethod
@@ -106,7 +302,6 @@ class CSSValidator:
         value = value.strip()
 
         return value.lower() in CSSValidator.BORDER_STYLES
-
 
     @staticmethod
     def is_valid_font_weight(value: str) -> bool:
@@ -143,28 +338,27 @@ class StyleValidator:
     # Property validation mapping
     PROPERTY_VALIDATORS = {
         # Color properties
-        'color': CSSValidator.is_valid_color,
-        'background_color': CSSValidator.is_valid_color,
-        'border_color': CSSValidator.is_valid_color,
-
+        "color": CSSValidator.is_valid_color,
+        "background_color": CSSValidator.is_valid_color,
+        "border_color": CSSValidator.is_valid_color,
         # Size/length properties (can handle space-separated values)
-        'font_size': CSSValidator.is_valid_length,
-        'border_width': CSSValidator.is_valid_length,
-
-        'border_style': CSSValidator.is_valid_border_style,
+        "font_size": CSSValidator.is_valid_length,
+        "border_width": CSSValidator.is_valid_length,
+        "border_style": CSSValidator.is_valid_border_style,
     }
 
     # Common property aliases/variations
     PROPERTY_ALIASES = {
-        'bg_color': 'background_color',
-        'text_color': 'color',
-        'font_color': 'color',
-        'size': 'font_size',
+        "bg_color": "background_color",
+        "text_color": "color",
+        "font_color": "color",
+        "size": "font_size",
     }
 
     @classmethod
-    def validate_property(cls, prop_name: str, prop_value: Any,
-                         strict: bool = False) -> Tuple[bool, Optional[str]]:
+    def validate_property(
+        cls, prop_name: str, prop_value: Any, strict: bool = False
+    ) -> Tuple[bool, Optional[str]]:
         """
         Validate a single styling property.
 
@@ -193,15 +387,15 @@ class StyleValidator:
         if validator is None:
             # Unknown property - warn but allow
             warning_msg = f"Unknown CSS property '{prop_name}'. Value will be passed through without validation."
-            # if not strict:
-            #     warnings.warn(warning_msg, ValidationWarning)
             return True, warning_msg if strict else None
 
         # Run validation
         try:
             is_valid = validator(prop_value)
             if not is_valid:
-                error_msg = cls._get_validation_error_message(normalized_prop, prop_value)
+                error_msg = cls._get_validation_error_message(
+                    normalized_prop, prop_value
+                )
                 return False, error_msg
             return True, None
         except Exception as e:
@@ -211,33 +405,48 @@ class StyleValidator:
     @classmethod
     def _get_validation_error_message(cls, prop_name: str, prop_value: str) -> str:
         """Generate helpful error message for validation failure."""
-        if 'color' in prop_name:
-            return (f"Invalid color value '{prop_value}' for property '{prop_name}'. "
-                   f"Expected formats: #hex (e.g., #FF0000), rgb(r,g,b), rgba(r,g,b,a), "
-                   f"hsl(h,s%,l%), or named colors (e.g., 'red', 'blue').")
-        elif prop_name in ['width', 'height', 'font_size', 'border_radius']:
-            return (f"Invalid length value '{prop_value}' for property '{prop_name}'. "
-                   f"Expected formats: number with unit (e.g., '10px', '2em', '50%') or '0'.")
-        elif prop_name in ['padding', 'margin']:
-            return (f"Invalid length value '{prop_value}' for property '{prop_name}'. "
-                   f"Expected formats: single value ('10px') or space-separated values ('10px 20px').")
-        elif 'border' in prop_name:
-            return (f"Invalid border value '{prop_value}' for property '{prop_name}'. "
-                   f"Expected format: 'width style color' (e.g., '1px solid #000000').")
-        elif prop_name == 'font_weight':
-            return (f"Invalid font-weight value '{prop_value}'. "
-                   f"Expected: 'normal', 'bold', 'bolder', 'lighter', or numbers 100-900.")
-        elif prop_name == 'text_align':
-            return (f"Invalid text-align value '{prop_value}'. "
-                   f"Expected: 'left', 'center', 'right', 'justify', 'start', or 'end'.")
+        if "color" in prop_name:
+            return (
+                f"Invalid color value '{prop_value}' for property '{prop_name}'. "
+                f"Expected formats: #hex (e.g., #FF0000), rgb(r,g,b), rgba(r,g,b,a), "
+                f"hsl(h,s%,l%), or named colors (e.g., 'red', 'blue')."
+            )
+        elif prop_name in ["width", "height", "font_size", "border_radius"]:
+            return (
+                f"Invalid length value '{prop_value}' for property '{prop_name}'. "
+                f"Expected formats: number with unit (e.g., '10px', '2em', '50%') or '0'."
+            )
+        elif prop_name in ["padding", "margin"]:
+            return (
+                f"Invalid length value '{prop_value}' for property '{prop_name}'. "
+                f"Expected formats: single value ('10px') or space-separated values ('10px 20px')."
+            )
+        elif "border" in prop_name:
+            return (
+                f"Invalid border value '{prop_value}' for property '{prop_name}'. "
+                f"Expected format: 'width style color' (e.g., '1px solid #000000')."
+            )
+        elif prop_name == "font_weight":
+            return (
+                f"Invalid font-weight value '{prop_value}'. "
+                f"Expected: 'normal', 'bold', 'bolder', 'lighter', or numbers 100-900."
+            )
+        elif prop_name == "text_align":
+            return (
+                f"Invalid text-align value '{prop_value}'. "
+                f"Expected: 'left', 'center', 'right', 'justify', 'start', or 'end'."
+            )
         else:
             return f"Invalid value '{prop_value}' for CSS property '{prop_name}'."
 
-
     @classmethod
-    def validate_component_kwargs(cls, component_type: str, kwargs: Dict[str, Any],
-                                strict: bool = False,
-                                bypass_validation: bool = False) -> Dict[str, Any]:
+    def validate_component_kwargs(
+        cls,
+        component_type: str,
+        kwargs: Dict[str, Any],
+        strict: bool = False,
+        bypass_validation: bool = False,
+    ) -> Dict[str, Any]:
         """
         Validate all styling properties in component kwargs.
 
@@ -265,7 +474,15 @@ class StyleValidator:
             # Skip non-styling properties (streamlit native params)
 
             # TODO: Better way to handle Streamlit native params
-            if prop_name in {'key', 'help', 'disabled', 'label_visibility', 'on_change', 'args', 'kwargs'}:
+            if prop_name in {
+                "key",
+                "help",
+                "disabled",
+                "label_visibility",
+                "on_change",
+                "args",
+                "kwargs",
+            }:
                 continue
 
             is_valid, message = cls.validate_property(prop_name, prop_value, strict)
@@ -293,36 +510,45 @@ class StyleValidator:
         return validated_kwargs
 
     @classmethod
-    def suggest_corrections(cls, prop_name: str, prop_value: str) -> List[str]:
+    def suggest_corrections(cls, prop_name: str) -> List[str]:
         """Suggest corrections for invalid property values."""
         suggestions = []
 
-        if 'color' in prop_name:
-            suggestions.extend([
-                "Try hex colors: '#FF0000', '#00FF00', '#0000FF'",
-                "Try RGB colors: 'rgb(255, 0, 0)', 'rgba(255, 0, 0, 0.5)'",
-                "Try named colors: 'red', 'blue', 'green', 'transparent'"
-            ])
-        elif prop_name in ['width', 'height', 'padding', 'margin']:
-            suggestions.extend([
-                "Try pixel values: '10px', '20px', '100px'",
-                "Try percentage values: '50%', '100%'",
-                "Try relative units: '1em', '2rem'",
-                "Use '0' for zero values (no unit needed)"
-            ])
-        elif 'border' in prop_name:
-            suggestions.extend([
-                "Try: '1px solid #000000'",
-                "Try: '2px dashed red'",
-                "Try: '3px dotted blue'"
-            ])
+        if "color" in prop_name:
+            suggestions.extend(
+                [
+                    "Try hex colors: '#FF0000', '#00FF00', '#0000FF'",
+                    "Try RGB colors: 'rgb(255, 0, 0)', 'rgba(255, 0, 0, 0.5)'",
+                    "Try named colors: 'red', 'blue', 'green', 'transparent'",
+                ]
+            )
+        elif prop_name in ["width", "height", "padding", "margin"]:
+            suggestions.extend(
+                [
+                    "Try pixel values: '10px', '20px', '100px'",
+                    "Try percentage values: '50%', '100%'",
+                    "Try relative units: '1em', '2rem'",
+                    "Use '0' for zero values (no unit needed)",
+                ]
+            )
+        elif "border" in prop_name:
+            suggestions.extend(
+                [
+                    "Try: '1px solid #000000'",
+                    "Try: '2px dashed red'",
+                    "Try: '3px dotted blue'",
+                ]
+            )
 
         return suggestions
 
 
-def validate_styling_kwargs(component_type: str, kwargs: Dict[str, Any],
-                          strict: bool = False,
-                          bypass_validation: bool = False) -> Dict[str, Any]:
+def validate_styling_kwargs(
+    component_type: str,
+    kwargs: Dict[str, Any],
+    strict: bool = False,
+    bypass_validation: bool = False,
+) -> Dict[str, Any]:
     """
     Main validation function for component styling kwargs.
 
