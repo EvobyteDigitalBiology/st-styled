@@ -426,6 +426,11 @@ class StyleValidator:
                 f"Invalid value '{prop_value}' for property '{prop_name}'. "
                 f"Expected format: 'style' (e.g., solid)."
             )
+        elif "border_width" in prop_name:
+            return (
+                f"Invalid value '{prop_value}' for property '{prop_name}'. "
+                f"Expected format: 'width' (e.g., 1px)."
+            )
         elif prop_name == "font_weight":
             return (
                 f"Invalid font-weight value '{prop_value}'. "

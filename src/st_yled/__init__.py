@@ -13,6 +13,10 @@ __version__ = "0.0.2"
 
 def init(css_path: Optional[str] = None) -> None:
     """Initialize st_yled with CSS styling."""
+
+    # Set session_state
+    st.session_state["st-yled-comp-counter"] = 0
+
     cwd = Path.cwd()
 
     if css_path:

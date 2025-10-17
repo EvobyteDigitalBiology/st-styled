@@ -1,5 +1,4 @@
 import json
-import uuid
 from pathlib import Path
 from typing import Any, Optional
 
@@ -7,11 +6,27 @@ import streamlit as st
 
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
+from st_yled.validation import ValidationError  # type: ignore
 
 dirpath = Path(__file__).parent
 
 with (dirpath / "element_styles.json").open() as f:
     ELEMENT_STYLES = json.load(f)
+
+
+def generate_component_key() -> str:
+    """Generate a unique component key for st_yled components."""
+
+    if "st-yled-comp-counter" not in st.session_state:
+        error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
+        raise ValidationError(error_msg)
+
+    comp_counter = st.session_state["st-yled-comp-counter"]
+    comp_key = f"st-yler-comp-{comp_counter}"
+
+    st.session_state["st-yled-comp-counter"] += 1
+
+    return comp_key
 
 
 def get_css_properties_from_args(
@@ -113,7 +128,7 @@ def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str
 
     # Generate unique key if not provided
     if "key" not in kwargs:
-        kwargs["key"] = f"st-yler-{uuid.uuid4()}"
+        kwargs["key"] = generate_component_key()
 
     # Generate and apply CSS
     # component kwargs are removed of styling properties

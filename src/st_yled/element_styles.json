@@ -472,11 +472,6 @@
             ".katex-html": {
                 "color": null
             }
-        },
-        "font_size": {
-            ".katex-html": {
-                "font-size": null
-            }
         }
     },
     "table": {
