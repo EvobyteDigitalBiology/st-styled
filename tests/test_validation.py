@@ -347,7 +347,7 @@ class TestRealWorldScenarios:
             assert validated[key] == value
 
     def test_dashboard_component_styling(self):
-        """Test styling for dashboard-like components."""
+        """Test styling for dashboard-like elements."""
         metric_kwargs = {
             "background_color": "#f8f9fa",
             "border": "1px solid #dee2e6",

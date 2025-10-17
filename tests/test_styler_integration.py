@@ -92,9 +92,9 @@ class TestStylerValidationIntegration:
             }
 
             # Import ValidationError from validation module directly due to sys.path modifications
-            from validation import ValidationError as VE
+            from st_yled.validation import ValidationError as VE
 
-            with pytest.raises(VE):
+            with pytest.raises(VE, match="Invalid color value 'invalid_color'"):
                 apply_component_css("text", kwargs)
 
         finally:
@@ -200,13 +200,13 @@ class TestStylerValidationIntegration:
         assert "value" in kwargs
 
     def test_component_with_unsupported_component_type(self):
-        """Test component that doesn't exist in COMPONENT_STYLES."""
+        """Test component that doesn't exist in ELEMENT_STYLES."""
         kwargs = {
             "value": "Hello World",
             "color": "#ff0000"
         }
 
-        # Use a component type that doesn't exist in COMPONENT_STYLES
+        # Use a component type that doesn't exist in ELEMENT_STYLES
         with pytest.raises(ValueError, match="Component type 'nonexistent' not found"):
             get_css_properties_from_args("nonexistent", kwargs)
 

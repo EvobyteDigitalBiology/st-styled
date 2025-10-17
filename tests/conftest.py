@@ -30,6 +30,6 @@ def mock_streamlit_app(monkeypatch):
             return False
 
     mock_st = MockStreamlit()
-    monkeypatch.setattr("st_yled.components.st", mock_st)
+    monkeypatch.setattr("st_yled.elements.st", mock_st)
     monkeypatch.setattr("st_yled.styler.st", mock_st)
     return mock_st
