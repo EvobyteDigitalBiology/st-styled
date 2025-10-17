@@ -8,11 +8,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", "src", "st_y
 
 
 @pytest.mark.integration()
-def test_components_integration(mock_streamlit_app):
-    """Test components integration with mocked Streamlit."""
-    from st_yled.components import button
+def test_elements_integration(mock_streamlit_app):
+    """Test elements integration with mocked Streamlit."""
+    from st_yled.elements import button
 
-    # Test that components can be called without errors
+    # Test that elements can be called without errors
     try:
         button("Test Button", key="test")
     except Exception as e:
