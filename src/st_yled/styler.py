@@ -5,12 +5,13 @@ from typing import Any, Optional
 
 import streamlit as st
 
-from validation import validate_styling_kwargs, ValidationConfig  # type: ignore
+from st_yled.validation import validate_styling_kwargs  # type: ignore
+from st_yled.validation import ValidationConfig  # type: ignore
 
 dirpath = Path(__file__).parent
 
-with (dirpath / "component_styles.json").open() as f:
-    COMPONENT_STYLES = json.load(f)
+with (dirpath / "element_styles.json").open() as f:
+    ELEMENT_STYLES = json.load(f)
 
 
 def get_css_properties_from_args(
@@ -18,9 +19,9 @@ def get_css_properties_from_args(
 ) -> dict[str, dict[str, str]]:
     """Get CSS properties from component arguments."""
     css_properties: dict[str, dict[str, str]] = {}
-    if component_type in COMPONENT_STYLES:
+    if component_type in ELEMENT_STYLES:
         # Return dict of css properties and selectors for component
-        style_mappings = COMPONENT_STYLES[component_type]
+        style_mappings = ELEMENT_STYLES[component_type]
 
         args_to_remove = []
 

@@ -1,32 +1,384 @@
 {
     "button": {
         "background_color": {
-            ".stButton > button": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
                 "background-color": null
             }
         },
         "color": {
-            ".stButton > button": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
                 "color": null
             }
         },
         "font_size": {
-            ".stButton > button p": {
+            ".stButton:has(button[kind=\"secondary\"]) > button p": {
                 "font-size": null
             }
         },
         "border_style": {
-            ".stButton > button": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
                 "border-style": null
             }
         },
         "border_color": {
-            ".stButton > button": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
                 "border-color": null
             }
         },
         "border_width": {
-            ".stButton > button": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "button_primary": {
+        "background_color": {
+            ".stButton:has(button[kind=\"primary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stButton:has(button[kind=\"primary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stButton:has(button[kind=\"primary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stButton:has(button[kind=\"primary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButton:has(button[kind=\"primary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButton:has(button[kind=\"primary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "button_secondary": {
+        "background_color": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stButton:has(button[kind=\"secondary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButton:has(button[kind=\"secondary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "button_tertiary": {
+        "background_color": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "download_button": {
+        "background_color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "download_button_primary": {
+        "background_color": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "download_button_secondary": {
+        "background_color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "download_button_tertiary": {
+        "background_color": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                "border-width": null
+            }
+        }
+    },
+    "link_button": {
+        "background_color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stLinkButton > a[kind=\"secondary\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "link_button_primary": {
+        "background_color": {
+            ".stLinkButton > a[kind=\"primary\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stLinkButton > a[kind=\"primary\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stLinkButton > a[kind=\"primary\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stLinkButton > a[kind=\"primary\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stLinkButton > a[kind=\"primary\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stLinkButton > a[kind=\"primary\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "link_button_secondary": {
+        "background_color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stLinkButton > a[kind=\"secondary\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stLinkButton > a[kind=\"secondary\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "link_button_tertiary": {
+        "background_color": {
+            ".stLinkButton > a[kind=\"tertiary\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stLinkButton > a[kind=\"tertiary\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stLinkButton > a[kind=\"tertiary\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stLinkButton > a[kind=\"tertiary\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stLinkButton > a[kind=\"tertiary\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stLinkButton > a[kind=\"tertiary\"]": {
                 "border-width": null
             }
         }
@@ -185,50 +537,6 @@
         },
         "font_size": {
             ".stJson span": {
-                "font-size": null
-            }
-        }
-    },
-    "download_button": {
-        "background_color": {
-            ".stDownloadButton > button": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stDownloadButton > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stDownloadButton > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stDownloadButton > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDownloadButton > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDownloadButton > button": {
-                "border-width": null
-            }
-        }
-    },
-    "link_button": {
-        "color": {
-            ".stLinkButton > a": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stLinkButton > a p": {
                 "font-size": null
             }
         }
@@ -1032,28 +1340,129 @@
         }
     },
     "form_submit_button": {
+        "background_color": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "background-color": null
+            }
+        },
         "color": {
-            ".stFormSubmitButton > button": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
                 "color": null
             }
         },
         "font_size": {
-            ".stFormSubmitButton > button p": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
                 "font-size": null
             }
         },
         "border_style": {
-            ".stFormSubmitButton > button": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
                 "border-style": null
             }
         },
         "border_color": {
-            ".stFormSubmitButton > button": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
                 "border-color": null
             }
         },
         "border_width": {
-            ".stFormSubmitButton > button": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "form_submit_button_primary": {
+        "background_color": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "form_submit_button_secondary": {
+        "background_color": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                "border-width": null
+            }
+        }
+    },
+    "form_submit_button_tertiary": {
+        "background_color": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                "background-color": null
+            }
+        },
+        "color": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                "color": null
+            }
+        },
+        "font_size": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"] p": {
+                "font-size": null
+            }
+        },
+        "border_style": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                "border-style": null
+            }
+        },
+        "border_color": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                "border-color": null
+            }
+        },
+        "border_width": {
+            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
                 "border-width": null
             }
         }

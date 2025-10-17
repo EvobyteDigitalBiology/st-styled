@@ -5,12 +5,10 @@ from typing import Optional
 
 import streamlit as st
 
-import styler  # type: ignore
-from components import *  # type: ignore # noqa: F403
+from st_yled import styler  # type: ignore
+from st_yled.elements import *  # type: ignore # noqa: F403
 
-__version__ = "0.1.0"
-
-# Extra Components
+__version__ = "0.1.1"
 
 
 def init(css_path: Optional[str] = None) -> None:
@@ -42,5 +40,5 @@ def init(css_path: Optional[str] = None) -> None:
     # TODO: Potentially raise a warning here
 
 
-def set(component: str, property: str, value: str) -> None:
-    styler.apply_component_css_global(component, {property: value})
+def set(element: str, property: str, value: str) -> None:
+    styler.apply_component_css_global(element, {property: value})

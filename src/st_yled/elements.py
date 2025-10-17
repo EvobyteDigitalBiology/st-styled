@@ -1,6 +1,6 @@
 import streamlit as st
 
-import styler  # type: ignore
+from st_yled import styler  # type: ignore
 
 # ==============================================================================
 # Display and Magic Components
@@ -184,17 +184,33 @@ def graphviz_chart(*args, **kwargs):
 
 
 def button(*args, **kwargs):
-    kwargs = styler.apply_component_css("button", kwargs)
+    if "type" in kwargs:
+        btn_selector = f'button_{kwargs["type"]}'
+    else:
+        btn_selector = "button"
+
+    kwargs = styler.apply_component_css(btn_selector, kwargs)
     return st.button(*args, **kwargs)
 
 
 def download_button(*args, **kwargs):
-    kwargs = styler.apply_component_css("download_button", kwargs)
+    if "type" in kwargs:
+        btn_selector = f'download_button_{kwargs["type"]}'
+    else:
+        btn_selector = "download_button"
+
+    kwargs = styler.apply_component_css(btn_selector, kwargs)
     return st.download_button(*args, **kwargs)
 
 
 def link_button(*args, **kwargs):
-    kwargs = styler.apply_component_css("link_button", kwargs)
+    if "type" in kwargs:
+        btn_selector = f'link_button_{kwargs["type"]}'
+    else:
+        btn_selector = "link_button"
+
+    kwargs = styler.apply_component_css(btn_selector, kwargs)
+
     key = kwargs.pop("key", None)
     cont = st.container(key=key)
     return cont.link_button(*args, **kwargs)
@@ -461,15 +477,18 @@ def form(*args, **kwargs):
 
 
 def form_submit_button(*args, **kwargs):
-    kwargs = styler.apply_component_css("form_submit_button", kwargs)
+    if "type" in kwargs:
+        btn_selector = f'form_submit_button_{kwargs["type"]}'
+    else:
+        btn_selector = "form_submit_button"
+
+    kwargs = styler.apply_component_css(btn_selector, kwargs)
     key = kwargs.pop("key", None)
     cont = st.container(key=key)
     return cont.form_submit_button(*args, **kwargs)
 
-
 def rerun(*args, **kwargs):
     return st.rerun(*args, **kwargs)
-
 
 def stop(*args, **kwargs):
     return st.stop(*args, **kwargs)
@@ -479,10 +498,8 @@ def stop(*args, **kwargs):
 # Navigation and Pages
 # ==============================================================================
 
-
 def navigation(*args, **kwargs):
     return st.navigation(*args, **kwargs)
-
 
 def switch_page(*args, **kwargs):
     return st.switch_page(*args, **kwargs)
@@ -492,14 +509,11 @@ def switch_page(*args, **kwargs):
 # Configuration
 # ==============================================================================
 
-
 def set_page_config(*args, **kwargs):
     return st.set_page_config(*args, **kwargs)
 
-
 def get_option(*args, **kwargs):
     return st.get_option(*args, **kwargs)
-
 
 def set_option(*args, **kwargs):
     return st.set_option(*args, **kwargs)

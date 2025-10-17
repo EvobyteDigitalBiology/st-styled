@@ -421,10 +421,10 @@ class StyleValidator:
                 f"Invalid length value '{prop_value}' for property '{prop_name}'. "
                 f"Expected formats: single value ('10px') or space-separated values ('10px 20px')."
             )
-        elif "border" in prop_name:
+        elif "border_style" in prop_name:
             return (
-                f"Invalid border value '{prop_value}' for property '{prop_name}'. "
-                f"Expected format: 'width style color' (e.g., '1px solid #000000')."
+                f"Invalid value '{prop_value}' for property '{prop_name}'. "
+                f"Expected format: 'style' (e.g., solid)."
             )
         elif prop_name == "font_weight":
             return (
