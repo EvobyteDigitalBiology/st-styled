@@ -487,8 +487,10 @@ def form_submit_button(*args, **kwargs):
     cont = st.container(key=key)
     return cont.form_submit_button(*args, **kwargs)
 
+
 def rerun(*args, **kwargs):
     return st.rerun(*args, **kwargs)
+
 
 def stop(*args, **kwargs):
     return st.stop(*args, **kwargs)
@@ -498,8 +500,10 @@ def stop(*args, **kwargs):
 # Navigation and Pages
 # ==============================================================================
 
+
 def navigation(*args, **kwargs):
     return st.navigation(*args, **kwargs)
+
 
 def switch_page(*args, **kwargs):
     return st.switch_page(*args, **kwargs)
@@ -509,11 +513,14 @@ def switch_page(*args, **kwargs):
 # Configuration
 # ==============================================================================
 
+
 def set_page_config(*args, **kwargs):
     return st.set_page_config(*args, **kwargs)
 
+
 def get_option(*args, **kwargs):
     return st.get_option(*args, **kwargs)
+
 
 def set_option(*args, **kwargs):
     return st.set_option(*args, **kwargs)
