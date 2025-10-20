@@ -355,6 +355,19 @@ class StyleValidator:
         "size": "font_size",
     }
 
+    # Properties with default unit handling
+    PROPERTY_DEFAULT_UNITS = {
+        "font_size": "px",
+        "border_width": "px",
+    }
+
+    @classmethod
+    def set_default_int_unit(cls, prop_name: str, prop_value: Any) -> Any:
+        """Convert integer property values to string with 'px' unit."""
+        if (prop_name in cls.PROPERTY_DEFAULT_UNITS) and isinstance(prop_value, int):
+            return f"{prop_value}px"
+        return prop_value
+
     @classmethod
     def validate_property(
         cls, prop_name: str, prop_value: Any, strict: bool = False
@@ -378,11 +391,8 @@ class StyleValidator:
         if not isinstance(prop_value, str):
             prop_value = str(prop_value)
 
-        # Check property aliases
-        normalized_prop = cls.PROPERTY_ALIASES.get(prop_name, prop_name)
-
         # Get validator function
-        validator = cls.PROPERTY_VALIDATORS.get(normalized_prop)
+        validator = cls.PROPERTY_VALIDATORS.get(prop_name)
 
         if validator is None:
             # Unknown property - warn but allow
@@ -393,9 +403,7 @@ class StyleValidator:
         try:
             is_valid = validator(prop_value)
             if not is_valid:
-                error_msg = cls._get_validation_error_message(
-                    normalized_prop, prop_value
-                )
+                error_msg = cls._get_validation_error_message(prop_name, prop_value)
                 return False, error_msg
             return True, None
         except Exception as e:
@@ -490,6 +498,12 @@ class StyleValidator:
             }:
                 continue
 
+            # Check property aliases
+            prop_name = cls.PROPERTY_ALIASES.get(prop_name, prop_name)
+
+            # Set default unit for certain properties
+            prop_value = cls.set_default_int_unit(prop_name, prop_value)
+
             is_valid, message = cls.validate_property(prop_name, prop_value, strict)
 
             if not is_valid:
@@ -499,9 +513,11 @@ class StyleValidator:
                     warnings_list.append(f"Component '{component_type}': {message}")
                     # Remove invalid property to prevent CSS errors
                     validated_kwargs.pop(prop_name, None)
-            elif message and not strict:
-                # Warning message for unknown property
-                warnings_list.append(f"Component '{component_type}': {message}")
+            else:
+                validated_kwargs[prop_name] = prop_value
+                if message and not strict:
+                    # Warning message for unknown property
+                    warnings_list.append(f"Component '{component_type}': {message}")
 
         # Handle errors and warnings
         if errors:
