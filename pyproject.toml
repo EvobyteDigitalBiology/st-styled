@@ -5,7 +5,7 @@ description = "Advanced styling and custom components for Streamlit applications
 authors = [
     {name = "JonathanAlles", email = "Jonathan.Alles@evo-byte.com"}
 ]
-readme = "README.md"
+readme = "docs/readme.md"
 requires-python = ">=3.10"  # Changed from >=3.11 for broader compatibility
 license = {text = "MIT"}
 keywords = ["streamlit", "styling", "css", "components", "ui"]
@@ -43,10 +43,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/EvobyteDigitalBiology/st-styled"  # Note: project repo uses hyphen
+Homepage = "https://st-styled.evo-byte.com/"  # Note: project repo uses hyphen
 Repository = "https://github.com/EvobyteDigitalBiology/st-styled"  # Note: project repo uses hyphen
 Issues = "https://github.com/EvobyteDigitalBiology/st-styled/issues"
-Documentation = "https://github.com/EvobyteDigitalBiology/st-styled#readme"
+Documentation = "https://st-styled.evo-byte.com/"
 
 [build-system]
 requires = ["poetry-core>=2.0.0"]
