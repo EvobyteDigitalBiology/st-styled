@@ -8,14 +8,14 @@ This project incorporates material from the projects listed below:
 - **Homepage**: https://streamlit.io
 - **Used for**: Core Streamlit framework integration
 
-## pandas  
+## pandas
 - **License**: BSD 3-Clause License
 - **Copyright**: Copyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
 - **Homepage**: https://pandas.pydata.org
 - **Used for**: Data manipulation utilities
 
 ## openpyxl
-- **License**: MIT License  
+- **License**: MIT License
 - **Copyright**: Copyright (c) 2010 openpyxl
 - **Homepage**: https://openpyxl.readthedocs.io
 - **Used for**: Excel file handling

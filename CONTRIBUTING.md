@@ -20,7 +20,7 @@ Thank you for your interest in contributing! This document provides guidelines f
 We use several tools to maintain code quality:
 
 - **Ruff** for linting and formatting
-- **mypy** for type checking  
+- **mypy** for type checking
 - **pytest** for testing
 - **pre-commit** for automated checks
 
@@ -37,7 +37,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/):
 type(scope): description
 
 feat: add new component wrapper
-fix: resolve CSS injection issue  
+fix: resolve CSS injection issue
 docs: update API documentation
 test: add unit tests for styler
 refactor: improve component structure

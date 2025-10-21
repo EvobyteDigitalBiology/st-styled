@@ -1,47 +1,48 @@
 """st_yled - Advanced styling and custom components for Streamlit applications."""
-import os
+
+from pathlib import Path
+from typing import Optional
+
 import streamlit as st
 
-from components import *
-import styler
+from st_yled import styler  # type: ignore
+from st_yled.elements import *  # type: ignore # noqa: F403
 
-__version__ = "0.1.0"
-
-# Extra Components
+__version__ = "0.0.3"
 
 
-def init(css_path: str = None):
+def init(css_path: Optional[str] = None) -> None:
+    """Initialize st_yled with CSS styling."""
 
-    cwd = os.getcwd()
+    # Set session_state
+    st.session_state["st-yled-comp-counter"] = 0
+
+    cwd = Path.cwd()
 
     if css_path:
         # Check if provided path exists
-        if os.path.exists(css_path):
-            st.html(css_path)
+        css_file = Path(css_path)
+        if css_file.exists():
+            st.html(str(css_file))
             return
-        else:
-            raise FileNotFoundError(f"CSS file not found at provided path: {css_path}")
+        msg = f"CSS file not found at provided path: {css_path}"
+        raise FileNotFoundError(msg)
 
     # Check if .streamlit/st-styled.css exists
-    css_default_path = os.path.join(cwd, '.streamlit', 'st-styled.css')
-    if os.path.exists(css_default_path):
-        
-        st.html(css_default_path)
+    css_default_path = cwd / ".streamlit" / "st-styled.css"
+    if css_default_path.exists():
+        st.html(str(css_default_path))
         return
 
     # Check if directory in home exists
-    home_dir = os.path.join(os.path.expanduser('~'), '.streamlit', 'st-styled.css')
-    if os.path.exists(home_dir):
-        st.html(home_dir)
+    home_dir = Path.home() / ".streamlit" / "st-styled.css"
+    if home_dir.exists():
+        st.html(str(home_dir))
         return
 
     # If no CSS file found, apply no styles
     # TODO: Potentially raise a warning here
 
 
-def set(component, property, value):
-    
-    styler.apply_component_css_global(component, {property: value})
-
-
-
+def set(element: str, property: str, value: str) -> None:
+    styler.apply_component_css_global(element, {property: value})
