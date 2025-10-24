@@ -21,6 +21,7 @@ class CSSValidator:
     COLOR_PATTERNS = {
         "hex_short": re.compile(r"^#[0-9a-fA-F]{3}$"),
         "hex_long": re.compile(r"^#[0-9a-fA-F]{6}$"),
+        "hex_long_alpha": re.compile(r"^#[0-9a-fA-F]{8}$"),
         "rgb": re.compile(
             r"^rgb\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*\)$"
         ),
@@ -625,3 +626,21 @@ class ValidationConfig:
         elif strict_env in ("false", "0", "no"):
             return False
         return cls.DEFAULT_STRICT_MODE
+
+def validate_container_width(width_value: Any) -> bool:
+    """
+    Validate the container width value.
+
+    Args:
+        width_value: The width value to validate
+
+    Returns:
+        Tuple of (is_valid, error_message)
+    """
+
+    if isinstance(width_value, int):
+        return True
+    elif width_value == "stretch":
+        return True
+    else:
+        return False
