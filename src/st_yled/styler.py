@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from typing import Any, Optional
+import re
 
 import streamlit as st
 
@@ -12,6 +13,140 @@ dirpath = Path(__file__).parent
 
 with (dirpath / "element_styles.json").open() as f:
     ELEMENT_STYLES = json.load(f)
+
+
+def get_element_style(element_name: str) -> dict:
+    """
+    Get the style definition for a given element name.
+
+    Args:
+        element_name: The name of the element to retrieve the style for.
+
+    Returns:
+        A dictionary containing the style definition if found, else None.
+
+    Example:
+        >>> get_element_style("button")
+        {
+            "css": {
+                ".stButton > button": {
+                    "background-color": None
+    """
+
+    return ELEMENT_STYLES[element_name]
+
+
+def get_stylable_elements(include_variants: bool = True) -> list[str]:
+    """
+    Get a list of all stylable component names from ELEMENT_STYLES.
+
+    Args:
+        include_variants: If True, includes variants like 'button_primary', 'button_secondary'.
+                         If False, only returns base components like 'button'.
+
+    Returns:
+        Sorted list of component names that can be styled.
+
+    Example:
+        >>> get_stylable_elements(include_variants=False)
+        ['button', 'caption', 'code', ...]
+        >>> get_stylable_elements(include_variants=True)
+        ['button', 'button_primary', 'button_secondary', 'caption', ...]
+    """
+    if include_variants:
+        return sorted(ELEMENT_STYLES.keys())
+
+    # Filter out variants ending with _primary, _secondary, _tertiary
+    variant_pattern = re.compile(r".*_(primary|secondary|tertiary)$")
+    base_elements = [
+        key for key in ELEMENT_STYLES.keys() if not variant_pattern.match(key)
+    ]
+    return sorted(base_elements)
+
+
+def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
+    """
+    Get stylable components organized by category with variants.
+
+    Args:
+        include_variants: If True, includes variants like 'button_primary', 'button_secondary'.
+                         If False, only returns base components with 'primary' as default variant.
+
+    Returns:
+        Nested dictionary structure:
+        {
+            'category': {
+                'element': ['variant1', 'variant2', ...]
+            }
+        }
+
+        If no variants are found for an element, defaults to ['primary'].
+
+    Example:
+        >>> get_stylable_elements_by_category(include_variants=True)
+        {
+            'input': {
+                'button': ['primary', 'secondary', 'tertiary'],
+                'checkbox': ['primary'],
+                ...
+            },
+            'text': {
+                'caption': ['primary'],
+                'code': ['primary'],
+                ...
+            }
+        }
+    """
+    # Get all elements (always include variants to find them)
+    all_elements = sorted(ELEMENT_STYLES.keys())
+
+    # Group by category and base element
+    categories: dict[str, dict[str, list[str]]] = {}
+
+    # Pattern to extract base element and variant
+    variant_pattern = re.compile(
+        r"^(?P<base>.+?)_(?P<variant>primary|secondary|tertiary)$"
+    )
+
+    for element in all_elements:
+        if element not in ELEMENT_STYLES:
+            continue
+
+        category = ELEMENT_STYLES[element].get("category", "unknown")
+
+        # Check if this is a variant or base element
+        match = variant_pattern.match(element)
+        if match:
+            # This is a variant (e.g., button_primary)
+            base_element = match.group("base")
+            variant = match.group("variant")
+        else:
+            # This is a base element (e.g., button)
+            base_element = element
+            variant = "primary"  # Default variant
+
+        # Initialize category if not exists
+        if category not in categories:
+            categories[category] = {}
+
+        # Initialize base element if not exists
+        if base_element not in categories[category]:
+            categories[category][base_element] = []
+
+        # Add variant if not already present
+        if variant not in categories[category][base_element]:
+            categories[category][base_element].append(variant)
+
+    # Sort variants within each element and sort elements within each category
+    for category in categories:
+        # Sort elements in category
+        sorted_elements = dict(sorted(categories[category].items()))
+        # Sort variants for each element
+        for element in sorted_elements:
+            sorted_elements[element].sort()
+        categories[category] = sorted_elements
+
+    return dict(sorted(categories.items()))
 
 
 def generate_component_key() -> str:
@@ -36,7 +171,7 @@ def get_css_properties_from_args(
     css_properties: dict[str, dict[str, str]] = {}
     if component_type in ELEMENT_STYLES:
         # Return dict of css properties and selectors for component
-        style_mappings = ELEMENT_STYLES[component_type]
+        style_mappings = ELEMENT_STYLES[component_type]["css"]
 
         args_to_remove = []
 
