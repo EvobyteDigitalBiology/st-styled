@@ -565,7 +565,7 @@ class TestComponentFunctionality:
         result = elements.markdown("# Test", color="red")
 
         # Should call container with the key from styler
-        mock_st.container.assert_called_once_with(key="test_key_123")
+        mock_st.container.assert_called_once_with(key="test_key_123", width="stretch")
 
         # Should call markdown without the key (key is handled by container)
         mock_container.markdown.assert_called_once_with("# Test")
