@@ -1,1661 +1,1839 @@
 {
     "button": {
-        "background_color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stButton:has(button[kind=\"secondary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input",
+        "example" : "st_yled.button(\"Style Me\", **kwargs)"
     },
     "button_primary": {
-        "background_color": {
-            ".stButton:has(button[kind=\"primary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stButton:has(button[kind=\"primary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stButton:has(button[kind=\"primary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stButton:has(button[kind=\"primary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stButton:has(button[kind=\"primary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButton:has(button[kind=\"primary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButton:has(button[kind=\"primary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "button_secondary": {
-        "background_color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stButton:has(button[kind=\"secondary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButton:has(button[kind=\"secondary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "button_tertiary": {
-        "background_color": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "download_button": {
-        "background_color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "download_button_primary": {
-        "background_color": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDownloadButton:has(button[kind=\"primary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "download_button_secondary": {
-        "background_color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "download_button_tertiary": {
-        "background_color": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDownloadButton:has(button[kind=\"tertiary\"]) > button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "link_button": {
-        "background_color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stLinkButton > a[kind=\"secondary\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stLinkButton > a[kind=\"secondary\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "link_button_primary": {
-        "background_color": {
-            ".stLinkButton > a[kind=\"primary\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stLinkButton > a[kind=\"primary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stLinkButton > a[kind=\"primary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stLinkButton > a[kind=\"primary\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stLinkButton > a[kind=\"primary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stLinkButton > a[kind=\"primary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stLinkButton > a[kind=\"primary\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stLinkButton > a[kind=\"primary\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stLinkButton > a[kind=\"primary\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stLinkButton > a[kind=\"primary\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stLinkButton > a[kind=\"primary\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stLinkButton > a[kind=\"primary\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "link_button_secondary": {
-        "background_color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stLinkButton > a[kind=\"secondary\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stLinkButton > a[kind=\"secondary\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stLinkButton > a[kind=\"secondary\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stLinkButton > a[kind=\"secondary\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "link_button_tertiary": {
-        "background_color": {
-            ".stLinkButton > a[kind=\"tertiary\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stLinkButton > a[kind=\"tertiary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stLinkButton > a[kind=\"tertiary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stLinkButton > a[kind=\"tertiary\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stLinkButton > a[kind=\"tertiary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stLinkButton > a[kind=\"tertiary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stLinkButton > a[kind=\"tertiary\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stLinkButton > a[kind=\"tertiary\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stLinkButton > a[kind=\"tertiary\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stLinkButton > a[kind=\"tertiary\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stLinkButton > a[kind=\"tertiary\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stLinkButton > a[kind=\"tertiary\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "title": {
-        "color": {
-            "h1": {
-                "color": null
+        "css": {
+            "color": {
+                "h1": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "h1": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            "h1": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "header": {
-        "color": {
-            "h2": {
-                "color": null
+        "css": {
+            "color": {
+                "h2": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "h2": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            "h2": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "subheader": {
-        "color": {
-            "h3": {
-                "color": null
+        "css": {
+            "color": {
+                "h3": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "h3": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            "h3": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "markdown": {
-        "color": {
-            ".stMarkdown": {
-                "color": null
+        "css": {
+            "color": {
+                ".stMarkdown": {
+                    "color": null
+                },
+                ".stMarkdown a": {
+                    "color": null
+                }
             },
-            ".stMarkdown a": {
-                "color": null
+            "font_size": {
+                ".stMarkdown p": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stMarkdown p": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "text": {
-        "color": {
-            ".stText div": {
-                "color": null
+        "css": {
+            "color": {
+                ".stText div": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stText div": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stText div": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "write": {
-        "color": {
-            "div[data-testid=\"stMarkdownContainer\"]": {
-                "color": null
+        "css": {
+            "color": {
+                "div[data-testid=\"stMarkdownContainer\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "div[data-testid=\"stMarkdownContainer\"]": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            "div[data-testid=\"stMarkdownContainer\"]": {
-                "font-size": null
-            }
-        }
+        "category": "write"
     },
     "caption": {
-        "color": {
-            "div[data-testid=\"stCaptionContainer\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                "div[data-testid=\"stCaptionContainer\"] p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "div[data-testid=\"stCaptionContainer\"] p": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            "div[data-testid=\"stCaptionContainer\"] p": {
-                "font-size": null
-            }
-        }
+        "category": "text"
     },
     "latex": {
-        "color": {
-            ".katex-html": {
-                "color": null
+        "css": {
+            "color": {
+                ".katex-html": {
+                    "color": null
+                }
             }
-        }
+        },
+        "category": "text"
     },
     "table": {
-        "background_color": {
-            ".stTable": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stTable": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stTable p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stTable p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stTable > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stTable div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stTable > div": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stTable p": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stTable p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stTable > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stTable div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stTable > div": {
-                "border-width": null
-            }
-        }
+        "category": "data"
     },
     "metric": {
-        "color": {
-            ".stMetric label div": {
-                "color": null
+        "css": {
+            "color": {
+                ".stMetric label div": {
+                    "color": null
+                },
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "color": null
+                }
             },
-            ".stMetric div[data-testid=\"stMetricValue\"]": {
-                "color": null
+            "font_size": {
+                ".stMetric label div": {
+                    "font-size": null
+                },
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stMetric label div": {
-                "font-size": null
-            },
-            ".stMetric div[data-testid=\"stMetricValue\"]": {
-                "font-size": null
-            }
-        }
+        "category": "data"
     },
     "json": {
-        "color": {
-            ".stJson span": {
-                "color": null
+        "css": {
+            "color": {
+                ".stJson span": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stJson span": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stJson span": {
-                "font-size": null
-            }
-        }
+        "category": "data"
     },
     "checkbox": {
-        "color": {
-            ".stCheckbox label p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stCheckbox label p": {
+                    "color": null
+                }
+            },
+            "background_color": {
+                ".stCheckbox label span": {
+                    "background-color": null
+                }
+            },
+            "font_size": {
+                ".stCheckbox label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stCheckbox label span": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stCheckbox label span": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stCheckbox label span": {
+                    "border-width": null
+                }
             }
         },
-        "background_color": {
-            ".stCheckbox label span": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stCheckbox label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stCheckbox label span": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stCheckbox label span": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stCheckbox label span": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "radio": {
-        "color": {
-            ".stRadio label p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stRadio label p": {
+                    "color": null
+                }
+            },
+            "background_color": {
+                ".stRadio > div[role=\"radiogroup\"] > label > div:has( + input)": {
+                    "background-color": null
+                }
+            },
+            "font_size": {
+                ".stRadio label p": {
+                    "font-size": null
+                }
             }
         },
-        "background_color": {
-            ".stRadio > div[role=\"radiogroup\"] > label > div:has( + input)": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stRadio label p": {
-                "font-size": null
-            }
-        }
+        "category": "input"
     },
     "multiselect": {
-        "background_color": {
-            ".stMultiSelect > div > div > div": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stMultiSelect label p": {
-                "color": null
+        "css": {
+            "background_color": {
+                ".stMultiSelect > div > div > div": {
+                    "background-color": null
+                }
             },
-            ".stMultiSelect div svg": {
-                "color": null
+            "color": {
+                ".stMultiSelect label p": {
+                    "color": null
+                },
+                ".stMultiSelect div svg": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stMultiSelect label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stMultiSelect > div > div > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stMultiSelect > div > div > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stMultiSelect > div > div > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stMultiSelect label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stMultiSelect > div > div > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stMultiSelect > div > div > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stMultiSelect > div > div > div": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "selectbox": {
-        "background_color": {
-            ".stSelectbox > div > div": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stSelectbox label p": {
-                "color": null
+        "css": {
+            "background_color": {
+                ".stSelectbox > div > div": {
+                    "background-color": null
+                }
             },
-            ".stSelectbox div svg": {
-                "color": null
+            "color": {
+                ".stSelectbox label p": {
+                    "color": null
+                },
+                ".stSelectbox div svg": {
+                    "color": null
+                },
+                ".stSelectbox div": {
+                    "color": null
+                }
             },
-            ".stSelectbox div": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stSelectbox label p": {
-                "font-size": null
+            "font_size": {
+                ".stSelectbox label p": {
+                    "font-size": null
+                },
+                ".stSelectbox div": {
+                    "font-size": null
+                }
             },
-            ".stSelectbox div": {
-                "font-size": null
+            "border_style": {
+                ".stSelectbox > div > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stSelectbox > div > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stSelectbox > div > div": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stSelectbox > div > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stSelectbox > div > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stSelectbox > div > div": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "pills": {
-        "background_color": {
-            ".stButtonGroup button[kind=\"pills\"]": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stButtonGroup button[kind=\"pills\"]": {
-                "color": null
+        "css": {
+            "background_color": {
+                ".stButtonGroup button[kind=\"pills\"]": {
+                    "background-color": null
+                }
             },
-            ".stButtonGroup label p": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stButtonGroup button[kind=\"pills\"] p": {
-                "font-size": null
+            "color": {
+                ".stButtonGroup button[kind=\"pills\"]": {
+                    "color": null
+                },
+                ".stButtonGroup label p": {
+                    "color": null
+                }
             },
-            ".stButtonGroup label p": {
-                "font-size": null
+            "font_size": {
+                ".stButtonGroup button[kind=\"pills\"] p": {
+                    "font-size": null
+                },
+                ".stButtonGroup label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButtonGroup button[kind=\"pills\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButtonGroup button[kind=\"pills\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButtonGroup button[kind=\"pills\"]": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stButtonGroup button[kind=\"pills\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButtonGroup button[kind=\"pills\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButtonGroup button[kind=\"pills\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "segmented_control": {
-        "color": {
-            ".stButtonGroup label p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stButtonGroup label p": {
+                    "color": null
+                },
+                ".stButtonGroup div button p": {
+                    "color": null
+                }
             },
-            ".stButtonGroup div button p": {
-                "color": null
-            }
-        },
-        "background_color": {
-            ".stButtonGroup div button": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stButtonGroup label p": {
-                "font-size": null
+            "background_color": {
+                ".stButtonGroup div button": {
+                    "background-color": null
+                }
             },
-            ".stButtonGroup div button p": {
-                "font-size": null
+            "font_size": {
+                ".stButtonGroup label p": {
+                    "font-size": null
+                },
+                ".stButtonGroup div button p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stButtonGroup div button": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stButtonGroup div button": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stButtonGroup div button": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stButtonGroup div button": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stButtonGroup div button": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stButtonGroup div button": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "slider": {
-        "color": {
-            ".stSlider label": {
-                "color": null
+        "css": {
+            "color": {
+                ".stSlider label": {
+                    "color": null
+                },
+                ".stSlider div[role=\"slider\"]": {
+                    "color": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "color": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"]": {
+                    "color": null
+                }
             },
-            ".stSlider div[role=\"slider\"]": {
-                "color": null
-            },
-            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
-                "color": null
-            },
-            ".stSlider div[data-testid=\"stSliderTickBar\"]": {
-                "color": null
+            "font_size": {
+                ".stSlider label p": {
+                    "font-size": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "font-size": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stSlider label p": {
-                "font-size": null
-            },
-            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
-                "font-size": null
-            },
-            ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
-                "font-size": null
-            }
-        }
+        "category": "input"
     },
     "select_slider": {
-        "color": {
-            ".stSlider label": {
-                "color": null
+        "css": {
+            "color": {
+                ".stSlider label": {
+                    "color": null
+                },
+                ".stSlider div[role=\"slider\"]": {
+                    "color": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "color": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"]": {
+                    "color": null
+                }
             },
-            ".stSlider div[role=\"slider\"]": {
-                "color": null
-            },
-            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
-                "color": null
-            },
-            ".stSlider div[data-testid=\"stSliderTickBar\"]": {
-                "color": null
+            "font_size": {
+                ".stSlider label p": {
+                    "font-size": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "font-size": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stSlider label p": {
-                "font-size": null
-            },
-            ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
-                "font-size": null
-            },
-            ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
-                "font-size": null
-            }
-        }
+        "category": "input"
     },
     "toggle": {
-        "background_color": {
-            ".stCheckbox > label > div:not(:has(div[data-testid=\"stWidgetLabel\"])):has(+ input[aria-checked=\"true\"])": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stCheckbox > label > div:not(:has(div[data-testid=\"stWidgetLabel\"])):has(+ input[aria-checked=\"true\"])": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stCheckbox label p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stCheckbox label p": {
+                    "font-size": null
+                }
             }
         },
-        "color": {
-            ".stCheckbox label p": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stCheckbox label p": {
-                "font-size": null
-            }
-        }
+        "category": "input"
     },
     "number_input": {
-        "background_color": {
-            ".stNumberInput > div > div > div": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stNumberInput > div > div > div": {
+                    "background-color": null
+                },
+                ".stNumberInput > div > div button": {
+                    "background-color": null
+                }
             },
-            ".stNumberInput > div > div button": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stNumberInput input": {
-                "color": null
+            "color": {
+                ".stNumberInput input": {
+                    "color": null
+                },
+                ".stNumberInput label p": {
+                    "color": null
+                },
+                ".stNumberInput button svg": {
+                    "color": null
+                }
             },
-            ".stNumberInput label p": {
-                "color": null
+            "font_size": {
+                ".stNumberInput input": {
+                    "font-size": null
+                },
+                ".stNumberInput label p": {
+                    "font-size": null
+                }
             },
-            ".stNumberInput button svg": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stNumberInput input": {
-                "font-size": null
+            "border_style": {
+                ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                    "border-style": null
+                }
             },
-            ".stNumberInput label p": {
-                "font-size": null
+            "border_color": {
+                ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "date_input": {
-        "color": {
-            ".stDateInput input": {
-                "color": null
+        "css": {
+            "color": {
+                ".stDateInput input": {
+                    "color": null
+                },
+                ".stDateInput label p": {
+                    "color": null
+                }
             },
-            ".stDateInput label p": {
-                "color": null
-            }
-        },
-        "background_color": {
-            ".stDateInput > div > div[data-baseweb=\"input\"]": {
-                "background-color": null
+            "background_color": {
+                ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                    "background-color": null
+                },
+                ".stDateInput > div > div button": {
+                    "background-color": null
+                }
             },
-            ".stDateInput > div > div button": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stDateInput input": {
-                "font-size": null
+            "font_size": {
+                ".stDateInput input": {
+                    "font-size": null
+                },
+                ".stDateInput label p": {
+                    "font-size": null
+                }
             },
-            ".stDateInput label p": {
-                "font-size": null
+            "border_style": {
+                ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDateInput > div > div[data-baseweb=\"input\"]": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stDateInput > div > div[data-baseweb=\"input\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stDateInput > div > div[data-baseweb=\"input\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stDateInput > div > div[data-baseweb=\"input\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "time_input": {
-        "color": {
-            ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
-                "color": null
+        "css": {
+            "color": {
+                ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
+                    "color": null
+                },
+                ".stTimeInput label p": {
+                    "color": null
+                },
+                ".stTimeInput svg[data-baseweb=\"icon\"]": {
+                    "color": null
+                }
             },
-            ".stTimeInput label p": {
-                "color": null
+            "background_color": {
+                ".stTimeInput > div > div > div": {
+                    "background-color": null
+                },
+                ".stTimeInput > div > div button": {
+                    "background-color": null
+                }
             },
-            ".stTimeInput svg[data-baseweb=\"icon\"]": {
-                "color": null
-            }
-        },
-        "background_color": {
-            ".stTimeInput > div > div > div": {
-                "background-color": null
+            "font_size": {
+                ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
+                    "font-size": null
+                },
+                ".stTimeInput label p": {
+                    "font-size": null
+                }
             },
-            ".stTimeInput > div > div button": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
-                "font-size": null
+            "border_style": {
+                ".stTimeInput > div > div": {
+                    "border-style": null
+                }
             },
-            ".stTimeInput label p": {
-                "font-size": null
+            "border_color": {
+                ".stTimeInput > div > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stTimeInput > div > div": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stTimeInput > div > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stTimeInput > div > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stTimeInput > div > div": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "text_area": {
-        "background_color": {
-            ".stTextArea > div > div > textarea": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stTextArea textarea": {
-                "color": null
+        "css": {
+            "background_color": {
+                ".stTextArea > div > div > textarea": {
+                    "background-color": null
+                }
             },
-            ".stTextArea label p": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stTextArea textarea": {
-                "font-size": null
+            "color": {
+                ".stTextArea textarea": {
+                    "color": null
+                },
+                ".stTextArea label p": {
+                    "color": null
+                }
             },
-            ".stTextArea label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stTextArea > div[data-baseweb=\"textarea\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
-                "border-color": null
+            "font_size": {
+                ".stTextArea textarea": {
+                    "font-size": null
+                },
+                ".stTextArea label p": {
+                    "font-size": null
+                }
             },
-            ".stTextArea > div[data-baseweb=\"textarea\"]": {
-                "border-color": null
+            "border_style": {
+                ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
+                    "border-color": null
+                },
+                ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
+                    "border-width": null
+                },
+                ".stTextArea > div[data-baseweb=\"textarea\"]": {
+                    "border-width": null
+                }
             }
         },
-        "border_width": {
-            ".stTextArea > div[data-baseweb=\"textarea\"] > div": {
-                "border-width": null
-            },
-            ".stTextArea > div[data-baseweb=\"textarea\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "text_input": {
-        "background_color": {
-            ".stTextInput > div > div > input": {
-                "background-color": null
-            }
-        },
-        "color": {
-            ".stTextInput input": {
-                "color": null
+        "css": {
+            "background_color": {
+                ".stTextInput > div > div > input": {
+                    "background-color": null
+                }
             },
-            ".stTextInput label p": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stTextInput input": {
-                "font-size": null
+            "color": {
+                ".stTextInput input": {
+                    "color": null
+                },
+                ".stTextInput label p": {
+                    "color": null
+                }
             },
-            ".stTextInput label p": {
-                "font-size": null
+            "font_size": {
+                ".stTextInput input": {
+                    "font-size": null
+                },
+                ".stTextInput label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stTextInput > div[data-baseweb=\"input\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stTextInput > div[data-baseweb=\"input\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stTextInput > div[data-baseweb=\"input\"]": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stTextInput > div[data-baseweb=\"input\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stTextInput > div[data-baseweb=\"input\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stTextInput > div[data-baseweb=\"input\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "chat_input": {
-        "color": {
-            ".stChatInput textarea": {
-                "color": null
+        "css": {
+            "color": {
+                ".stChatInput textarea": {
+                    "color": null
+                },
+                ".stChatInput button[data-testid=\"stChatInputSubmitButton\"] svg": {
+                    "color": null
+                }
             },
-            ".stChatInput button[data-testid=\"stChatInputSubmitButton\"] svg": {
-                "color": null
-            }
-        },
-        "background_color": {
-            ".stChatInput > div": {
-                "background-color": null
+            "background_color": {
+                ".stChatInput > div": {
+                    "background-color": null
+                },
+                ".stChatInput > div textarea": {
+                    "background-color": null
+                }
             },
-            ".stChatInput > div textarea": {
-                "background-color": null
+            "font_size": {
+                ".stChatInput textarea": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stChatInput > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stChatInput > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stChatInput > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stChatInput textarea": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stChatInput > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stChatInput > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stChatInput > div": {
-                "border-width": null
-            }
-        }
+        "category": "chat"
     },
     "file_uploader": {
-        "color": {
-            ".stFileUploader label p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stFileUploader label p": {
+                    "color": null
+                },
+                ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
+                    "color": null
+                },
+                ".stFileUploader button": {
+                    "color": null
+                }
             },
-            ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
-                "color": null
+            "background_color": {
+                ".stFileUploader section": {
+                    "background-color": null
+                }
             },
-            ".stFileUploader button": {
-                "color": null
-            }
-        },
-        "background_color": {
-            ".stFileUploader section": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stFileUploader label p": {
-                "font-size": null
+            "font_size": {
+                ".stFileUploader label p": {
+                    "font-size": null
+                },
+                ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
+                    "font-size": null
+                },
+                ".stFileUploader button": {
+                    "font-size": null
+                }
             },
-            ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
-                "font-size": null
+            "border_style": {
+                ".stFileUploader section": {
+                    "border-style": null
+                }
             },
-            ".stFileUploader button": {
-                "font-size": null
+            "border_color": {
+                ".stFileUploader section": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stFileUploader section": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stFileUploader section": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stFileUploader section": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stFileUploader section": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "color_picker": {
-        "color": {
-            ".stColorPicker label": {
-                "color": null
+        "css": {
+            "color": {
+                ".stColorPicker label": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stColorPicker label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stColorPicker > div > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stColorPicker > div > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stColorPicker > div > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stColorPicker label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stColorPicker > div > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stColorPicker > div > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stColorPicker > div > div": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "feedback": {
-        "color": {
-            ".stButtonGroup button[data-testid=\"stBaseButton-borderlessIcon\"] span": {
-                "color": null
+        "css": {
+            "color": {
+                ".stButtonGroup button[data-testid=\"stBaseButton-borderlessIcon\"] span": {
+                    "color": null
+                }
             }
-        }
+        },
+        "category": "input"
     },
     "camera_input": {
-        "color": {
-            ".stCameraInput": {
-                "color": null
+        "css": {
+            "color": {
+                ".stCameraInput": {
+                    "color": null
+                },
+                ".stCameraInput label p": {
+                    "color": null
+                }
             },
-            ".stCameraInput label p": {
-                "color": null
+            "font_size": {
+                ".stCameraInput": {
+                    "font-size": null
+                },
+                ".stCameraInput label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                    "border-top-style": null,
+                    "border-right-style": null,
+                    "border-left-style": null
+                },
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                    "border-bottom-style": null,
+                    "border-right-style": null,
+                    "border-left-style": null
+                }
+            },
+            "border_color": {
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                    "border-top-color": null,
+                    "border-right-color": null,
+                    "border-left-color": null
+                },
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                    "border-bottom-color": null,
+                    "border-right-color": null,
+                    "border-left-color": null
+                }
+            },
+            "border_width": {
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
+                    "border-top-width": null,
+                    "border-right-width": null,
+                    "border-left-width": null
+                },
+                ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
+                    "border-bottom-width": null,
+                    "border-right-width": null,
+                    "border-left-width": null
+                }
             }
         },
-        "font_size": {
-            ".stCameraInput": {
-                "font-size": null
-            },
-            ".stCameraInput label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
-                "border-top-style": null,
-                "border-right-style": null,
-                "border-left-style": null
-            },
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
-                "border-bottom-style": null,
-                "border-right-style": null,
-                "border-left-style": null
-            }
-        },
-        "border_color": {
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
-                "border-top-color": null,
-                "border-right-color": null,
-                "border-left-color": null
-            },
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
-                "border-bottom-color": null,
-                "border-right-color": null,
-                "border-left-color": null
-            }
-        },
-        "border_width": {
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > div": {
-                "border-top-width": null,
-                "border-right-width": null,
-                "border-left-width": null
-            },
-            ".stCameraInput > div[data-testid=\"stCameraInputWebcamComponent\"] > button": {
-                "border-bottom-width": null,
-                "border-right-width": null,
-                "border-left-width": null
-            }
-        }
+        "category": "input"
     },
     "audio_input": {
-        "color": {
-            ".stAudioInput label p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stAudioInput label p": {
+                    "color": null
+                },
+                ".stAudioInput button svg": {
+                    "color": null
+                }
             },
-            ".stAudioInput button svg": {
-                "color": null
+            "font_size": {
+                ".stAudioInput label p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stAudioInput > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stAudioInput  > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stAudioInput  > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stAudioInput label p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stAudioInput > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stAudioInput  > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stAudioInput  > div": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "success": {
-        "color": {
-            ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stAlert:has(div[data-testid=\"stAlertContentSuccess\"]) > div": {
-                "border-width": null
-            }
-        }
+        "category": "status"
     },
     "info": {
-        "color": {
-            ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
-                "border-width": null
-            }
-        }
+        "category": "status"
     },
     "warning": {
-        "color": {
-            ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
-                "border-width": null
-            }
-        }
+        "category": "status"
     },
     "error": {
-        "color": {
-            ".stAlert div[data-testid=\"stAlertContentError\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stAlert div[data-testid=\"stAlertContentError\"] p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stAlert div[data-testid=\"stAlertContentError\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stAlert div[data-testid=\"stAlertContentError\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stAlert:has(div[data-testid=\"stAlertContentError\"]) > div": {
-                "border-width": null
-            }
-        }
+        "category": "status"
     },
     "progress": {
-        "background_color": {
-            ".stProgress div[data-baseweb=\"progress-bar\"] > div > div > div": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stProgress div[data-baseweb=\"progress-bar\"] > div > div > div": {
+                    "background-color": null
+                }
             }
-        }
+        },
+        "category": "status"
     },
     "form_submit_button": {
-        "background_color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "form_submit_button_primary": {
-        "background_color": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "form_submit_button_secondary": {
-        "background_color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "form_submit_button_tertiary": {
-        "background_color": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"]": {
-                "border-width": null
-            }
-        }
+        "category": "input"
     },
     "expander": {
-        "color": {
-            ".stExpander > details > summary": {
-                "color": null
+        "css": {
+            "color": {
+                ".stExpander > details > summary": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stExpander > details > summary p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stExpander > details": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stExpander > details": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stExpander > details": {
+                    "border-width": null
+                }
             }
         },
-        "font_size": {
-            ".stExpander > details > summary p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stExpander > details": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stExpander > details": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stExpander > details": {
-                "border-width": null
-            }
-        }
+        "category": "layout"
     },
     "tabs": {
-        "color": {
-            ".stTabs button div p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stTabs button div p": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                ".stTabs button div p": {
+                    "font-size": null
+                }
             }
         },
-        "font_size": {
-            ".stTabs button div p": {
-                "font-size": null
-            }
-        }
+        "category": "layout"
     },
     "chat_message": {
-        "color": {
-            ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
-                "color": null
+        "css": {
+            "color": {
+                ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
+                    "color": null
+                }
+            },
+            "background_color": {
+                ".stChatMessage": {
+                    "background-color": null
+                }
+            },
+            "font_size": {
+                ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stChatMessage": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stChatMessage": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stChatMessage": {
+                    "border-width": null
+                }
             }
         },
-        "background_color": {
-            ".stChatMessage": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stChatMessage": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stChatMessage": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stChatMessage": {
-                "border-width": null
-            }
-        }
+        "category": "chat"
     },
     "status": {
-        "color": {
-            ".stExpander > details > summary span": {
-                "color": null
+        "css": {
+            "color": {
+                ".stExpander > details > summary span": {
+                    "color": null
+                },
+                ".stExpander > details > summary p": {
+                    "color": null
+                },
+                ".stExpander > details > summary svg": {
+                    "color": null
+                }
             },
-            ".stExpander > details > summary p": {
-                "color": null
+            "font_size": {
+                ".stExpander > details > summary span": {
+                    "font-size": null
+                },
+                ".stExpander > details > summary p": {
+                    "font-size": null
+                }
             },
-            ".stExpander > details > summary svg": {
-                "color": null
-            }
-        },
-        "font_size": {
-            ".stExpander > details > summary span": {
-                "font-size": null
+            "border_style": {
+                ".stExpander details": {
+                    "border-style": null
+                }
             },
-            ".stExpander > details > summary p": {
-                "font-size": null
+            "border_color": {
+                ".stExpander details": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stExpander details": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            ".stExpander details": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stExpander details": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stExpander details": {
-                "border-width": null
-            }
-        }
+        "category": "status"
     },
     "code": {
-        "color": {
-            ".stCode code": {
-                "color": null
+        "css": {
+            "color": {
+                ".stCode code": {
+                    "color": null
+                }
+            },
+            "background_color": {
+                ".stCode pre": {
+                    "background-color": null
+                }
+            },
+            "font_size": {
+                ".stCode code": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                ".stCode pre": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stCode pre": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stCode pre": {
+                    "border-width": null
+                }
             }
         },
-        "background_color": {
-            ".stCode pre": {
-                "background-color": null
-            }
-        },
-        "font_size": {
-            ".stCode code": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            ".stCode pre": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            ".stCode pre": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            ".stCode pre": {
-                "border-width": null
-            }
-        }
+        "category": "text"
     },
     "container": {
-        "background_color": {
-            "": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                "": {
+                    "background-color": null
+                }
+            },
+            "border_style": {
+                "": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "": {
+                    "border-width": null
+                }
             }
         },
-        "border_style": {
-            "": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            "": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            "": {
-                "border-width": null
-            }
-        }
+        "category": "layout"
     },
     "popover": {
-        "background_color": {
-            "button[data-testid=\"stPopoverButton\"]": {
-                "background-color": null
+        "css": {
+            "background_color": {
+                "button[data-testid=\"stPopoverButton\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                "button[data-testid=\"stPopoverButton\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "button[data-testid=\"stPopoverButton\"] p": {
+                    "font-size": null
+                }
+            },
+            "border_style": {
+                "button[data-testid=\"stPopoverButton\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "button[data-testid=\"stPopoverButton\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "button[data-testid=\"stPopoverButton\"]": {
+                    "border-width": null
+                }
             }
         },
-        "color": {
-            "button[data-testid=\"stPopoverButton\"]": {
-                "color": null
-            }
-        },
-        "font_size": {
-            "button[data-testid=\"stPopoverButton\"] p": {
-                "font-size": null
-            }
-        },
-        "border_style": {
-            "button[data-testid=\"stPopoverButton\"]": {
-                "border-style": null
-            }
-        },
-        "border_color": {
-            "button[data-testid=\"stPopoverButton\"]": {
-                "border-color": null
-            }
-        },
-        "border_width": {
-            "button[data-testid=\"stPopoverButton\"]": {
-                "border-width": null
-            }
-        }
+        "category": "layout"
     }
 }
