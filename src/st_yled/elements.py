@@ -10,7 +10,17 @@ from st_yled import styler  # type: ignore
 def write(*args, **kwargs):
     kwargs = styler.apply_component_css("write", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch' # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.write(*args, **kwargs)
 
 
@@ -26,28 +36,68 @@ def write_stream(*args, **kwargs):
 def markdown(*args, **kwargs):
     kwargs = styler.apply_component_css("markdown", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.markdown(*args, **kwargs)
 
 
 def title(*args, **kwargs):
     kwargs = styler.apply_component_css("title", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.title(*args, **kwargs)
 
 
 def header(*args, **kwargs):
     kwargs = styler.apply_component_css("header", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.header(*args, **kwargs)
 
 
 def subheader(*args, **kwargs):
     kwargs = styler.apply_component_css("subheader", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.subheader(*args, **kwargs)
 
 
@@ -58,28 +108,68 @@ def badge(*args, **kwargs):
 def caption(*args, **kwargs):
     kwargs = styler.apply_component_css("caption", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.caption(*args, **kwargs)
 
 
 def code(*args, **kwargs):
     kwargs = styler.apply_component_css("code", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.code(*args, **kwargs)
 
 
 def latex(*args, **kwargs):
     kwargs = styler.apply_component_css("latex", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.latex(*args, **kwargs)
 
 
 def text(*args, **kwargs):
     kwargs = styler.apply_component_css("text", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.text(*args, **kwargs)
 
 
@@ -114,14 +204,34 @@ def table(*args, **kwargs):
 def metric(*args, **kwargs):
     kwargs = styler.apply_component_css("metric", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.metric(*args, **kwargs)
 
 
 def json(*args, **kwargs):
     kwargs = styler.apply_component_css("json", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.json(*args, **kwargs)
 
 
@@ -366,21 +476,52 @@ def empty(*args, **kwargs):
 def expander(*args, **kwargs):
     kwargs = styler.apply_component_css("expander", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.expander(*args, **kwargs)
 
 
 def popover(*args, **kwargs):
     kwargs = styler.apply_component_css("popover", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        # If a valid width is provided, use it; otherwise, default to 'stretch'
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.popover(*args, **kwargs)
 
 
 def tabs(*args, **kwargs):
     kwargs = styler.apply_component_css("tabs", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.tabs(*args, **kwargs)
 
 
@@ -392,7 +533,17 @@ def tabs(*args, **kwargs):
 def chat_message(*args, **kwargs):
     kwargs = styler.apply_component_css("chat_message", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.chat_message(*args, **kwargs)
 
 
@@ -404,7 +555,17 @@ def chat_message(*args, **kwargs):
 def progress(*args, **kwargs):
     kwargs = styler.apply_component_css("progress", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.progress(*args, **kwargs)
 
 
@@ -415,7 +576,17 @@ def spinner(*args, **kwargs):
 def status(*args, **kwargs):
     kwargs = styler.apply_component_css("status", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.status(*args, **kwargs)
 
 
@@ -434,28 +605,68 @@ def snow(*args, **kwargs):
 def success(*args, **kwargs):
     kwargs = styler.apply_component_css("success", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.success(*args, **kwargs)
 
 
 def info(*args, **kwargs):
     kwargs = styler.apply_component_css("info", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.info(*args, **kwargs)
 
 
 def warning(*args, **kwargs):
     kwargs = styler.apply_component_css("warning", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.warning(*args, **kwargs)
 
 
 def error(*args, **kwargs):
     kwargs = styler.apply_component_css("error", kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.error(*args, **kwargs)
 
 
@@ -484,7 +695,17 @@ def form_submit_button(*args, **kwargs):
 
     kwargs = styler.apply_component_css(btn_selector, kwargs)
     key = kwargs.pop("key", None)
-    cont = st.container(key=key)
+
+    if 'width' in kwargs:
+        width_value = kwargs['width']
+        if styler.validate_container_width(width_value):
+            container_width = width_value
+        else:
+            container_width = 'stretch'  # set default
+    else:
+        container_width = 'stretch'  # set default
+
+    cont = st.container(key=key, width=container_width)
     return cont.form_submit_button(*args, **kwargs)
 
 
