@@ -277,22 +277,6 @@ with col1:
         st_yled.metric("Revenue", "$2.4M", "+12%", color="#059669")
 ```
 
-### Responsive Design
-
-```python
-# Mobile-friendly CSS
-mobile_css = """
-<style>
-@media (max-width: 768px) {
-    .stButton > button {
-        width: 100% !important;
-    }
-}
-</style>
-"""
-st.html(mobile_css)
-```
-
 > **See [Advanced Examples](docs/ADVANCED_EXAMPLES.md) for complete real-world examples.**
 
 ## 🔧 Configuration
@@ -344,27 +328,6 @@ poetry run pytest tests/test_components_comprehensive.py  # Component tests
 poetry run pytest tests/test_validation.py               # Validation tests
 poetry run pytest tests/test_styler_integration.py       # Integration tests
 ```
-
-### Test Coverage
-
-- **Components**: 100% coverage with 105+ comprehensive tests
-- **Validation**: 91% coverage with 30+ validation tests
-- **Integration**: 100% passing integration tests
-- **Overall**: 89% total test coverage
-
-## 📊 Performance
-
-St_yled is designed for production use with performance optimizations:
-
-- **Minimal Overhead** - Efficient CSS generation and caching
-- **Smart Validation** - Property validation with caching for repeated values
-- **Global Styling** - Reduces inline CSS generation
-- **Bypass Mode** - Skip validation for performance-critical applications
-
-Performance benchmarks:
-- Component rendering: ~0.1ms overhead
-- CSS generation: ~0.05ms per property
-- Validation: ~0.02ms per property (cached)
 
 ## 🤝 Contributing
 

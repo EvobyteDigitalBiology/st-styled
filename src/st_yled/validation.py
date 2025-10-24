@@ -627,6 +627,7 @@ class ValidationConfig:
             return False
         return cls.DEFAULT_STRICT_MODE
 
+
 def validate_container_width(width_value: Any) -> bool:
     """
     Validate the container width value.
