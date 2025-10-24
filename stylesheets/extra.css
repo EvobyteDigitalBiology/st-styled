@@ -1,0 +1,15 @@
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #2A4159;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #2A4159;
+  }
+
+.md-header span {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+.md-logo img {
+    height: 48px !important;
+  }
