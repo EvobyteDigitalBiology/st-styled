@@ -1,6 +1,7 @@
 import streamlit as st
 
 from st_yled import styler  # type: ignore
+from st_yled import validation  # type: ignore
 
 # ==============================================================================
 # Display and Magic Components
@@ -13,7 +14,7 @@ def write(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -39,7 +40,7 @@ def markdown(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -56,7 +57,7 @@ def title(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -73,7 +74,7 @@ def header(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -90,7 +91,7 @@ def subheader(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -111,7 +112,7 @@ def caption(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -128,7 +129,7 @@ def code(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -145,7 +146,7 @@ def latex(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -162,7 +163,7 @@ def text(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -207,7 +208,7 @@ def metric(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -224,7 +225,7 @@ def json(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -479,7 +480,7 @@ def expander(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -497,7 +498,7 @@ def popover(*args, **kwargs):
     if "width" in kwargs:
         width_value = kwargs["width"]
         # If a valid width is provided, use it; otherwise, default to 'stretch'
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -514,7 +515,7 @@ def tabs(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -536,7 +537,7 @@ def chat_message(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -558,7 +559,7 @@ def progress(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -579,7 +580,7 @@ def status(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -608,7 +609,7 @@ def success(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -625,7 +626,7 @@ def info(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -642,7 +643,7 @@ def warning(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -659,7 +660,7 @@ def error(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
@@ -698,7 +699,7 @@ def form_submit_button(*args, **kwargs):
 
     if "width" in kwargs:
         width_value = kwargs["width"]
-        if styler.validate_container_width(width_value):
+        if validation.validate_container_width(width_value):
             container_width = width_value
         else:
             container_width = "stretch"  # set default
