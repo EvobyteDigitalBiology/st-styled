@@ -423,10 +423,13 @@
         "color": {
             ".stMarkdown": {
                 "color": null
+            },
+            ".stMarkdown a": {
+                "color": null
             }
         },
         "font_size": {
-            ".stMarkdown": {
+            ".stMarkdown p": {
                 "font-size": null
             }
         }
