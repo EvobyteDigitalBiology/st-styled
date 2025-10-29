@@ -87,8 +87,9 @@ your-streamlit-app/
 
 ## CSS File Setup (Optional)
 
-The easiest way to define custom css for Streamlit is using st_yled Studio, our free app to try and optimize your style and layout.
-(#TODO Add Link)
+The easiest way to define custom css for Streamlit is using st_yled studio, our free app to try and optimize your style and layout.
+
+Here is the [link to st_yled studio](https://styled-studio.streamlit.app/).
 
 st_yled will by default load CSS defined in `.streamlit/st-styled.css` once the `st_yled.init()` function is called.
 
