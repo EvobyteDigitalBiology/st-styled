@@ -8,7 +8,7 @@ import streamlit as st
 from st_yled import styler  # type: ignore
 from st_yled.elements import *  # type: ignore # noqa: F403
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 
 
 def init(css_path: Optional[str] = None) -> None:
