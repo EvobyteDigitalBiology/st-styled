@@ -8,16 +8,17 @@
 
 **st_yled** provides advanced styling capabilities and enhanced components for Streamlit applications. Style your Streamlit apps with CSS, create custom themes, and use enhanced component wrappers with built-in styling support and parameter validation.
 
+Check the [st_yled studio](https://styled-studio.streamlit.app/) app to test and configure layouts and UI elements for you Streamlit app.
+
 ## ✨ Features
 
-- 🎨 **CSS Integration** - Load custom CSS files and apply styles to Streamlit components
-- 🎯 **Global Styling** - Apply consistent styles across all components of the same type
-- 🔧 **Component Wrappers** - Enhanced versions of 44+ Streamlit components with styling parameters
-- ✅ **Parameter Validation** - Comprehensive CSS property validation with helpful error messages
-- 📱 **Responsive Design** - CSS-based responsive layouts and mobile-friendly styling
-- ⚡ **Easy Setup** - Simple initialization and intuitive API
-- 🎪 **Theme Support** - Create and apply custom themes to your applications
-- 🛡️ **Type Safety** - Built-in validation for CSS properties and values
+🎨 **CSS Integration** - Load custom CSS files and apply styles seamlessly
+
+🎯 **Global Styling** - Apply consistent styles across all elements
+
+🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
+
+⚡ **st_yled studio** - Use the accompanying app to test your layout styling
 
 ## 🚀 Quick Start
 
@@ -329,47 +330,15 @@ poetry run pytest tests/test_validation.py               # Validation tests
 poetry run pytest tests/test_styler_integration.py       # Integration tests
 ```
 
-## 🤝 Contributing
-
-Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Setup
-
-1. Fork and clone the repository
-2. Install dependencies: `poetry install --with dev`
-3. Install pre-commit hooks: `poetry run pre-commit install`
-4. Make changes and run tests: `poetry run pytest`
-5. Submit a pull request
-
-### Development Tools
-
-- **Poetry** for dependency management
-- **Pytest** for testing with comprehensive coverage
-- **Pre-commit** for code quality checks
-- **Ruff** for linting and formatting
-- **MyPy** for type checking
-
-## 📈 Roadmap
-
-Upcoming features and improvements:
-
-- 🎯 **Enhanced Component Support** - Additional Streamlit components with styling
-- 🎨 **Theme Marketplace** - Pre-built themes for common use cases
-- 📱 **Mobile Components** - Mobile-optimized component variants
-- ⚡ **Performance Optimizations** - Further CSS generation improvements
-- 🔌 **Plugin System** - Extensible styling system for custom components
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- **📚 Documentation:** [Component Reference](docs/COMPONENT_REFERENCE.md) | [Validation Guide](docs/VALIDATION_GUIDE.md) | [Advanced Examples](docs/ADVANCED_EXAMPLES.md)
 - **🐙 Source Code:** [GitHub Repository](https://github.com/EvobyteDigitalBiology/st-styled)
 - **🐛 Issue Tracker:** [GitHub Issues](https://github.com/EvobyteDigitalBiology/st-styled/issues)
 - **📦 PyPI Package:** [st-styled](https://pypi.org/project/st-styled/)
-- **📊 Test Coverage:** [Coverage Report](htmlcov/index.html)
 
 ## ❓ Support
 
@@ -379,17 +348,6 @@ If you encounter any issues or have questions:
 2. 🔍 Search [existing issues](https://github.com/EvobyteDigitalBiology/st-styled/issues)
 3. 💬 Create a [new issue](https://github.com/EvobyteDigitalBiology/st-styled/issues/new)
 4. 📧 Contact the maintainers
-
-## 🌟 Showcase
-
-Projects using st_yled:
-
-- **Executive Dashboards** - Financial and business intelligence dashboards
-- **Data Applications** - Interactive data analysis and visualization tools
-- **Admin Panels** - Styled administrative interfaces
-- **Customer Portals** - User-facing applications with custom branding
-
-> Share your st_yled projects by creating an issue with the "showcase" label!
 
 ---
 

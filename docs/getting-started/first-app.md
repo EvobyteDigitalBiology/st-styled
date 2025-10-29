@@ -20,10 +20,12 @@ A personal dashboard application featuring:
 
 ---
 
-## Step 0: Expore Layouts in st_yled Studio
+## Step 0: Expore Layouts in st_yled studio
 
-TODO
-Visit st_yled Studio to easly try, combine and configure possible app styles, which you can export. We will later load it into the example app.
+Visit st_yled studio to easily try out and configure your app styling, which you can export. We will later load it into the example app.
+
+Here is the [link to st_yled studio](https://styled-studio.streamlit.app/)
+
 
 ## Step 1: Create the Base App
 
@@ -212,10 +214,15 @@ st_yled.set("container", "backgroud_color", "grey")
 ## What You've Learned
 
 ✅ **Basic st_yled setup** - Initialize and configure styling
+
 ✅ **Component styling** - Apply colors, sizes, and spacing
+
 ✅ **Global styling** - Set consistent themes across components
+
 ✅ **Layout techniques** - Use columns and containers effectively
+
 ✅ **Interactive components** - Handle user input with styled widgets
+
 ✅ **Sidebar patterns** - Apply custom styling to sidebar components
 
 ---
