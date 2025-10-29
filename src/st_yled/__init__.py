@@ -2,6 +2,7 @@
 
 from pathlib import Path
 from typing import Optional
+import traceback
 
 import streamlit as st
 
@@ -14,8 +15,10 @@ __version__ = "0.0.4"
 def init(css_path: Optional[str] = None) -> None:
     """Initialize st_yled with CSS styling."""
 
+    caller_hash = styler.extract_caller_path_hash()
+
     # Set session_state
-    st.session_state["st-yled-comp-counter"] = 0
+    st.session_state[f"st-yled-comp-{caller_hash}-counter"] = 0
 
     cwd = Path.cwd()
 
