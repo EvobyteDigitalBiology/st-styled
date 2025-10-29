@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from typing import Any, Optional
 import re
+import warnings
+import traceback
 
 import streamlit as st
 
@@ -13,6 +15,28 @@ dirpath = Path(__file__).parent
 
 with (dirpath / "element_styles.json").open() as f:
     ELEMENT_STYLES = json.load(f)
+
+
+def extract_caller_path_hash() -> str:
+
+    traceback_stack = traceback.extract_stack()
+
+    exec_line = False
+    caller_path = ""
+    # Traverse traceback in reverse order
+    for line in traceback_stack[::-1]:
+        if exec_line:
+            caller_path = line.filename
+            break
+        if line.line.startswith('exec(code, module.__dict__)'):
+            exec_line = True
+
+    if caller_path == "":
+        warnings.warn("Could not extract caller path from traceback.")
+
+    caller_hash = str(hash(caller_path))
+
+    return caller_hash
 
 
 def get_element_style(element_name: str) -> dict:
@@ -149,17 +173,43 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
     return dict(sorted(categories.items()))
 
 
+
+def get_element_variants(element_name: str) -> list[str]:
+    """
+    Get all variants for a given element name.
+
+    Args:
+        element_name: The base name of the element (e.g., 'button').
+
+    Returns:
+        A list of variant names (e.g., ['primary', 'secondary', 'tertiary']).
+    """
+    variants = []
+    element_found = False
+    if not element_name in ELEMENT_STYLES:
+        raise ValueError(f"Element '{element_name}' not found in stylable elements.")
+
+    for element in ELEMENT_STYLES:
+        if element.startswith(f"{element_name}_"):
+            match = re.match(rf"{re.escape(element_name)}_(primary|secondary|tertiary)$", element)
+            if match:
+                variants.append(match.group(1))
+
+    return variants
+
 def generate_component_key() -> str:
     """Generate a unique component key for st_yled components."""
 
-    if "st-yled-comp-counter" not in st.session_state:
+    caller_hash = extract_caller_path_hash()
+
+    if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
         error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
         raise ValidationError(error_msg)
 
-    comp_counter = st.session_state["st-yled-comp-counter"]
-    comp_key = f"st-yler-comp-{comp_counter}"
+    comp_counter = st.session_state[f"st-yled-comp-{caller_hash}-counter"]
+    comp_key = f"st-yler-comp-{caller_hash}-{comp_counter}"
 
-    st.session_state["st-yled-comp-counter"] += 1
+    st.session_state[f"st-yled-comp-{caller_hash}-counter"] += 1
 
     return comp_key
 
@@ -168,7 +218,9 @@ def get_css_properties_from_args(
     component_type: str, component_kwargs: dict[str, Any]
 ) -> dict[str, dict[str, str]]:
     """Get CSS properties from component arguments."""
+
     css_properties: dict[str, dict[str, str]] = {}
+
     if component_type in ELEMENT_STYLES:
         # Return dict of css properties and selectors for component
         style_mappings = ELEMENT_STYLES[component_type]["css"]
@@ -247,6 +299,9 @@ def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str
     Raises:
         ValidationError: If validation is in strict mode and validation fails
     """
+
+
+
     # Check if validation should be bypassed
     bypass_validation = ValidationConfig.is_validation_bypassed()
     strict_mode = ValidationConfig.get_strict_mode()
