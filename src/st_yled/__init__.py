@@ -2,7 +2,6 @@
 
 from pathlib import Path
 from typing import Optional
-import traceback
 
 import streamlit as st
 

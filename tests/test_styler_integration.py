@@ -8,6 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src", "st_yled"))
 
 from unittest.mock import patch, MagicMock
 from st_yled.styler import apply_component_css, apply_component_css_global, get_css_properties_from_args
+from st_yled.styler import extract_caller_path_hash
 from st_yled.validation import ValidationConfig, ValidationError
 import st_yled
 
@@ -26,7 +27,10 @@ class TestStylerValidationIntegration:
         # Mock st.html to capture CSS generation and st.session_state
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+
+            # Generate a hash using the caller's file path
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
 
             result_kwargs = apply_component_css("text", kwargs)
 
@@ -58,7 +62,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("button", kwargs)
 
             # Verify CSS was generated
@@ -81,7 +86,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # Original key should be preserved
@@ -120,7 +126,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             # Should not raise error in permissive mode - invalid properties are removed by validation
             result_kwargs = apply_component_css("text", kwargs)
 
@@ -141,7 +148,8 @@ class TestStylerValidationIntegration:
 
             with patch("st_yled.styler.st") as mock_st:
                 # Mock session_state as a dictionary
-                mock_st.session_state = {'st-yled-comp-counter': 0}
+                caller_hash = extract_caller_path_hash()
+                mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
                 result_kwargs = apply_component_css("text", kwargs)
 
                 # When bypassed, validation is skipped, but CSS processing still happens
@@ -162,7 +170,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # No CSS should be generated for no styling properties
@@ -185,7 +194,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # Unsupported properties should not be processed/removed
@@ -273,7 +283,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # Supported styling properties should be removed
@@ -297,7 +308,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             # Should not raise error
             apply_component_css_global("text", kwargs)
 
@@ -313,7 +325,8 @@ class TestStylerValidationIntegration:
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            mock_st.session_state = {'st-yled-comp-counter': 0}
+            caller_hash = extract_caller_path_hash()
+            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             # Should complete but issue warnings
             result_kwargs = apply_component_css("text", kwargs)
             # Supported styling should be processed

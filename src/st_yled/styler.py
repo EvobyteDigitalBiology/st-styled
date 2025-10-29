@@ -18,7 +18,6 @@ with (dirpath / "element_styles.json").open() as f:
 
 
 def extract_caller_path_hash() -> str:
-
     traceback_stack = traceback.extract_stack()
 
     exec_line = False
@@ -28,15 +27,15 @@ def extract_caller_path_hash() -> str:
         if exec_line:
             caller_path = line.filename
             break
-        if line.line.startswith('exec(code, module.__dict__)'):
+        if isinstance(line.line, str) and line.line.startswith(
+            "exec(code, module.__dict__)"
+        ):
             exec_line = True
 
     if caller_path == "":
         warnings.warn("Could not extract caller path from traceback.")
 
-    caller_hash = str(hash(caller_path))
-
-    return caller_hash
+    return str(hash(caller_path))
 
 
 def get_element_style(element_name: str) -> dict:
@@ -173,7 +172,6 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
     return dict(sorted(categories.items()))
 
 
-
 def get_element_variants(element_name: str) -> list[str]:
     """
     Get all variants for a given element name.
@@ -185,17 +183,20 @@ def get_element_variants(element_name: str) -> list[str]:
         A list of variant names (e.g., ['primary', 'secondary', 'tertiary']).
     """
     variants = []
-    element_found = False
-    if not element_name in ELEMENT_STYLES:
-        raise ValueError(f"Element '{element_name}' not found in stylable elements.")
+    if element_name not in ELEMENT_STYLES:
+        value_error_msg = f"Element '{element_name}' not found in stylable elements."
+        raise ValueError(value_error_msg)
 
     for element in ELEMENT_STYLES:
         if element.startswith(f"{element_name}_"):
-            match = re.match(rf"{re.escape(element_name)}_(primary|secondary|tertiary)$", element)
+            match = re.match(
+                rf"{re.escape(element_name)}_(primary|secondary|tertiary)$", element
+            )
             if match:
                 variants.append(match.group(1))
 
     return variants
+
 
 def generate_component_key() -> str:
     """Generate a unique component key for st_yled components."""
@@ -299,8 +300,6 @@ def apply_component_css(component_type: str, kwargs: dict[str, Any]) -> dict[str
     Raises:
         ValidationError: If validation is in strict mode and validation fails
     """
-
-
 
     # Check if validation should be bypassed
     bypass_validation = ValidationConfig.is_validation_bypassed()
