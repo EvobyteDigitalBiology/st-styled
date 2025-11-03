@@ -6,9 +6,17 @@
 [![PyPI version](https://badge.fury.io/py/st-styled.svg)](https://badge.fury.io/py/st-styled)
 [![Test Coverage](https://img.shields.io/badge/coverage-89%25-brightgreen.svg)](htmlcov/index.html)
 
-**st_yled** provides advanced styling capabilities and enhanced components for Streamlit applications. Style your Streamlit apps with CSS, create custom themes, and use enhanced component wrappers with built-in styling support and parameter validation.
+<br>
 
-Check the [st_yled studio](https://styled-studio.streamlit.app/) app to test and configure layouts and UI elements for you Streamlit app.
+![st_yled Components Examples](assets/st_streamlit_styling_header.png)
+
+<br>
+
+**st_yled** provides advanced styling capabilities and enhanced components for Streamlit applications.
+Style your Streamlit apps with custom themes and unique elements to match your personal tone or corporate brand.
+
+> **Check the [st_yled studio](https://styled-studio.streamlit.app/) app to configure your layouts and custom elements.**
+
 
 ## ✨ Features
 
@@ -46,33 +54,10 @@ st_yled.button("Styled Button", background_color="#4ecdc4", color="white")
 st_yled.text("Styled Text", color="#2c3e50", font_size="18px")
 ```
 
-### Parameter Validation
-
-St_yled includes comprehensive CSS property validation:
-
-```python
-# ✅ Valid CSS properties
-st_yled.button("Valid", background_color="#ff0000", border_style="solid")
-
-# ❌ Invalid properties show helpful errors
-st_yled.button("Invalid", background_color="not-a-color")
-# Warning: Invalid color value 'not-a-color' for property 'background_color'
-
-# Configure validation mode
-import os
-os.environ["ST_STYLED_STRICT_VALIDATION"] = "true"  # Raise errors
-os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"  # Skip validation
-```
-
 ## 📚 Documentation
 
-### Comprehensive Guides
 
-- **[Component Reference](docs/COMPONENT_REFERENCE.md)** - Complete reference for all 44 styled components and their supported properties
-- **[Validation Guide](docs/VALIDATION_GUIDE.md)** - In-depth guide to parameter validation, error handling, and configuration
-- **[Advanced Examples](docs/ADVANCED_EXAMPLES.md)** - Real-world examples including dashboards, themes, forms, and performance patterns
-
-### Quick Links
+### Content
 
 - [Installation & Setup](#installation) - Get started quickly
 - [API Reference](#api-reference) - Core functions and usage
@@ -80,7 +65,7 @@ os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"  # Skip validation
 - [Styling Properties](#styling-properties) - Supported CSS properties
 - [Configuration](#configuration) - Advanced configuration options
 
-## 📖 API Reference
+## <a name="api-reference"></a>📖 API Reference
 
 ### Core Functions
 
@@ -121,7 +106,7 @@ st_yled.set("header", "color", "#2c3e50")
 st_yled.set("header", "font_size", "24px")
 ```
 
-## 🔧 Enhanced Components
+## <a name="enhanced-components"></a>🔧 Enhanced Components
 
 St_yled provides enhanced versions of Streamlit components with additional styling parameters:
 
@@ -193,9 +178,8 @@ St_yled supports **43 styled components** with comprehensive CSS property suppor
 - **Data Components (4)**: table, metric, progress, status
 - **Chat Components (1)**: chat_message
 
-Plus **45 pass-through components** that maintain original Streamlit functionality.
+Check the [st_yled element docs](https://st-styled.evo-byte.com/elements/) for more information
 
-> **See [Component Reference](docs/COMPONENT_REFERENCE.md) for complete details on all components and their supported properties.**
 
 ## 🛡️ Validation System
 
@@ -219,34 +203,22 @@ os.environ["ST_STYLED_STRICT_VALIDATION"] = "true"
 os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"
 ```
 
-### Validation Features
 
-- ✅ **CSS Property Validation** - Validates colors, lengths, borders, fonts
-- ✅ **Component Compatibility** - Ensures properties are supported by components
-- ✅ **Helpful Error Messages** - Detailed feedback with suggestions
-- ✅ **Property Aliases** - Supports common variations (bg_color → background_color)
-- ✅ **Environment Configuration** - Flexible validation modes
-
-> **See [Validation Guide](docs/VALIDATION_GUIDE.md) for complete validation documentation.**
-
-## 🎨 Styling Properties
+## <a name="styling-properties">🎨 Styling Properties
 
 ### Color Properties
 - **Valid formats:** Hex (`#ff0000`), RGB (`rgb(255,0,0)`), HSL (`hsl(0,100%,50%)`), Named (`red`)
 - **Examples:** `color`, `background_color`, `border_color`
 
 ### Size Properties
-- **Valid units:** `px`, `em`, `rem`, `%`, `vh`, `vw`
+- **Valid units:** `px`, `em`, `rem`
 - **Examples:** `font_size`, `width`, `height`, `padding`, `margin`
 
 ### Border Properties
-- **Styles:** `solid`, `dashed`, `dotted`, `double`
+- **Styles:** `solid`, `dashed`, `dotted`, `double`, ...
 - **Examples:** `border`, `border_radius`, `border_width`, `border_style`
 
-### Typography Properties
-- **Examples:** `font_weight`, `font_family`, `text_align`, `line_height`
-
-> **See [Component Reference](docs/COMPONENT_REFERENCE.md) for complete property details.**
+> **See [Component Reference](https://st-styled.evo-byte.com/elements/) for complete property details.**
 
 ## 🚀 Advanced Usage
 
@@ -273,12 +245,9 @@ with col1:
         background_color="#f8fafc",
         border="1px solid #e2e8f0",
         border_radius="12px",
-        padding="20px"
     ):
         st_yled.metric("Revenue", "$2.4M", "+12%", color="#059669")
 ```
-
-> **See [Advanced Examples](docs/ADVANCED_EXAMPLES.md) for complete real-world examples.**
 
 ## 🔧 Configuration
 
@@ -305,29 +274,6 @@ Styles are applied in priority order (highest to lowest):
 # Validation configuration
 export ST_STYLED_STRICT_VALIDATION=true   # Enable strict validation
 export ST_STYLED_BYPASS_VALIDATION=true   # Bypass all validation
-
-# Development mode
-export ST_STYLED_DEBUG=true               # Enable debug output
-```
-
-## 🧪 Testing
-
-Run the comprehensive test suite:
-
-```bash
-# Install development dependencies
-poetry install --with dev
-
-# Run all tests
-poetry run pytest
-
-# Run with coverage report
-poetry run pytest --cov=st_yled --cov-report=html
-
-# Run specific test categories
-poetry run pytest tests/test_components_comprehensive.py  # Component tests
-poetry run pytest tests/test_validation.py               # Validation tests
-poetry run pytest tests/test_styler_integration.py       # Integration tests
 ```
 
 ## 📝 License
@@ -344,7 +290,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. 📖 Check the [comprehensive documentation](docs/)
+1. 📖 Check the [comprehensive documentation](https://st-styled.evo-byte.com/)
 2. 🔍 Search [existing issues](https://github.com/EvobyteDigitalBiology/st-styled/issues)
 3. 💬 Create a [new issue](https://github.com/EvobyteDigitalBiology/st-styled/issues/new)
 4. 📧 Contact the maintainers

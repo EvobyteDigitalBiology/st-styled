@@ -23,6 +23,7 @@ theme:
   language: en
   logo: assets/st_yled Logo Frame.png
   favicon: assets/st_yled_favicon.png
+  custom_dir: docs/overrides
 
 nav:
   - Home: index.md

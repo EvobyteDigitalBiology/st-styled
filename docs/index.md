@@ -1,10 +1,14 @@
+
+![st_yled Components Examples](assets/st_streamlit_styling_header.png)
+
 # st_yled - Advanced Streamlit Styling
 
 Streamlit is great - but styling individual elements is a hassle.
 
 **st_yled solves this by providing a simple way for styling Streamlit elements and components**
 
-Transform your Streamlit applications with powerful CSS integration, enhanced elements, and comprehensive styling capabilities. st_yled provides everything you need to create beautiful, professional-looking Streamlit apps with minimal effort.
+Transform your Streamlit applications with enhanced elements and comprehensive styling capabilities. st_yled provides everything you need to create beautiful, professional-looking Streamlit apps which match your personal tone or corporate brand.
+
 
 ---
 
