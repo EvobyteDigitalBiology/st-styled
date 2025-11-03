@@ -1,30 +1,37 @@
+
+![st_yled Components Examples](assets/st_streamlit_styling_header.png)
+
 # st_yled - Advanced Streamlit Styling
 
 Streamlit is great - but styling individual elements is a hassle.
 
 **st_yled solves this by providing a simple way for styling Streamlit elements and components**
 
-Transform your Streamlit applications with powerful CSS integration, enhanced elements, and comprehensive styling capabilities. st_yled provides everything you need to create beautiful, professional-looking Streamlit apps with minimal effort.
+Transform your Streamlit applications with enhanced elements and comprehensive styling capabilities. st_yled provides everything you need to create beautiful, professional-looking Streamlit apps which match your personal tone or corporate brand.
+
 
 ---
 
 ## Key Features
 
 🎨 **CSS Integration** - Load custom CSS files and apply styles seamlessly
+
 🎯 **Global Styling** - Apply consistent styles across all elements
+
 🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
-⚡ **Easy Setup** - Simple initialization with intuitive API
-🛡️ **Type Safety** - Built-in CSS property validation
+
+⚡ **st_yled studio** - Use the accompanying app to test your layout styling
 
 ---
 
 ## Quick Start (5 minutes)
 
-### 0. Check st_yled Studio
+### 0. Check st_yled studio
 
-#TODO Add Link
-st_yled Studio is out accompanying free app to try and optimize Streamlit layouts and styles.
-Your can customize elements and components in st_yled Studio and export them directly into your Streamlit app.
+[**st_yled studio**](https://styled-studio.streamlit.app/) is a free app to test and optimize your Streamlit layouts and UI styling.
+Your directly export your layouting into your Streamlit app using st_yled together with the studio app.
+
+Here is the [link to st_yled studio](https://styled-studio.streamlit.app/)
 
 ### 1. Install st_yled
 
@@ -92,10 +99,11 @@ st_yled.set("button", "background_color", "lightblue")
 st_yled.button("Click me!", background_color="#4ecdc4")
 ```
 
-### st_yled Studio: Try and optimize your Streamlit styling
+### st_yled studio: Try and optimize your Streamlit styling
 
-st_yled Studio is an open and free webapp for you to try, configure and optimize theming and styling of you Streamlit app.
-Visit (#TDOD) and transform your Streamlit app in a unique and professional experience.
+st_yled studio is an open and free webapp for you to try, configure and optimize theming and styling of you Streamlit app.
+
+Here is the [link to st_yled studio](https://styled-studio.streamlit.app/)
 
 Once optimized, you can export your app layout and save in the `.streamlit` folder of your app. st_yled will automatically make use of your custom layout.
 

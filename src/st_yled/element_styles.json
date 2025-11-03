@@ -33,7 +33,7 @@
             }
         },
         "category": "input",
-        "example" : "st_yled.button(\"Style Me\", **kwargs)"
+        "example": "st_yled.button(\"Style Me\", **kwargs)"
     },
     "button_primary": {
         "css": {
@@ -68,7 +68,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.button(\"Style Me\", type=\"primary\", **kwargs)"
     },
     "button_secondary": {
         "css": {
@@ -103,7 +104,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.button(\"Style Me\", type=\"secondary\", **kwargs)"
     },
     "button_tertiary": {
         "css": {
@@ -138,7 +140,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.button(\"Style Me\", type=\"tertiary\", **kwargs)"
     },
     "download_button": {
         "css": {
@@ -173,7 +176,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.download_button(\"Download\", data=\"sample\", **kwargs)"
     },
     "download_button_primary": {
         "css": {
@@ -208,7 +212,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"primary\", **kwargs)"
     },
     "download_button_secondary": {
         "css": {
@@ -243,7 +248,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"secondary\", **kwargs)"
     },
     "download_button_tertiary": {
         "css": {
@@ -278,7 +284,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"tertiary\", **kwargs)"
     },
     "link_button": {
         "css": {
@@ -313,7 +320,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", **kwargs)"
     },
     "link_button_primary": {
         "css": {
@@ -348,7 +356,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"primary\", **kwargs)"
     },
     "link_button_secondary": {
         "css": {
@@ -383,7 +392,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"secondary\", **kwargs)"
     },
     "link_button_tertiary": {
         "css": {
@@ -418,7 +428,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"tertiary\", **kwargs)"
     },
     "title": {
         "css": {
@@ -433,7 +444,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.title(\"Page Title\", **kwargs)"
     },
     "header": {
         "css": {
@@ -448,7 +460,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.header(\"Section Header\", **kwargs)"
     },
     "subheader": {
         "css": {
@@ -463,7 +476,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.subheader(\"Subsection\", **kwargs)"
     },
     "markdown": {
         "css": {
@@ -481,7 +495,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.markdown(\"**Bold Text**\", **kwargs)"
     },
     "text": {
         "css": {
@@ -496,7 +511,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.text(\"Sample Text\", **kwargs)"
     },
     "write": {
         "css": {
@@ -511,7 +527,8 @@
                 }
             }
         },
-        "category": "write"
+        "category": "write",
+        "example": "st_yled.write(\"Dynamic content\", **kwargs)"
     },
     "caption": {
         "css": {
@@ -526,7 +543,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.caption(\"Small caption text\", **kwargs)"
     },
     "latex": {
         "css": {
@@ -536,7 +554,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.latex(r\"E = mc^2\", **kwargs)"
     },
     "table": {
         "css": {
@@ -571,7 +590,8 @@
                 }
             }
         },
-        "category": "data"
+        "category": "data",
+        "example": "st_yled.table({\"Col1\": [1, 2], \"Col2\": [3, 4]}, **kwargs)"
     },
     "metric": {
         "css": {
@@ -592,7 +612,8 @@
                 }
             }
         },
-        "category": "data"
+        "category": "data",
+        "example": "st_yled.metric(\"Revenue\", \"$1,234\", **kwargs)"
     },
     "json": {
         "css": {
@@ -607,7 +628,8 @@
                 }
             }
         },
-        "category": "data"
+        "category": "data",
+        "example": "st_yled.json({\"key\": \"value\"}, **kwargs)"
     },
     "checkbox": {
         "css": {
@@ -642,7 +664,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.checkbox(\"Check Me\", **kwargs)"
     },
     "radio": {
         "css": {
@@ -662,7 +685,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.radio(\"Select Option\", [\"Option 1\", \"Option 2\"], **kwargs)"
     },
     "multiselect": {
         "css": {
@@ -700,7 +724,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.multiselect(\"Select Multiple\", [\"A\", \"B\", \"C\"], **kwargs)"
     },
     "selectbox": {
         "css": {
@@ -744,7 +769,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.selectbox(\"Choose\", [\"Option 1\", \"Option 2\"], **kwargs)"
     },
     "pills": {
         "css": {
@@ -785,7 +811,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.pills(\"Choose\", [\"A\", \"B\", \"C\"], **kwargs)"
     },
     "segmented_control": {
         "css": {
@@ -826,7 +853,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.segmented_control(\"Pick\", [\"X\", \"Y\", \"Z\"], **kwargs)"
     },
     "slider": {
         "css": {
@@ -856,7 +884,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.slider(\"Adjust Value\", 0, 100, 50, **kwargs)"
     },
     "select_slider": {
         "css": {
@@ -886,7 +915,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.select_slider(\"Pick\", [\"Low\", \"Med\", \"High\"], **kwargs)"
     },
     "toggle": {
         "css": {
@@ -906,7 +936,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.toggle(\"Enable Feature\", **kwargs)"
     },
     "number_input": {
         "css": {
@@ -953,7 +984,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.number_input(\"Enter Number\", **kwargs)"
     },
     "date_input": {
         "css": {
@@ -997,7 +1029,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.date_input(\"Pick Date\", **kwargs)"
     },
     "time_input": {
         "css": {
@@ -1044,7 +1077,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.time_input(\"Pick Time\", **kwargs)"
     },
     "text_area": {
         "css": {
@@ -1091,7 +1125,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.text_area(\"Enter Message\", **kwargs)"
     },
     "text_input": {
         "css": {
@@ -1132,7 +1167,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.text_input(\"Enter Text\", **kwargs)"
     },
     "chat_input": {
         "css": {
@@ -1173,7 +1209,8 @@
                 }
             }
         },
-        "category": "chat"
+        "category": "chat",
+        "example": "st_yled.chat_input(\"Type message...\", **kwargs)"
     },
     "file_uploader": {
         "css": {
@@ -1220,7 +1257,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.file_uploader(\"Upload File\", **kwargs)"
     },
     "color_picker": {
         "css": {
@@ -1250,7 +1288,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.color_picker(\"Pick Color\", **kwargs)"
     },
     "feedback": {
         "css": {
@@ -1260,7 +1299,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.feedback(\"thumbs\", **kwargs)"
     },
     "camera_input": {
         "css": {
@@ -1317,7 +1357,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.camera_input(\"Take Photo\", **kwargs)"
     },
     "audio_input": {
         "css": {
@@ -1350,7 +1391,8 @@
                 }
             }
         },
-        "category": "input"
+        "category": "input",
+        "example": "st_yled.audio_input(\"Record Audio\", **kwargs)"
     },
     "success": {
         "css": {
@@ -1380,7 +1422,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.success(\"Operation successful!\", **kwargs)"
     },
     "info": {
         "css": {
@@ -1410,7 +1453,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.info(\"Information message\", **kwargs)"
     },
     "warning": {
         "css": {
@@ -1440,7 +1484,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.warning(\"Warning message\", **kwargs)"
     },
     "error": {
         "css": {
@@ -1470,7 +1515,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.error(\"Error occurred\", **kwargs)"
     },
     "progress": {
         "css": {
@@ -1480,7 +1526,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.progress(0.75, **kwargs)"
     },
     "form_submit_button": {
         "css": {
@@ -1629,6 +1676,11 @@
                     "color": null
                 }
             },
+            "background_color": {
+                ".stExpander > details > summary": {
+                    "background-color": null
+                }
+            },
             "font_size": {
                 ".stExpander > details > summary p": {
                     "font-size": null
@@ -1650,7 +1702,8 @@
                 }
             }
         },
-        "category": "layout"
+        "category": "layout",
+        "example": "st_yled.expander(\"Click to expand\", **kwargs)"
     },
     "tabs": {
         "css": {
@@ -1665,7 +1718,8 @@
                 }
             }
         },
-        "category": "layout"
+        "category": "layout",
+        "example": "st_yled.tabs([\"Tab 1\", \"Tab 2\"], **kwargs)"
     },
     "chat_message": {
         "css": {
@@ -1700,7 +1754,8 @@
                 }
             }
         },
-        "category": "chat"
+        "category": "chat",
+        "example": "st_yled.chat_message(\"user\", **kwargs)"
     },
     "status": {
         "css": {
@@ -1739,7 +1794,8 @@
                 }
             }
         },
-        "category": "status"
+        "category": "status",
+        "example": "st_yled.status(\"Processing...\", **kwargs)"
     },
     "code": {
         "css": {
@@ -1774,7 +1830,8 @@
                 }
             }
         },
-        "category": "text"
+        "category": "text",
+        "example": "st_yled.code(\"print('Hello World')\", **kwargs)"
     },
     "container": {
         "css": {
@@ -1834,6 +1891,7 @@
                 }
             }
         },
-        "category": "layout"
+        "category": "layout",
+        "example": "st_yled.popover(\"Show Popup\", **kwargs)"
     }
 }

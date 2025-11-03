@@ -8,14 +8,16 @@ import streamlit as st
 from st_yled import styler  # type: ignore
 from st_yled.elements import *  # type: ignore # noqa: F403
 
-__version__ = "0.0.4"
+__version__ = "0.1.0"
 
 
 def init(css_path: Optional[str] = None) -> None:
     """Initialize st_yled with CSS styling."""
 
+    caller_hash = styler.extract_caller_path_hash()
+
     # Set session_state
-    st.session_state["st-yled-comp-counter"] = 0
+    st.session_state[f"st-yled-comp-{caller_hash}-counter"] = 0
 
     cwd = Path.cwd()
 
