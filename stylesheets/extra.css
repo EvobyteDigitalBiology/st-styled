@@ -1,0 +1,65 @@
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #2A4159;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #2A4159;
+  }
+
+h1 {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700 !important;
+    font-size: 39px !important;
+    color: #2A4159 !important;
+}
+
+h2 {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 500 !important;
+    font-size: 31px !important;
+    color: #2A4159 !important;
+  }
+
+h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: #2A4159 !important;
+  }
+
+.md-header span {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+.md-logo img {
+    height: 48px !important;
+  }
+
+.md-banner {
+  background-color: #2A4159;
+}
+
+.banner-text {
+  background-color: #FFFFFF;
+  color: #2A4159;
+  font-family: "Source Sans 3", sans-serif;
+  padding: 8px 16px 8px 16px;
+  border-radius: 32px;
+  font-weight: 500;
+}
+
+.banner-link {
+  color: #FF4B4B !important;
+  font-family: "Source Sans 3", sans-serif;
+  padding: 8px 8px;
+  border-radius: 32px;
+  font-weight: 700;
+  border-color: #FF4B4B !important;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.banner-link:hover {
+  background-color: #FF4B4B !important;
+  color: #FFFFFF !important;
+}
