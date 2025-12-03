@@ -2118,6 +2118,9 @@
             "color": {
                 ".stCode code": {
                     "color": null
+                },
+                ".stCode code span": {
+                    "color": null
                 }
             },
             "background_color": {
