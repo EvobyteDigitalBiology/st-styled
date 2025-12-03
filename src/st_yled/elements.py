@@ -33,6 +33,7 @@ def write_stream(*args, **kwargs):
 # Text Elements
 # ==============================================================================
 
+
 def markdown(*args, **kwargs):
     kwargs = styler.apply_component_css("markdown", kwargs)
     key = kwargs.pop("key", None)
@@ -438,14 +439,18 @@ def camera_input(*args, **kwargs):
 def image(*args, **kwargs):
     return st.image(*args, **kwargs)
 
+
 def logo(*args, **kwargs):
     return st.logo(*args, **kwargs)
+
 
 def pdf(*args, **kwargs):
     return st.pdf(*args, **kwargs)
 
+
 def audio(*args, **kwargs):
     return st.audio(*args, **kwargs)
+
 
 def video(*args, **kwargs):
     return st.video(*args, **kwargs)
@@ -454,6 +459,7 @@ def video(*args, **kwargs):
 # ==============================================================================
 # Layout and Container Elements
 # ==============================================================================
+
 
 def columns(*args, **kwargs):
     return st.columns(*args, **kwargs)

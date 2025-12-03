@@ -218,24 +218,24 @@ class CSSValidator:
 
     # CSS font weights
     FONT_WEIGHTS = {
-        "thin" : "100",
-        "extra-light" : "200",
-        "light" : "300",
-        "normal" : "400",
-        "medium" : "500",
-        "semi-bold" : "600",
-        "bold" : "700",
-        "extra-bold" : "800",
-        "black" : "900",
-        "100" : "100",
-        "200" : "200",
-        "300" : "300",
-        "400" : "400",
-        "500" : "500",
-        "600" : "600",
-        "700" : "700",
-        "800" : "800",
-        "900" : "900",
+        "thin": "100",
+        "extra-light": "200",
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semi-bold": "600",
+        "bold": "700",
+        "extra-bold": "800",
+        "black": "900",
+        "100": "100",
+        "200": "200",
+        "300": "300",
+        "400": "400",
+        "500": "500",
+        "600": "600",
+        "700": "700",
+        "800": "800",
+        "900": "900",
     }
 
     # CSS text align values
@@ -378,10 +378,10 @@ class StyleValidator:
     @classmethod
     def normalize_font_weight(cls, prop_name: str, prop_value: Any) -> str:
         """Normalize font-weight values."""
-        if prop_name == "font_weight":
+        if (prop_name == "font_weight") and (prop_value in CSSValidator.FONT_WEIGHTS):
             # Map font weight names to numeric
-            if prop_value in CSSValidator.FONT_WEIGHTS:
-                return CSSValidator.FONT_WEIGHTS[prop_value]
+            return CSSValidator.FONT_WEIGHTS[prop_value]
+
         return prop_value
 
     @classmethod

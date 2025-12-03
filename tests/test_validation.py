@@ -89,6 +89,8 @@ class TestCSSValidator:
         for weight in invalid_weights:
             assert not CSSValidator.is_valid_font_weight(weight)
 
+
+
     def test_text_align(self):
         """Test text align validation."""
         valid_aligns = ["left", "center", "right", "justify", "start", "end"]
@@ -336,7 +338,7 @@ class TestRealWorldScenarios:
             "border": "1px solid #007BFF",
             "padding": "10px 20px",
             "border_radius": "5px",
-            "font_weight": "bold"
+            "font_weight": "700"
         }
 
         validated = validate_styling_kwargs("button", button_kwargs)
