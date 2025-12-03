@@ -8,11 +8,11 @@
 
 <br>
 
-![st_yled Components Examples](assets/st_streamlit_styling_header.png)
+![st_yled Components Examples](assets/st_yled_font_weight_preview.png)
 
 <br>
 
-**st_yled** provides advanced styling capabilities and enhanced components for Streamlit applications.
+**st_yled** provides styling capabilities and improved components for Streamlit applications.
 Style your Streamlit apps with custom themes and unique elements to match your personal tone or corporate brand.
 
 > **Check the [st_yled studio](https://styled-studio.streamlit.app/) app to configure your layouts and custom elements.**
@@ -297,6 +297,6 @@ If you encounter any issues or have questions:
 
 ---
 
-**Made with ❤️ by [EVOBYTE](www.evo-byte.com) for the Streamlit community**
+**Made with ❤️ by [EVOBYTE](https://www.evo-byte.com) for the Streamlit community**
 
 *Transform your Streamlit apps with professional styling and comprehensive validation.*

@@ -40,6 +40,7 @@ clicked = st_yled.button("Click Me", background_color="#007bff", color="white")
 - `background_color` - Button background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -108,13 +109,14 @@ st_yled.download_button(
 - `background_color` - Button background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
 
 **Button Types:**
 
-Download buttons support the same type variations as regular buttons:
+Link buttons support the same type variations as regular buttons:
 
 - **Primary** (`type="primary"`)
 - **Secondary** (`type="secondary"`) - Default
@@ -147,6 +149,7 @@ st_yled.link_button(
 - `background_color` - Button background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -189,6 +192,7 @@ option = st_yled.selectbox(
 - `background_color` - Background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -211,6 +215,7 @@ choice = st_yled.radio(
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -233,6 +238,7 @@ selections = st_yled.multiselect(
 - `background_color` - Background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -257,6 +263,7 @@ enabled = st_yled.checkbox(
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -284,6 +291,7 @@ name = st_yled.text_input(
 - `background_color` - Background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -309,6 +317,7 @@ content = st_yled.text_area(
 - `background_color` - Background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -335,13 +344,14 @@ value = st_yled.number_input(
 - `background_color` - Background color (hex, rgb, named colors)
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
 
 ---
 
-## Slider Components
+## Slider Controls
 
 ### slider
 **Streamlit equivalent:** `st.slider()`
@@ -382,6 +392,7 @@ size = st_yled.select_slider(
 
 - `color` - Text and track color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -405,6 +416,7 @@ date = st_yled.date_input(
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -429,6 +441,7 @@ time = st_yled.time_input(
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -454,6 +467,7 @@ color = st_yled.color_picker(
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -479,6 +493,7 @@ file = st_yled.file_uploader(
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -502,6 +517,7 @@ photo = st_yled.camera_input(
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)

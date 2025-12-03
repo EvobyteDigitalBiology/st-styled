@@ -48,6 +48,7 @@ with st_yled.expander("Click to expand", color="#2c3e50", font_size="16px"):
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -65,6 +66,7 @@ tab1, tab2, tab3 = st_yled.tabs(["Tab 1", "Tab 2", "Tab 3"], color="#007bff", fo
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 

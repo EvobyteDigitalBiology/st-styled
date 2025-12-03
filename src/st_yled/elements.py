@@ -526,6 +526,10 @@ def tabs(*args, **kwargs):
     return cont.tabs(*args, **kwargs)
 
 
+def space(*args, **kwargs):
+    return st.space(*args, **kwargs)
+
+
 # ==============================================================================
 # Chat Elements
 # ==============================================================================

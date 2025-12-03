@@ -1,6 +1,6 @@
 [project]
 name = "st-styled"
-version = "0.1.0"
+version = "0.2.0"
 description = "Advanced styling and custom components for Streamlit applications"
 authors = [
     {name = "JonathanAlles", email = "Jonathan.Alles@evo-byte.com"}

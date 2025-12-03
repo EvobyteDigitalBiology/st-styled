@@ -26,6 +26,7 @@ st_yled.table(df, background_color="#f8f9fa", color="#2c3e50")
 - `background_color` - Table background color
 - `color` - Text color
 - `font_size` - Text size in cells
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -47,6 +48,7 @@ st_yled.metric("Revenue", "$12,345", "+15%", color="#2c3e50", font_size="18px")
 
 - `color` - Text color for label and value
 - `font_size` - Text size for label and value
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -66,6 +68,7 @@ st_yled.json(data, color="#2c3e50", font_size="14px")
 
 - `color` - Text color
 - `font_size` - Text size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 

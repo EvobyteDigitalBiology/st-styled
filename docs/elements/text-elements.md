@@ -30,6 +30,7 @@ st_yled.title("Page Title",
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -48,6 +49,7 @@ st_yled.header("Section Header", color="#34495e", font_size="2rem")
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -66,6 +68,7 @@ st_yled.subheader("Subsection Title", color="#7f8c8d", font_size="1.3rem")
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -84,6 +87,7 @@ st_yled.text("Body text content", color="#2c3e50", font_size="16px")
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -102,6 +106,7 @@ st_yled.markdown("**Bold text** with *emphasis*", color="#2c3e50", font_size="16
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -120,6 +125,7 @@ st_yled.caption("Figure 1: Sales data over time", color="#6c757d", font_size="12
 
 - `color` - Text color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -140,6 +146,7 @@ st_yled.code("print('Hello, World!')", language="python",
 - `color` - Text color (hex, rgb, named colors)
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
