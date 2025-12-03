@@ -218,19 +218,24 @@ class CSSValidator:
 
     # CSS font weights
     FONT_WEIGHTS = {
-        "normal",
-        "bold",
-        "bolder",
-        "lighter",
-        "100",
-        "200",
-        "300",
-        "400",
-        "500",
-        "600",
-        "700",
-        "800",
-        "900",
+        "thin" : "100",
+        "extra-light" : "200",
+        "light" : "300",
+        "normal" : "400",
+        "medium" : "500",
+        "semi-bold" : "600",
+        "bold" : "700",
+        "extra-bold" : "800",
+        "black" : "900",
+        "100" : "100",
+        "200" : "200",
+        "300" : "300",
+        "400" : "400",
+        "500" : "500",
+        "600" : "600",
+        "700" : "700",
+        "800" : "800",
+        "900" : "900",
     }
 
     # CSS text align values
@@ -344,6 +349,7 @@ class StyleValidator:
         "border_color": CSSValidator.is_valid_color,
         # Size/length properties (can handle space-separated values)
         "font_size": CSSValidator.is_valid_length,
+        "font_weight": CSSValidator.is_valid_font_weight,
         "border_width": CSSValidator.is_valid_length,
         "border_style": CSSValidator.is_valid_border_style,
     }
@@ -367,6 +373,15 @@ class StyleValidator:
         """Convert integer property values to string with 'px' unit."""
         if (prop_name in cls.PROPERTY_DEFAULT_UNITS) and isinstance(prop_value, int):
             return f"{prop_value}px"
+        return prop_value
+
+    @classmethod
+    def normalize_font_weight(cls, prop_name: str, prop_value: Any) -> str:
+        """Normalize font-weight values."""
+        if prop_name == "font_weight":
+            # Map font weight names to numeric
+            if prop_value in CSSValidator.FONT_WEIGHTS:
+                return CSSValidator.FONT_WEIGHTS[prop_value]
         return prop_value
 
     @classmethod
@@ -443,12 +458,7 @@ class StyleValidator:
         elif prop_name == "font_weight":
             return (
                 f"Invalid font-weight value '{prop_value}'. "
-                f"Expected: 'normal', 'bold', 'bolder', 'lighter', or numbers 100-900."
-            )
-        elif prop_name == "text_align":
-            return (
-                f"Invalid text-align value '{prop_value}'. "
-                f"Expected: 'left', 'center', 'right', 'justify', 'start', or 'end'."
+                f"Expected: {', '.join(sorted(CSSValidator.FONT_WEIGHTS.keys()))}."
             )
         else:
             return f"Invalid value '{prop_value}' for CSS property '{prop_name}'."
@@ -504,6 +514,8 @@ class StyleValidator:
 
             # Set default unit for certain properties
             prop_value = cls.set_default_int_unit(prop_name, prop_value)
+            # Normalize font-weight values
+            prop_value = cls.normalize_font_weight(prop_name, prop_value)
 
             is_valid, message = cls.validate_property(prop_name, prop_value, strict)
 
