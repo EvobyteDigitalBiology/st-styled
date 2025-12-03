@@ -16,6 +16,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stButton:has(button[kind=\"secondary\"]) > button": {
                     "border-style": null
@@ -50,6 +55,11 @@
             "font_size": {
                 ".stButton:has(button[kind=\"primary\"]) > button p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stButton:has(button[kind=\"primary\"]) > button p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -88,6 +98,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stButton:has(button[kind=\"secondary\"]) > button": {
                     "border-style": null
@@ -122,6 +137,11 @@
             "font_size": {
                 ".stButton:has(button[kind=\"tertiary\"]) > button p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -160,6 +180,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
                     "border-style": null
@@ -194,6 +219,11 @@
             "font_size": {
                 ".stDownloadButton:has(button[kind=\"primary\"]) > button p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stDownloadButton:has(button[kind=\"primary\"]) > button p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -232,6 +262,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stDownloadButton:has(button[kind=\"secondary\"]) > button p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stDownloadButton:has(button[kind=\"secondary\"]) > button": {
                     "border-style": null
@@ -266,6 +301,11 @@
             "font_size": {
                 ".stDownloadButton:has(button[kind=\"tertiary\"]) > button p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stDownloadButton:has(button[kind=\"tertiary\"]) > button p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -304,6 +344,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stLinkButton > a[kind=\"secondary\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stLinkButton > a[kind=\"secondary\"]": {
                     "border-style": null
@@ -338,6 +383,11 @@
             "font_size": {
                 ".stLinkButton > a[kind=\"primary\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stLinkButton > a[kind=\"primary\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -376,6 +426,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stLinkButton > a[kind=\"secondary\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stLinkButton > a[kind=\"secondary\"]": {
                     "border-style": null
@@ -412,6 +467,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stLinkButton > a[kind=\"tertiary\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stLinkButton > a[kind=\"tertiary\"]": {
                     "border-style": null
@@ -442,6 +502,11 @@
                 "h1": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                "h1": {
+                    "font-weight": null
+                }
             }
         },
         "category": "text",
@@ -458,6 +523,11 @@
                 "h2": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                "h2": {
+                    "font-weight": null
+                }
             }
         },
         "category": "text",
@@ -473,6 +543,11 @@
             "font_size": {
                 "h3": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                "h3": {
+                    "font-weight": null
                 }
             }
         },
@@ -493,6 +568,11 @@
                 ".stMarkdown p": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stMarkdown p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "text",
@@ -508,6 +588,11 @@
             "font_size": {
                 ".stText div": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stText div": {
+                    "font-weight": null
                 }
             }
         },
@@ -525,6 +610,11 @@
                 "div[data-testid=\"stMarkdownContainer\"]": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                "div[data-testid=\"stMarkdownContainer\"] p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "write",
@@ -540,6 +630,11 @@
             "font_size": {
                 "div[data-testid=\"stCaptionContainer\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                "div[data-testid=\"stCaptionContainer\"] p": {
+                    "font-weight": null
                 }
             }
         },
@@ -572,6 +667,11 @@
             "font_size": {
                 ".stTable p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stTable p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -610,6 +710,14 @@
                 ".stMetric div[data-testid=\"stMetricValue\"]": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stMetric label div": {
+                    "font-weight": null
+                },
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-weight": null
+                }
             }
         },
         "category": "data",
@@ -625,6 +733,11 @@
             "font_size": {
                 ".stJson span": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stJson span": {
+                    "font-weight": null
                 }
             }
         },
@@ -646,6 +759,11 @@
             "font_size": {
                 ".stCheckbox label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stCheckbox label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -683,6 +801,11 @@
                 ".stRadio label p": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stRadio label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -706,6 +829,11 @@
             "font_size": {
                 ".stMultiSelect label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stMultiSelect label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -753,6 +881,14 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stSelectbox label p": {
+                    "font-weight": null
+                },
+                ".stSelectbox div": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stSelectbox > div > div": {
                     "border-style": null
@@ -795,6 +931,14 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stButtonGroup button[kind=\"pills\"] p": {
+                    "font-weight": null
+                },
+                ".stButtonGroup label p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stButtonGroup button[kind=\"pills\"]": {
                     "border-style": null
@@ -835,6 +979,14 @@
                 },
                 ".stButtonGroup div button p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stButtonGroup label p": {
+                    "font-weight": null
+                },
+                ".stButtonGroup div button p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -882,6 +1034,17 @@
                 ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stSlider label p": {
+                    "font-weight": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "font-weight": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -913,6 +1076,17 @@
                 ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stSlider label p": {
+                    "font-weight": null
+                },
+                ".stSlider div[data-testid=\"stSliderThumbValue\"]": {
+                    "font-weight": null
+                },
+                ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -933,6 +1107,11 @@
             "font_size": {
                 ".stCheckbox label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stCheckbox label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -966,6 +1145,14 @@
                 },
                 ".stNumberInput label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stNumberInput input": {
+                    "font-weight": null
+                },
+                ".stNumberInput label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1011,6 +1198,14 @@
                 },
                 ".stDateInput label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stDateInput input": {
+                    "font-weight": null
+                },
+                ".stDateInput label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1061,6 +1256,14 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stTimeInput div[data-testid=\"stTimeInputTimeDisplay\"]": {
+                    "font-weight": null
+                },
+                ".stTimeInput label p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stTimeInput > div > div": {
                     "border-style": null
@@ -1101,6 +1304,14 @@
                 },
                 ".stTextArea label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stTextArea textarea": {
+                    "font-weight": null
+                },
+                ".stTextArea label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1151,6 +1362,14 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stTextInput input": {
+                    "font-weight": null
+                },
+                ".stTextInput label p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stTextInput > div[data-baseweb=\"input\"]": {
                     "border-style": null
@@ -1191,6 +1410,11 @@
             "font_size": {
                 ".stChatInput textarea": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stChatInput textarea": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1241,6 +1465,17 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stFileUploader label p": {
+                    "font-weight": null
+                },
+                ".stFileUploader div[data-testid=\"stFileUploaderDropzoneInstructions\"] span": {
+                    "font-weight": null
+                },
+                ".stFileUploader button": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stFileUploader section": {
                     "border-style": null
@@ -1270,6 +1505,11 @@
             "font_size": {
                 ".stColorPicker label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stColorPicker label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1318,6 +1558,14 @@
                 },
                 ".stCameraInput label p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stCameraInput": {
+                    "font-weight": null
+                },
+                ".stCameraInput label p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1375,6 +1623,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stAudioInput label p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stAudioInput > div": {
                     "border-style": null
@@ -1404,6 +1657,11 @@
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1437,6 +1695,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stAlert:has(div[data-testid=\"stAlertContentInfo\"]) > div": {
                     "border-style": null
@@ -1468,6 +1731,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stAlert:has(div[data-testid=\"stAlertContentWarning\"]) > div": {
                     "border-style": null
@@ -1497,6 +1765,11 @@
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentError\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stAlert div[data-testid=\"stAlertContentError\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1546,6 +1819,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
                     "border-style": null
@@ -1579,6 +1857,11 @@
             "font_size": {
                 ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stFormSubmitButton > button[kind=\"primaryFormSubmit\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1616,6 +1899,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"] p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stFormSubmitButton > button[kind=\"secondaryFormSubmit\"]": {
                     "border-style": null
@@ -1649,6 +1937,11 @@
             "font_size": {
                 ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stFormSubmitButton > button[kind=\"tertiaryFormSubmit\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1686,6 +1979,11 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stExpander > details > summary p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stExpander > details": {
                     "border-style": null
@@ -1716,6 +2014,11 @@
                 ".stTabs button div p": {
                     "font-size": null
                 }
+            },
+            "font_weight": {
+                ".stTabs button div p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "layout",
@@ -1736,6 +2039,11 @@
             "font_size": {
                 ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stChatMessage div[data-testid=\"stChatMessageContent\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1778,6 +2086,14 @@
                     "font-size": null
                 }
             },
+            "font_weight": {
+                ".stExpander > details > summary span": {
+                    "font-weight": null
+                },
+                ".stExpander > details > summary p": {
+                    "font-weight": null
+                }
+            },
             "border_style": {
                 ".stExpander details": {
                     "border-style": null
@@ -1812,6 +2128,11 @@
             "font_size": {
                 ".stCode code": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stCode code": {
+                    "font-weight": null
                 }
             },
             "border_style": {
@@ -1856,7 +2177,8 @@
                 }
             }
         },
-        "category": "layout"
+        "category": "layout",
+        "example": "st_yled.container(height=75, **kwargs)"
     },
     "popover": {
         "css": {
@@ -1873,6 +2195,11 @@
             "font_size": {
                 "button[data-testid=\"stPopoverButton\"] p": {
                     "font-size": null
+                }
+            },
+            "font_weight": {
+                "button[data-testid=\"stPopoverButton\"] p": {
+                    "font-weight": null
                 }
             },
             "border_style": {
