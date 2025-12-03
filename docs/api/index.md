@@ -371,47 +371,6 @@ print(f"Validation time: {metrics['validation_time']}ms")
 
 ---
 
-## Error Handling
-
-### Exception Types
-
-```python
-from st_yled.exceptions import (
-    ValidationError,
-    ComponentError,
-    CSSError,
-    ThemeError
-)
-
-try:
-    st_yled.button("Test", color="invalid-color")
-except ValidationError as e:
-    st_yled.error(f"Validation failed: {e}")
-except ComponentError as e:
-    st_yled.error(f"Component error: {e}")
-```
-
-### Error Recovery
-
-```python
-# Graceful error handling
-def safe_styling(**kwargs):
-    try:
-        return kwargs
-    except ValidationError:
-        # Return default styling on validation error
-        return {"background_color": "#f8f9fa", "color": "#2c3e50"}
-
-# Usage
-button_style = safe_styling(
-    background_color=user_selected_color,
-    color=user_selected_text_color
-)
-
-st_yled.button("Safe Button", **button_style)
-```
-
----
 
 ## Migration Guide
 
@@ -485,29 +444,6 @@ create_styled_button("Save", "success")
 create_styled_button("Cancel", "secondary")
 ```
 
-### Responsive Design Helper
-
-```python
-def responsive_container(**kwargs):
-    """Create responsive container with mobile-friendly defaults"""
-
-    defaults = {
-        "width": "100%",
-        "max_width": "1200px",
-        "margin": "0 auto",
-        "padding": "clamp(16px, 4vw, 32px)"
-    }
-
-    # Merge user styles with defaults
-    styles = {**defaults, **kwargs}
-
-    return st_yled.container(**styles)
-
-# Usage
-with responsive_container(background_color="white"):
-    st_yled.title("Responsive Content")
-```
-
 ---
 
 ## Next Steps
@@ -520,15 +456,11 @@ with responsive_container(background_color="white"):
 
 ### Advanced Topics
 
-- **[Custom Theme Development](../examples/advanced-examples/custom-themes.md)**
 - **[Performance Optimization](../examples/advanced-examples/dashboard-demo.md)**
-- **[Integration Patterns](../examples/use-cases/business-dashboard.md)**
 
 ### Community Resources
 
 - **[GitHub Repository](https://github.com/EvobyteDigitalBiology/st-styled)** - Source code and issues
-- **[Community Forum](../community/index.md)** - Discussion and support
-- **[Contributing Guide](../community/contributing.md)** - How to contribute
 
 ---
 

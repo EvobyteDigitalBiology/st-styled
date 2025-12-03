@@ -27,6 +27,7 @@ st_yled.success("✅ Operation completed successfully!", color="#155724", font_s
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -44,6 +45,7 @@ st_yled.info("ℹ️ This is important information", color="#0c5460", font_size=
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -61,6 +63,7 @@ st_yled.warning("⚠️ Please review your input", color="#856404", font_size="1
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)
@@ -78,6 +81,7 @@ st_yled.error("❌ An error occurred", color="#721c24", font_size="16px")
 
 - `color` - Text color
 - `font_size` - Font size
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color
 - `border_width` - Border width (px, rem, em, or integer as px)

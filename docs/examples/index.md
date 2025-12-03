@@ -142,16 +142,6 @@ Many examples include interactive code playgrounds where you can:
 - **Copy code snippets** directly to your projects
 - **Download complete examples** as standalone files
 
-### Before/After Comparisons
-
-See the dramatic difference st_yled makes:
-
-| Before (Standard Streamlit) | After (st_yled Enhanced) |
-|------------------------------|--------------------------|
-| ![Basic button](images/before-button.png) | ![Styled button](images/after-button.png) |
-| ![Plain table](images/before-table.png) | ![Styled table](images/after-table.png) |
-| ![Default metrics](images/before-metrics.png) | ![Enhanced metrics](images/after-metrics.png) |
-
 ---
 
 ## Featured Examples
@@ -168,43 +158,6 @@ Complete business dashboard with KPIs, charts, and interactive controls.
 - Export functionality
 
 **Technologies:** st_yled, Plotly, Pandas
-
----
-
-#### [Responsive Form System](advanced-examples/responsive-design.md)
-Mobile-friendly form with validation and styling.
-
-**Highlights:**
-- Mobile-first design
-- Real-time validation
-- Progressive enhancement
-- Accessibility features
-
-**Technologies:** st_yled, Custom CSS
-
----
-
-### 🆕 Recently Added
-
-#### [Color Theme Showcase](basic-examples/color-themes.md)
-Comprehensive demonstration of theming capabilities.
-
-**Highlights:**
-- 8 pre-built themes
-- Theme switching
-- Color palette generator
-- Export theme code
-
----
-
-#### [Data Visualization Gallery](use-cases/data-analysis.md)
-Scientific data analysis platform with enhanced charts.
-
-**Highlights:**
-- Interactive charts
-- Statistical analysis
-- Data export options
-- Collaborative features
 
 ---
 

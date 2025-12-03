@@ -1,26 +1,11 @@
 
-![st_yled Components Examples](assets/st_streamlit_styling_header.png)
+![st_yled Components Examples](assets/st_yled_font_weight_preview.png)
 
-# st_yled - Advanced Streamlit Styling
+# st_yled - Streamlit Styling Made Simple
 
 Streamlit is great - but styling individual elements is a hassle.
 
 **st_yled solves this by providing a simple way for styling Streamlit elements and components**
-
-Transform your Streamlit applications with enhanced elements and comprehensive styling capabilities. st_yled provides everything you need to create beautiful, professional-looking Streamlit apps which match your personal tone or corporate brand.
-
-
----
-
-## Key Features
-
-🎨 **CSS Integration** - Load custom CSS files and apply styles seamlessly
-
-🎯 **Global Styling** - Apply consistent styles across all elements
-
-🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
-
-⚡ **st_yled studio** - Use the accompanying app to test your layout styling
 
 ---
 
@@ -82,7 +67,6 @@ Responsive form layouts with styled input elements and validation feedback.
 ### [Data Visualization](examples/use-cases/data-analysis.md)
 Enhanced charts, tables, and data display elements with custom styling. -->
 
-
 ---
 
 ## What Makes st_yled Special?
@@ -98,6 +82,9 @@ st_yled.set("button", "background_color", "lightblue")
 # Individual styling - customize specific elements
 st_yled.button("Click me!", background_color="#4ecdc4")
 ```
+
+This works for almost all Streamlit elements!
+
 
 ### st_yled studio: Try and optimize your Streamlit styling
 
@@ -126,14 +113,17 @@ Ready to transform your Streamlit apps? Choose your learning path:
 
 ---
 
-## Project Stats
+## Key Features
 
-- **44+ Enhanced Streamlit Elements** with styling capabilities
-- **Comprehensive Validation** for 50+ CSS properties
-- **Production Tested** in enterprise applications
-- **Active Development** with regular updates and new features
-- **MIT Licensed** for commercial and open source use
+🎨 **CSS Integration** - Load custom CSS files and apply styles seamlessly
 
+🎯 **Global Styling** - Apply consistent styles across all elements
+
+🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
+
+⚡ **st_yled studio** - Use the accompanying app to test your layout styling
+
+📄 **MIT Licensed** for commercial and open source use
 
 ---
 
