@@ -401,6 +401,11 @@ def time_input(*args, **kwargs):
     return st.time_input(*args, **kwargs)
 
 
+def datetime_input(*args, **kwargs):
+    kwargs = styler.apply_component_css("datetime_input", kwargs)
+    return st.datetime_input(*args, **kwargs)
+
+
 def text_area(*args, **kwargs):
     kwargs = styler.apply_component_css("text_area", kwargs)
     return st.text_area(*args, **kwargs)
