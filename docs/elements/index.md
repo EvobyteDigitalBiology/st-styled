@@ -81,6 +81,8 @@ Interactive widgets for user input with enhanced visual styling.
 
 - [`time_input`](input-elements.md#time_input)
 
+- [`datetime_input`](input-elements.md#datetime_input)
+
 - [`color_picker`](input-elements.md#color_picker)
 
 - [`file_uploader`](input-elements.md#file_uploader)

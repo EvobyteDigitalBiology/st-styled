@@ -448,6 +448,32 @@ time = st_yled.time_input(
 
 ---
 
+### datetime_input
+**Streamlit equivalent:** `st.datetime_input()`
+
+Date and time picker with custom styling.
+
+```python
+datetime = st_yled.datetime_input(
+    "Select date and time",
+    background_color="#ffffff",
+    border_color="#007bff"
+)
+```
+
+**Supported Styling Properties:**
+
+- `color` - Text color (hex, rgb, named colors)
+- `background_color` - Background color (hex, rgb, named colors)
+- `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `border_style` - Border style (solid, dashed, dotted, none)
+- `border_color` - Border color (hex, rgb, named colors)
+- `border_width` - Border width (px, rem, em, or integer as px)
+
+---
+
+
 ## Specialized Input Components
 
 ### color_picker
