@@ -494,17 +494,17 @@
     "title": {
         "css": {
             "color": {
-                "h1": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h1": {
                     "color": null
                 }
             },
             "font_size": {
-                "h1": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h1": {
                     "font-size": null
                 }
             },
             "font_weight": {
-                "h1": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h1": {
                     "font-weight": null
                 }
             }
@@ -515,17 +515,17 @@
     "header": {
         "css": {
             "color": {
-                "h2": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h2": {
                     "color": null
                 }
             },
             "font_size": {
-                "h2": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h2": {
                     "font-size": null
                 }
             },
             "font_weight": {
-                "h2": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h2": {
                     "font-weight": null
                 }
             }
@@ -536,17 +536,17 @@
     "subheader": {
         "css": {
             "color": {
-                "h3": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h3": {
                     "color": null
                 }
             },
             "font_size": {
-                "h3": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h3": {
                     "font-size": null
                 }
             },
             "font_weight": {
-                "h3": {
+                "div[data-testid=\"stHeadingWithActionElements\"] > h3": {
                     "font-weight": null
                 }
             }
