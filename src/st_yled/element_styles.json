@@ -1283,6 +1283,59 @@
         "category": "input",
         "example": "st_yled.time_input(\"Pick Time\", **kwargs)"
     },
+    "datetime_input": {
+        "css": {
+            "color": {
+                ".stDateTimeInput input": {
+                    "color": null
+                },
+                ".stDateTimeInput label p": {
+                    "color": null
+                }
+            },
+            "background_color": {
+                ".stDateTimeInput > div > div[data-baseweb=\"input\"]": {
+                    "background-color": null
+                },
+                ".stDateTimeInput > div > div button": {
+                    "background-color": null
+                }
+            },
+            "font_size": {
+                ".stDateTimeInput input": {
+                    "font-size": null
+                },
+                ".stDateTimeInput label p": {
+                    "font-size": null
+                }
+            },
+            "font_weight": {
+                ".stDateTimeInput input": {
+                    "font-weight": null
+                },
+                ".stDateTimeInput label p": {
+                    "font-weight": null
+                }
+            },
+            "border_style": {
+                ".stDateTimeInput > div > div[data-baseweb=\"input\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                ".stDateTimeInput > div > div[data-baseweb=\"input\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                ".stDateTimeInput > div > div[data-baseweb=\"input\"]": {
+                    "border-width": null
+                }
+            }
+        },
+        "category": "input",
+        "example": "st_yled.datetime_input(\"Pick Date and Time\", **kwargs)"
+    },
     "text_area": {
         "css": {
             "background_color": {
