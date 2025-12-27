@@ -759,6 +759,12 @@
             "font_size": {
                 ".stCheckbox label p": {
                     "font-size": null
+                },
+                ".stCheckbox > label": {
+                    "align-items": "center"
+                },
+                ".stCheckbox > label > span": {
+                    "margin": "0px"
                 }
             },
             "font_weight": {
@@ -1100,13 +1106,19 @@
                 }
             },
             "color": {
-                ".stCheckbox label p": {
+                ".stCheckbox > label p": {
                     "color": null
                 }
             },
             "font_size": {
-                ".stCheckbox label p": {
+                ".stCheckbox > label p": {
                     "font-size": null
+                },
+                ".stCheckbox > label": {
+                    "align-items": "center"
+                },
+                ".stCheckbox > label > div": {
+                    "margin": "0px"
                 }
             },
             "font_weight": {
@@ -2051,7 +2063,33 @@
                 ".stExpander > details": {
                     "border-width": null
                 }
+            },
+            "padding" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding": null
+                }
+            },
+            "padding_left" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-left": null
+                }
+            },
+            "padding_right" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-right": null
+                }
+            },
+            "padding_top" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-top": null
+                }
+            },
+            "padding_bottom" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-bottom": null
+                }
             }
+
         },
         "category": "layout",
         "example": "st_yled.expander(\"Click to expand\", **kwargs)"
@@ -2230,6 +2268,31 @@
             "border_width": {
                 "": {
                     "border-width": null
+                }
+            },
+            "padding" : {
+                "": {
+                    "padding": null
+                }
+            },
+            "padding_left" : {
+                "": {
+                    "padding-left": null
+                }
+            },
+            "padding_right" : {
+                "": {
+                    "padding-right": null
+                }
+            },
+            "padding_top" : {
+                "": {
+                    "padding-top": null
+                }
+            },
+            "padding_bottom" : {
+                "": {
+                    "padding-bottom": null
                 }
             }
         },
