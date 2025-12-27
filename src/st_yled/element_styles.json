@@ -718,6 +718,36 @@
                 ".stMetric div[data-testid=\"stMetricValue\"]": {
                     "font-weight": null
                 }
+            },
+            "label_color": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "font-weight": null
+                }
+            },
+            "value_color": {
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "color": null
+                }
+            },
+            "value_font_size": {
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-size": null
+                }
+            },
+            "value_font_weight": {
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-weight": null
+                }
             }
         },
         "category": "data",
