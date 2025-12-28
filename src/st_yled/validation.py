@@ -337,6 +337,49 @@ class CSSValidator:
             return False
         return value.strip().lower() in CSSValidator.POSITION_VALUES
 
+    @staticmethod
+    def is_valid_padding(value: str, allow_multiple: bool = True) -> bool:
+        """Validate CSS padding value.
+
+        Args:
+            value: The padding value to validate
+            allow_multiple: If True, allows 1-4 space-separated values (for shorthand padding)
+                          If False, only allows single value (for padding_left, etc.)
+
+        Returns:
+            True if valid, False otherwise
+        """
+        if not isinstance(value, str):
+            return False
+
+        value = value.strip()
+
+        # Split by spaces to handle shorthand syntax
+        parts = value.split()
+
+        # Check number of values
+        if not allow_multiple and len(parts) > 1:
+            return False
+
+        if allow_multiple and len(parts) > 4:
+            return False
+
+        if len(parts) == 0:
+            return False
+
+        # Validate each part individually
+        for part in parts:
+            # Check for 0 (unitless)
+            if part == "0":
+                continue
+
+            # Check for number with valid unit (px, rem, em)
+            padding_pattern = re.compile(r"^-?\d*\.?\d+(px|rem|em)$")
+            if not padding_pattern.match(part):
+                return False
+
+        return True
+
 
 class StyleValidator:
     """Main styling parameter validator."""
@@ -352,6 +395,13 @@ class StyleValidator:
         "font_weight": CSSValidator.is_valid_font_weight,
         "border_width": CSSValidator.is_valid_length,
         "border_style": CSSValidator.is_valid_border_style,
+        # Padding properties
+        "padding": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=True),
+        "padding_left": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "padding_right": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "padding_top": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "padding_bottom": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "height": CSSValidator.is_valid_length,
     }
 
     # Common property aliases/variations
@@ -366,6 +416,14 @@ class StyleValidator:
     PROPERTY_DEFAULT_UNITS = {
         "font_size": "px",
         "border_width": "px",
+        "padding": "px",
+        "padding_left": "px",
+        "padding_right": "px",
+        "padding_top": "px",
+        "padding_bottom": "px",
+        "label_font_size": "px",
+        "value_font_size": "px",
+        "height": "px",
     }
 
     @classmethod
@@ -440,7 +498,22 @@ class StyleValidator:
                 f"Invalid length value '{prop_value}' for property '{prop_name}'. "
                 f"Expected formats: number with unit (e.g., '10px', '2em', '50%') or '0'."
             )
-        elif prop_name in ["padding", "margin"]:
+        elif prop_name == "padding":
+            return (
+                f"Invalid padding value '{prop_value}' for property '{prop_name}'. "
+                f"Expected formats: single value ('8px', '1rem', '2em'), "
+                f"two values ('8px 16px' for top-bottom, left-right), "
+                f"three values ('25px 50px 75px' for top, right-left, bottom), "
+                f"or four values ('8px 16px 24px 32px' for top, right, bottom, left). "
+                f"Supported units: px, rem, em. Integers are auto-converted to px."
+            )
+        elif prop_name in ["padding_left", "padding_right", "padding_top", "padding_bottom"]:
+            return (
+                f"Invalid padding value '{prop_value}' for property '{prop_name}'. "
+                f"Expected format: single value with unit ('8px', '1rem', '2em'). "
+                f"Supported units: px, rem, em. Integers are auto-converted to px."
+            )
+        elif prop_name in ["margin"]:
             return (
                 f"Invalid length value '{prop_value}' for property '{prop_name}'. "
                 f"Expected formats: single value ('10px') or space-separated values ('10px 20px')."
@@ -654,6 +727,8 @@ def validate_container_width(width_value: Any) -> bool:
     if isinstance(width_value, int):
         return True
     elif width_value == "stretch":
+        return True
+    elif width_value == "content":
         return True
     else:
         return False
