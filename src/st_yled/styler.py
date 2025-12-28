@@ -16,26 +16,71 @@ dirpath = Path(__file__).parent
 with (dirpath / "element_styles.json").open() as f:
     ELEMENT_STYLES = json.load(f)
 
+def extract_caller_path_hash_init() -> str:
 
-def extract_caller_path_hash() -> str:
     traceback_stack = traceback.extract_stack()
 
-    exec_line = False
     caller_path = ""
     # Traverse traceback in reverse order
     for line in traceback_stack[::-1]:
-        if exec_line:
+        if isinstance(line.line, str) and (".init()" in line.line):
             caller_path = line.filename
             break
-        if isinstance(line.line, str) and line.line.startswith(
-            "exec(code, module.__dict__)"
-        ):
-            exec_line = True
 
     if caller_path == "":
         warnings.warn("Could not extract caller path from traceback.")
 
     return str(hash(caller_path))
+
+def extract_caller_path_hash(offset: int = 2) -> str:
+    """
+        offet: Number of stack frames to go up from the generate_component_key call
+        Typically 2 for st_yled elements and 1 for custom components
+    """
+
+    traceback_stack = traceback.extract_stack()
+
+    caller_path = ""
+    target_ix = None
+    # Traverse traceback in reverse order
+    for ix, line in enumerate(traceback_stack[::-1]):
+        # Plus 2 upstream to get to caller of generate_component_key for st_yled elements
+        if isinstance(line.line, str) and ("generate_component_key" in line.line):
+            target_ix = ix + offset
+
+        if ix == target_ix:
+            caller_path = line.filename
+            break
+
+    if caller_path == "":
+        warnings.warn("Could not extract caller path from traceback.")
+
+    return str(hash(caller_path))
+
+    # traceback_stack = traceback.extract_stack()
+
+    # exec_line = False
+    # caller_path = ""
+    # # Traverse traceback in reverse order
+    # for line in traceback_stack[::-1]:
+
+    #     # if isinstance(line.line, str):
+    #     #     print(f"LINE: {line.line}")
+    #     #     print(f"FILENAME: {line.filename}")
+
+    #     if exec_line:
+    #         caller_path = line.filename
+    #         #print(f"CALLER PATH: {caller_path}")
+    #         break
+    #     if isinstance(line.line, str) and line.line.startswith(
+    #         "exec(code, module.__dict__)"
+    #     ):
+    #         exec_line = True
+
+    # if caller_path == "":
+    #     warnings.warn("Could not extract caller path from traceback.")
+
+    # return str(hash(caller_path))
 
 
 def get_element_style(element_name: str) -> dict:
@@ -198,10 +243,13 @@ def get_element_variants(element_name: str) -> list[str]:
     return variants
 
 
-def generate_component_key() -> str:
+def generate_component_key(type: str = 'element') -> str:
     """Generate a unique component key for st_yled components."""
 
-    caller_hash = extract_caller_path_hash()
+    if type == 'element':
+        caller_hash = extract_caller_path_hash()
+    elif type == 'custom_component':
+        caller_hash = extract_caller_path_hash(offset=1)
 
     if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
         error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
