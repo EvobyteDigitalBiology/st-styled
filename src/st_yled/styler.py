@@ -10,11 +10,8 @@ import streamlit as st
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
 from st_yled.validation import ValidationError  # type: ignore
+from st_yled import constants  # type: ignore
 
-dirpath = Path(__file__).parent
-
-with (dirpath / "element_styles.json").open() as f:
-    ELEMENT_STYLES = json.load(f)
 
 def extract_caller_path_hash_init() -> str:
 
@@ -101,12 +98,12 @@ def get_element_style(element_name: str) -> dict:
                     "background-color": None
     """
 
-    return ELEMENT_STYLES[element_name]
+    return constants.ELEMENT_STYLES[element_name]
 
 
 def get_stylable_elements(include_variants: bool = True) -> list[str]:
     """
-    Get a list of all stylable component names from ELEMENT_STYLES.
+    Get a list of all stylable component names from constants.ELEMENT_STYLES.
 
     Args:
         include_variants: If True, includes variants like 'button_primary', 'button_secondary'.
@@ -122,12 +119,12 @@ def get_stylable_elements(include_variants: bool = True) -> list[str]:
         ['button', 'button_primary', 'button_secondary', 'caption', ...]
     """
     if include_variants:
-        return sorted(ELEMENT_STYLES.keys())
+        return sorted(constants.ELEMENT_STYLES.keys())
 
     # Filter out variants ending with _primary, _secondary, _tertiary
     variant_pattern = re.compile(r".*_(primary|secondary|tertiary)$")
     base_elements = [
-        key for key in ELEMENT_STYLES.keys() if not variant_pattern.match(key)
+        key for key in constants.ELEMENT_STYLES.keys() if not variant_pattern.match(key)
     ]
     return sorted(base_elements)
 
@@ -166,7 +163,7 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
         }
     """
     # Get all elements (always include variants to find them)
-    all_elements = sorted(ELEMENT_STYLES.keys())
+    all_elements = sorted(constants.ELEMENT_STYLES.keys())
 
     # Group by category and base element
     categories: dict[str, dict[str, list[str]]] = {}
@@ -177,10 +174,10 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
     )
 
     for element in all_elements:
-        if element not in ELEMENT_STYLES:
+        if element not in constants.ELEMENT_STYLES:
             continue
 
-        category = ELEMENT_STYLES[element].get("category", "unknown")
+        category = constants.ELEMENT_STYLES[element].get("category", "unknown")
 
         # Check if this is a variant or base element
         match = variant_pattern.match(element)
@@ -228,11 +225,11 @@ def get_element_variants(element_name: str) -> list[str]:
         A list of variant names (e.g., ['primary', 'secondary', 'tertiary']).
     """
     variants = []
-    if element_name not in ELEMENT_STYLES:
+    if element_name not in constants.ELEMENT_STYLES:
         value_error_msg = f"Element '{element_name}' not found in stylable elements."
         raise ValueError(value_error_msg)
 
-    for element in ELEMENT_STYLES:
+    for element in constants.ELEMENT_STYLES:
         if element.startswith(f"{element_name}_"):
             match = re.match(
                 rf"{re.escape(element_name)}_(primary|secondary|tertiary)$", element
@@ -270,9 +267,9 @@ def get_css_properties_from_args(
 
     css_properties: dict[str, dict[str, str]] = {}
 
-    if component_type in ELEMENT_STYLES:
+    if component_type in constants.ELEMENT_STYLES:
         # Return dict of css properties and selectors for component
-        style_mappings = ELEMENT_STYLES[component_type]["css"]
+        style_mappings = constants.ELEMENT_STYLES[component_type]["css"]
 
         args_to_remove = []
 
