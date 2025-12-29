@@ -1,3 +1,4 @@
+import colorsys
 import json
 import re
 from st_yled import constants
@@ -233,3 +234,114 @@ def to_hex(color: str) -> str:
         "rgb(r,g,b), rgba(r,g,b,a), hsl(h,s%,l%), hsla(h,s%,l%,a), "
         "or CSS color names."
     )
+
+
+def adjust_lightness(hex_color: str, factor: float) -> str:
+    """
+    Adjust the lightness of a hex color by a given factor.
+
+    Args:
+        color: Hex color string (e.g., "#FF0000" or "#FF0000FF")
+        factor: Amount to adjust lightness (-1.0 to 1.0).
+               Negative values decrease lightness, positive values increase it.
+               For example, -0.15 decreases lightness by 15%.
+
+    Returns:
+        Hex color string with adjusted lightness, preserving alpha if present
+
+    Raises:
+        InvalidColorError: If color format is invalid or factor is out of range
+
+    Examples:
+        >>> adjust_lightness("#FF0000", -0.15)
+        "#D90000"
+        >>> adjust_lightness("#FF0000FF", -0.15)
+        "#D90000FF"
+        >>> adjust_lightness("#0080FF", 0.2)
+        "#66B3FF"
+    """
+    if not -1.0 <= factor <= 1.0:
+        raise InvalidColorError(f"Factor must be in range -1.0 to 1.0: factor={factor}")
+
+    # Remove the # prefix
+    hex_color = hex_color.lstrip('#')
+
+    # Check if alpha channel is present
+    has_alpha = len(hex_color) == 8
+
+    # Extract RGB and optional alpha
+    if has_alpha:
+        r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+        alpha_hex = hex_color[6:8]
+    else:
+        r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+        alpha_hex = None
+
+    # Convert RGB to HLS (Hue, Lightness, Saturation)
+    h, l, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+
+    # Adjust lightness
+    l = max(0, min(1, l + factor))
+
+    # Convert back to RGB
+    r, g, b = colorsys.hls_to_rgb(h, l, s)
+
+    # Convert to hex
+    result = f"#{int(r * 255):02X}{int(g * 255):02X}{int(b * 255):02X}"
+
+    # Append alpha if present
+    if alpha_hex:
+        result += alpha_hex
+
+    return result
+
+
+def update_opacity(color: str, factor: float) -> str:
+    """
+    Adjust the opacity (alpha) of a hex color by a given factor.
+
+    Args:
+        color: Hex color string (e.g., "#FF0000" or "#FF0000FF")
+        factor: Amount to adjust opacity (-1.0 to 1.0).
+               Positive values increase opacity, negative values decrease it.
+               For example, 0.2 increases opacity by 20%, -0.3 decreases by 30%.
+
+    Returns:
+        Hex color string with alpha channel (e.g., "#FF000099")
+
+    Raises:
+        InvalidColorError: If color format is invalid or factor is out of range
+
+    Examples:
+        >>> update_opacity("#FF0000", 0.2)
+        "#FF0000FF"
+        >>> update_opacity("#FF000080", 0.2)
+        "#FF0000A0"
+        >>> update_opacity("#FF000080", -0.2)
+        "#FF000060"
+    """
+
+    if not -1.0 <= factor <= 1.0:
+        raise InvalidColorError(f"Factor must be in range -1.0 to 1.0: factor={factor}")
+
+    # Remove the # prefix
+    hex_color = color.lstrip('#')
+
+    # Extract RGB and existing alpha
+    if len(hex_color) == 8:
+        rgb_hex = hex_color[:6]
+        current_alpha = int(hex_color[6:8], 16) / 255
+    elif len(hex_color) == 6:
+        rgb_hex = hex_color
+        current_alpha = 1.0  # Fully opaque if no alpha specified
+    else:
+        raise InvalidColorError(f"Invalid hex color format: #{hex_color}")
+
+    # Adjust opacity and clamp to valid range
+    new_opacity = max(0.0, min(1.0, current_alpha + factor))
+
+    # Convert to hex
+    alpha_value = round(new_opacity * 255)
+    alpha_hex = f"{alpha_value:02X}"
+
+    return f"#{rgb_hex.upper()}{alpha_hex}"
