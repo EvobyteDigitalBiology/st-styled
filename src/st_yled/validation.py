@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import warnings
 import os
 
+from st_yled import constants
 
 class ValidationError(ValueError):
     """Raised when validation fails for styling parameters."""
@@ -17,245 +18,6 @@ class ValidationWarning(UserWarning):
 class CSSValidator:
     """Comprehensive CSS property value validator."""
 
-    # Common CSS color formats (improved patterns)
-    COLOR_PATTERNS = {
-        "hex_short": re.compile(r"^#[0-9a-fA-F]{3}$"),
-        "hex_long": re.compile(r"^#[0-9a-fA-F]{6}$"),
-        "hex_long_alpha": re.compile(r"^#[0-9a-fA-F]{8}$"),
-        "rgb": re.compile(
-            r"^rgb\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*\)$"
-        ),
-        "rgba": re.compile(
-            r"^rgba\(\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$"
-        ),
-        "hsl": re.compile(r"^hsl\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)$"),
-        "hsla": re.compile(
-            r"^hsla\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*,\s*(0(\.\d+)?|1(\.0)?)\s*\)$"
-        ),
-    }
-
-    # CSS named colors (expanded set including CSS keywords) CSS4 colors
-    NAMED_COLORS = {
-        "aliceblue",
-        "antiquewhite",
-        "aqua",
-        "aquamarine",
-        "azure",
-        "beige",
-        "bisque",
-        "black",
-        "blanchedalmond",
-        "blue",
-        "blueviolet",
-        "brown",
-        "burlywood",
-        "cadetblue",
-        "chartreuse",
-        "chocolate",
-        "coral",
-        "cornflowerblue",
-        "cornsilk",
-        "crimson",
-        "cyan",
-        "darkblue",
-        "darkcyan",
-        "darkgoldenrod",
-        "darkgray",
-        "darkgreen",
-        "darkgrey",
-        "darkkhaki",
-        "darkmagenta",
-        "darkolivegreen",
-        "darkorange",
-        "darkorchid",
-        "darkred",
-        "darksalmon",
-        "darkseagreen",
-        "darkslateblue",
-        "darkslategray",
-        "darkslategrey",
-        "darkturquoise",
-        "darkviolet",
-        "deeppink",
-        "deepskyblue",
-        "dimgray",
-        "dimgrey",
-        "dodgerblue",
-        "firebrick",
-        "floralwhite",
-        "forestgreen",
-        "fuchsia",
-        "gainsboro",
-        "ghostwhite",
-        "gold",
-        "goldenrod",
-        "gray",
-        "green",
-        "greenyellow",
-        "grey",
-        "honeydew",
-        "hotpink",
-        "indianred",
-        "indigo",
-        "ivory",
-        "khaki",
-        "lavender",
-        "lavenderblush",
-        "lawngreen",
-        "lemonchiffon",
-        "lightblue",
-        "lightcoral",
-        "lightcyan",
-        "lightgoldenrodyellow",
-        "lightgray",
-        "lightgreen",
-        "lightgrey",
-        "lightpink",
-        "lightsalmon",
-        "lightseagreen",
-        "lightskyblue",
-        "lightslategray",
-        "lightslategrey",
-        "lightsteelblue",
-        "lightyellow",
-        "lime",
-        "limegreen",
-        "linen",
-        "magenta",
-        "maroon",
-        "mediumaquamarine",
-        "mediumblue",
-        "mediumorchid",
-        "mediumpurple",
-        "mediumseagreen",
-        "mediumslateblue",
-        "mediumspringgreen",
-        "mediumturquoise",
-        "mediumvioletred",
-        "midnightblue",
-        "mintcream",
-        "mistyrose",
-        "moccasin",
-        "navajowhite",
-        "navy",
-        "oldlace",
-        "olive",
-        "olivedrab",
-        "orange",
-        "orangered",
-        "orchid",
-        "palegoldenrod",
-        "palegreen",
-        "paleturquoise",
-        "palevioletred",
-        "papayawhip",
-        "peachpuff",
-        "peru",
-        "pink",
-        "plum",
-        "powderblue",
-        "purple",
-        "red",
-        "rosybrown",
-        "royalblue",
-        "saddlebrown",
-        "salmon",
-        "sandybrown",
-        "seagreen",
-        "seashell",
-        "sienna",
-        "silver",
-        "skyblue",
-        "slateblue",
-        "slategray",
-        "slategrey",
-        "snow",
-        "springgreen",
-        "steelblue",
-        "tan",
-        "teal",
-        "thistle",
-        "tomato",
-        "turquoise",
-        "violet",
-        "wheat",
-        "white",
-        "whitesmoke",
-        "yellow",
-        "yellowgreen",
-        "transparent",
-    }
-
-    # CSS units
-    LENGTH_UNITS = {
-        "px",
-        "em",
-        "rem",
-        "%",
-        "vh",
-        "vw",
-        "pt",
-        "cm",
-        "mm",
-        "in",
-        "pc",
-        "ex",
-        "ch",
-    }
-
-    # CSS border styles
-    BORDER_STYLES = {
-        "none",
-        "solid",
-        "dashed",
-        "dotted",
-        "double",
-        "groove",
-        "ridge",
-        "inset",
-        "outset",
-    }
-
-    # CSS font weights
-    FONT_WEIGHTS = {
-        "thin": "100",
-        "extra-light": "200",
-        "light": "300",
-        "normal": "400",
-        "medium": "500",
-        "semi-bold": "600",
-        "bold": "700",
-        "extra-bold": "800",
-        "black": "900",
-        "100": "100",
-        "200": "200",
-        "300": "300",
-        "400": "400",
-        "500": "500",
-        "600": "600",
-        "700": "700",
-        "800": "800",
-        "900": "900",
-    }
-
-    # CSS text align values
-    TEXT_ALIGN_VALUES = {"left", "center", "right", "justify", "start", "end"}
-
-    # CSS display values
-    DISPLAY_VALUES = {
-        "block",
-        "inline",
-        "inline-block",
-        "flex",
-        "inline-flex",
-        "grid",
-        "inline-grid",
-        "none",
-    }
-
-    # CSS position values
-    POSITION_VALUES = {"static", "relative", "absolute", "fixed", "sticky"}
-
     @staticmethod
     def is_valid_color(value: str) -> bool:
         """Validate CSS color value."""
@@ -265,11 +27,11 @@ class CSSValidator:
         value = value.strip().lower()
 
         # Check named colors
-        if value in CSSValidator.NAMED_COLORS:
+        if value in constants.CSS_NAMED_COLORS:
             return True
 
         # Check color patterns
-        for pattern in CSSValidator.COLOR_PATTERNS.values():
+        for pattern in constants.COLOR_PATTERNS.values():
             if pattern.match(value):
                 return True
 
@@ -295,7 +57,7 @@ class CSSValidator:
 
         # Check for number with unit
         length_pattern = re.compile(
-            r"^-?\d*\.?\d+(" + "|".join(CSSValidator.LENGTH_UNITS) + ")$"
+            r"^-?\d*\.?\d+(" + "|".join(constants.CSS_LENGTH_UNITS) + ")$"
         )
         return bool(length_pattern.match(value))
 
@@ -307,35 +69,35 @@ class CSSValidator:
 
         value = value.strip()
 
-        return value.lower() in CSSValidator.BORDER_STYLES
+        return value.lower() in constants.CSS_BORDER_STYLES
 
     @staticmethod
     def is_valid_font_weight(value: str) -> bool:
         """Validate CSS font-weight value."""
         if not isinstance(value, str):
             return False
-        return value.strip().lower() in CSSValidator.FONT_WEIGHTS
+        return value.strip().lower() in constants.CSS_FONT_WEIGHTS
 
     @staticmethod
     def is_valid_text_align(value: str) -> bool:
         """Validate CSS text-align value."""
         if not isinstance(value, str):
             return False
-        return value.strip().lower() in CSSValidator.TEXT_ALIGN_VALUES
+        return value.strip().lower() in constants.CSS_TEXT_ALIGN_VALUES
 
     @staticmethod
     def is_valid_display(value: str) -> bool:
         """Validate CSS display value."""
         if not isinstance(value, str):
             return False
-        return value.strip().lower() in CSSValidator.DISPLAY_VALUES
+        return value.strip().lower() in constants.CSS_DISPLAY_VALUES
 
     @staticmethod
     def is_valid_position(value: str) -> bool:
         """Validate CSS position value."""
         if not isinstance(value, str):
             return False
-        return value.strip().lower() in CSSValidator.POSITION_VALUES
+        return value.strip().lower() in constants.CSS_POSITION_VALUES
 
     @staticmethod
     def is_valid_padding(value: str, allow_multiple: bool = True) -> bool:
@@ -436,9 +198,9 @@ class StyleValidator:
     @classmethod
     def normalize_font_weight(cls, prop_name: str, prop_value: Any) -> str:
         """Normalize font-weight values."""
-        if (prop_name == "font_weight") and (prop_value in CSSValidator.FONT_WEIGHTS):
+        if (prop_name == "font_weight") and (prop_value in constants.CSS_FONT_WEIGHTS):
             # Map font weight names to numeric
-            return CSSValidator.FONT_WEIGHTS[prop_value]
+            return constants.CSS_FONT_WEIGHTS[prop_value]
 
         return prop_value
 
@@ -531,7 +293,7 @@ class StyleValidator:
         elif prop_name == "font_weight":
             return (
                 f"Invalid font-weight value '{prop_value}'. "
-                f"Expected: {', '.join(sorted(CSSValidator.FONT_WEIGHTS.keys()))}."
+                f"Expected: {', '.join(sorted(constants.CSS_FONT_WEIGHTS.keys()))}."
             )
         else:
             return f"Invalid value '{prop_value}' for CSS property '{prop_name}'."
