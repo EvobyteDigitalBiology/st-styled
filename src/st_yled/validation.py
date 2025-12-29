@@ -344,6 +344,12 @@ class StyleValidator:
             }:
                 continue
 
+            # Exceptions for special cases of css keywords like height and width, which can be set for components like
+            if component_type in ['container', 'text_area', 'code'] and prop_name == "height":
+                continue
+
+            # TODO Add width when needed
+
             # Check property aliases
             prop_name = cls.PROPERTY_ALIASES.get(prop_name, prop_name)
 
