@@ -4,6 +4,7 @@ This module provides a sticky header component that remains fixed at the top of 
 Streamlit app while scrolling. The header supports customizable styling including
 height, background color, alignment, and padding.
 """
+from typing import Literal
 
 import streamlit as st
 
@@ -16,38 +17,12 @@ from st_yled.validation import ValidationError  # type: ignore
 
 __version__ = "0.1.0"
 
-COMPONENT_CSS = """
-BACKGROUND_CONTAINER_KEY
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999991;
-    width: 100%;
-    border-radius: 0px;
-    height: HEIGHT_VALUE !important;
-    min-height: HEIGHT_VALUE !important;
-}
-MAIN_CONTAINER_KEY
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999992;
-    height: HEIGHT_VALUE !important;
-    min-height: HEIGHT_VALUE !important;
-    background-color: transparent;
-    margin-right: 16px;
-}
-"""
-
-
 def sticky_header(height: int | str = '56px',
-                  background_color: str = "#eef0f5",
-                  vertical_alignment: str = "center",
-                  horizontal_alignment: str = "left",
+                  background_color: str | None = None,
+                  vertical_alignment: Literal["top", "center", "bottom"] = "center",
+                  horizontal_alignment: Literal["left", "center", "right"] = "left",
                   padding: str = "0px 32px",
-                  gap="small",
+                  gap: Literal["small", "medium", "large"] = "small",
                   key: str | None = None) -> ste.container:
     """Create a sticky header container that remains fixed at the top of the page.
 
@@ -58,8 +33,9 @@ def sticky_header(height: int | str = '56px',
     Args:
         height (int | str, optional): Height of the header. Can be an integer (pixels) or
             a CSS value string. Defaults to '56px'.
-        background_color (str, optional): Background color of the header. Accepts CSS color
-            values (hex, rgb, named colors). Defaults to "#eef0f5".
+        background_color (str | None, optional): Background color of the header. Accepts CSS color
+            values (hex, rgb, named colors). Defaults to None, in which case the theme's primary color
+            is used.
         vertical_alignment (str, optional): Vertical alignment of content within the header.
             Options: "top", "center", "bottom". Defaults to "center".
         horizontal_alignment (str, optional): Horizontal alignment of content within the header.
@@ -89,6 +65,8 @@ def sticky_header(height: int | str = '56px',
     bypass_validation = ValidationConfig.is_validation_bypassed()
     strict_mode = ValidationConfig.get_strict_mode()
 
+    background_color = background_color or st.get_option("theme.primaryColor") or "#ff4b4b"
+
     # run validation for vertical alignment and background color
     css_kwargs = {
         "height": height,
@@ -98,7 +76,6 @@ def sticky_header(height: int | str = '56px',
 
     # Validate styling parameters if not bypassed
     if not bypass_validation:
-        # TODO: Cache validation results
         css_kwargs = validate_styling_kwargs(
             component_type='sticky_header',
             kwargs=css_kwargs,
@@ -110,17 +87,33 @@ def sticky_header(height: int | str = '56px',
     background_color = css_kwargs["background_color"]
     padding = css_kwargs["padding"]
 
-    if key is None:
-        key = generate_component_key(type='custom_component')
+    key = key or generate_component_key(type='custom_component')
     header_bg_key = f"{key}-bg"
 
-    st.html(f"""<style>
-            {COMPONENT_CSS.
-                    replace('BACKGROUND_CONTAINER_KEY', f'.st-key-{header_bg_key}').
-                    replace('HEIGHT_VALUE', height).
-                    replace('MAIN_CONTAINER_KEY', f'.st-key-{key}')
-            }
-            </style>""")
+    st.html(f"""
+    <style>
+    .st-key-{header_bg_key} {{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999991;
+        width: 100%;
+        border-radius: 0px;
+        height: {height} !important;
+        min-height: {height} !important;
+    }}
+
+    .st-key-{key} {{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999992;
+        height: {height} !important;
+        min-height: {height} !important;
+        background-color: transparent;
+    }}
+    </style>
+    """)
 
     sticky_header_bg = ste.container(
         key=header_bg_key,
