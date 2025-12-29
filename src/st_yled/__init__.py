@@ -2,23 +2,34 @@
 
 from pathlib import Path
 from typing import Optional
+import sys
 
 import streamlit as st
 
 from st_yled import styler  # type: ignore
 from st_yled.elements import *  # type: ignore # noqa: F403
 
+# Import custom components
+from st_yled.components.streamlit_split_button import split_button  # type: ignore
+from st_yled.components.streamlit_redirect import redirect  # type: ignore
+from st_yled.components.sticky_header import sticky_header  # type: ignore
+from st_yled.components.badge_card_one import badge_card_one  # type: ignore
+from st_yled.components.image_card_one import image_card_one  # type: ignore
+
+
 __version__ = "0.1.0"
 
 
-def init(css_path: Optional[str] = None) -> None:
+def init(css_path: Optional[str] = None, reset_tracebacklimit: bool = True) -> None:
     """Initialize st_yled with CSS styling."""
 
-    caller_hash = styler.extract_caller_path_hash()
+    if reset_tracebacklimit:
+        sys.tracebacklimit = 1000
+
+    caller_hash = styler.extract_caller_path_hash_init()
 
     # Set session_state
     st.session_state[f"st-yled-comp-{caller_hash}-counter"] = 0
-
     cwd = Path.cwd()
 
     if css_path:
