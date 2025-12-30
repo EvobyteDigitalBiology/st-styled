@@ -258,8 +258,6 @@ def generate_component_key(type: str = 'element') -> str:
     elif type == 'custom_component':
         caller_hash = extract_caller_path_hash(offset=1)
 
-    print(caller_hash)
-
     if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
         error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
         raise ValidationError(error_msg)
@@ -285,28 +283,44 @@ def get_css_properties_from_args(
 
         args_to_remove = []
 
-        # Loop over component arguments and check if those are in style mappings
+        # Separate args into priority and non-priority
+        priority_args = []
+        non_priority_args = []
+
         for comp_arg in component_kwargs:
-            # Comp arg eg.g background_color
             if comp_arg in style_mappings:
                 args_to_remove.append(comp_arg)
-                # Get css selectors for css property as a dict
-                css_for_selectors = style_mappings[comp_arg]
+                # Check if arg contains any priority tag
+                has_priority = any(
+                    priority_tag in comp_arg
+                    for priority_tag in constants.CSS_PRIORITY_TAGS
+                )
+                if has_priority:
+                    priority_args.append(comp_arg)
+                else:
+                    non_priority_args.append(comp_arg)
 
-                # [css_selector] > dict(css_property: css_value or None)
-                for sel, sel_css in css_for_selectors.items():
-                    # Update css values for selector. If css_value is set, then take over, else set comp_val
-                    new_sel_css = {}
-                    for k, v in sel_css.items():
-                        if v is None:
-                            new_sel_css[k] = component_kwargs[comp_arg]
-                        else:
-                            new_sel_css[k] = v
+        # Process non-priority args first, then priority args
+        # This ensures priority args can override non-priority ones
+        for comp_arg in non_priority_args + priority_args:
+            # Comp arg eg.g background_color
+            # Get css selectors for css property as a dict
+            css_for_selectors = style_mappings[comp_arg]
 
-                    if sel in css_properties:
-                        css_properties[sel].update(new_sel_css)
+            # [css_selector] > dict(css_property: css_value or None)
+            for sel, sel_css in css_for_selectors.items():
+                # Update css values for selector. If css_value is set, then take over, else set comp_val
+                new_sel_css = {}
+                for k, v in sel_css.items():
+                    if v is None:
+                        new_sel_css[k] = component_kwargs[comp_arg]
                     else:
-                        css_properties[sel] = new_sel_css
+                        new_sel_css[k] = v
+
+                if sel in css_properties:
+                    css_properties[sel].update(new_sel_css)
+                else:
+                    css_properties[sel] = new_sel_css
     else:
         msg = f"Component type '{component_type}' not found. Are you sure this component exists?"
         raise ValueError(msg)
