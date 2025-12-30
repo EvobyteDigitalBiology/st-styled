@@ -712,7 +712,7 @@
                 }
             },
             "font_weight": {
-                ".stMetric label div": {
+                ".stMetric label div p": {
                     "font-weight": null
                 },
                 ".stMetric div[data-testid=\"stMetricValue\"]": {
@@ -1749,6 +1749,11 @@
                     "color": null
                 }
             },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
+                }
+            },
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
                     "font-size": null
@@ -1783,6 +1788,11 @@
             "color": {
                 ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
                     "color": null
+                }
+            },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
                 }
             },
             "font_size": {
@@ -1821,6 +1831,11 @@
                     "color": null
                 }
             },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
+                }
+            },
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
                     "font-size": null
@@ -1855,6 +1870,11 @@
             "color": {
                 ".stAlert div[data-testid=\"stAlertContentError\"] p": {
                     "color": null
+                }
+            },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
                 }
             },
             "font_size": {
