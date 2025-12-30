@@ -40,14 +40,24 @@ def extract_caller_path_hash(offset: int = 2) -> str:
     caller_path = ""
     target_ix = None
     # Traverse traceback in reverse order
-    for ix, line in enumerate(traceback_stack[::-1]):
+    ix = 0
+    for line in traceback_stack[::-1]:
+
+        # Skip if line.line is empty
+        if not isinstance(line.line, str):
+            continue
+        if line.line == "":
+            continue
+
         # Plus 2 upstream to get to caller of generate_component_key for st_yled elements
-        if isinstance(line.line, str) and ("generate_component_key" in line.line):
+        if ("generate_component_key" in line.line):
             target_ix = ix + offset
 
         if ix == target_ix:
             caller_path = line.filename
             break
+
+        ix += 1
 
     if caller_path == "":
         warnings.warn("Could not extract caller path from traceback.")
@@ -247,6 +257,8 @@ def generate_component_key(type: str = 'element') -> str:
         caller_hash = extract_caller_path_hash()
     elif type == 'custom_component':
         caller_hash = extract_caller_path_hash(offset=1)
+
+    print(caller_hash)
 
     if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
         error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
