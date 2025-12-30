@@ -96,3 +96,5 @@ CSS_DISPLAY_VALUES = {
 }
 
 CSS_POSITION_VALUES = {"static", "relative", "absolute", "fixed", "sticky"}
+
+CSS_PRIORITY_TAGS = {"label_", "value_", "_left", "_right", "_top", "_bottom"}
