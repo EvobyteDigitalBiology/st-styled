@@ -164,6 +164,12 @@ class StyleValidator:
         "padding_top": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
         "padding_bottom": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
         "height": CSSValidator.is_valid_length,
+        "value_color": CSSValidator.is_valid_color,
+        "label_color": CSSValidator.is_valid_color,
+        "value_font_size": CSSValidator.is_valid_length,
+        "label_font_size": CSSValidator.is_valid_length,
+        "value_font_weight": CSSValidator.is_valid_font_weight,
+        "label_font_weight": CSSValidator.is_valid_font_weight,
     }
 
     # Common property aliases/variations
@@ -198,7 +204,7 @@ class StyleValidator:
     @classmethod
     def normalize_font_weight(cls, prop_name: str, prop_value: Any) -> str:
         """Normalize font-weight values."""
-        if (prop_name == "font_weight") and (prop_value in constants.CSS_FONT_WEIGHTS):
+        if (prop_name.endswith("font_weight")) and (prop_value in constants.CSS_FONT_WEIGHTS):
             # Map font weight names to numeric
             return constants.CSS_FONT_WEIGHTS[prop_value]
 
