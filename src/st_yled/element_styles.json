@@ -37,7 +37,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", **kwargs)"
     },
     "button_primary": {
@@ -78,7 +78,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"primary\", **kwargs)"
     },
     "button_secondary": {
@@ -119,7 +119,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"secondary\", **kwargs)"
     },
     "button_tertiary": {
@@ -160,7 +160,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"tertiary\", **kwargs)"
     },
     "download_button": {
@@ -201,7 +201,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", **kwargs)"
     },
     "download_button_primary": {
@@ -242,7 +242,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"primary\", **kwargs)"
     },
     "download_button_secondary": {
@@ -283,7 +283,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"secondary\", **kwargs)"
     },
     "download_button_tertiary": {
@@ -324,7 +324,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"tertiary\", **kwargs)"
     },
     "link_button": {
@@ -365,7 +365,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", **kwargs)"
     },
     "link_button_primary": {
@@ -406,7 +406,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"primary\", **kwargs)"
     },
     "link_button_secondary": {
@@ -447,7 +447,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"secondary\", **kwargs)"
     },
     "link_button_tertiary": {
@@ -488,7 +488,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"tertiary\", **kwargs)"
     },
     "title": {
@@ -1955,7 +1955,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_primary": {
         "css": {
@@ -1995,7 +1995,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_secondary": {
         "css": {
@@ -2035,7 +2035,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_tertiary": {
         "css": {
@@ -2075,7 +2075,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "expander": {
         "css": {
@@ -2102,15 +2102,24 @@
             "border_style": {
                 ".stExpander > details": {
                     "border-style": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "border-style": null
                 }
             },
             "border_color": {
                 ".stExpander > details": {
                     "border-color": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "border-color": null
                 }
             },
             "border_width": {
                 ".stExpander > details": {
+                    "border-width": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
                     "border-width": null
                 }
             },
