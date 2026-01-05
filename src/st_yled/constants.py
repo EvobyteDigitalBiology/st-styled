@@ -14,6 +14,9 @@ with (dirpath / "css_color_names.json").open() as f:
     # Create lowercase version for case-insensitive matching
     CSS_COLOR_NAMES_HEX = {k.lower(): v for k, v in CSS_COLOR_NAMES_HEX.items()}
 
+with (dirpath / "components.json").open() as f:
+    COMPONENTS = json.load(f)
+
 # Color format patterns
 COLOR_PATTERNS = {
     "hex_short": re.compile(r"^#[0-9a-fA-F]{3}$"),
