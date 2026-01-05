@@ -153,6 +153,8 @@ def image_card_one(
     # Generate unique keys for component and text container
     key = key or generate_component_key(type='custom_component')
     key_text_container = f"{key}-text-container"
+    key_subheader = f"{key}_subheader"
+    key_markdown = f"{key}_markdown"
 
     # Configure card shadow
     if card_shadow:
@@ -195,8 +197,8 @@ def image_card_one(
                                padding="1rem",
                                key=key_text_container,
                                height='stretch'):
-            ste.subheader(title, **title_css_kwargs)
-            ste.markdown(text, **text_css_kwargs)
+            ste.subheader(title, **title_css_kwargs, key=key_subheader)
+            ste.markdown(text, **text_css_kwargs, key=key_markdown)
 
     return cont
 
