@@ -41,14 +41,27 @@ st_yled.table(df, background_color="#f8f9fa", color="#2c3e50")
 Display key performance indicators with custom styling.
 
 ```python
-st_yled.metric("Revenue", "$12,345", "+15%", color="#2c3e50", font_size="18px")
+st_yled.metric(
+    "Revenue",
+    "$12,345",
+    "+15%",
+    label_color="#666666",
+    value_color="#2c3e50",
+    value_font_size="24px"
+)
 ```
 
 **Supported Styling Properties:**
 
-- `color` - Text color for label and value
-- `font_size` - Text size for label and value
-- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `color` - Text color for label and value (hex, rgb, named colors)
+- `font_size` - Text size for label and value (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight for label and value (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `label_color` - Text color for label only (hex, rgb, named colors)
+- `label_font_size` - Text size for label only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Font weight for label only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `value_color` - Text color for metric value only (hex, rgb, named colors)
+- `value_font_size` - Text size for metric value only (px, rem, em, %, or integer as px)
+- `value_font_weight` - Font weight for metric value only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
