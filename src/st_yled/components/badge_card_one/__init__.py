@@ -158,6 +158,9 @@ def badge_card_one(
     # Generate unique key for component
     key = key or generate_component_key(type='custom_component')
 
+    title_key = f"{key}_title"
+    text_key = f"{key}_text"
+
     # Configure card shadow
     if card_shadow:
         box_shadow = "2px 2px rgba(0, 0, 0, 0.1)"
@@ -193,8 +196,8 @@ def badge_card_one(
     # Populate card with badge, title, and text
     with cont:
         ste.badge(badge_text, icon=badge_icon, color=badge_color)
-        ste.subheader(title, **title_css_kwargs)
-        ste.markdown(text, **text_css_kwargs)
+        ste.subheader(title, **title_css_kwargs, key=title_key)
+        ste.markdown(text, **text_css_kwargs, key=text_key)
 
     return cont
 
