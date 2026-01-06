@@ -13,7 +13,6 @@ Get st_yled up and running in your Streamlit application in just a few minutes.
 ## Installation
 
 
-
 ### Option 1: Install from PyPI (Recommended)
 
 ```bash

@@ -24,7 +24,7 @@ Style your Streamlit apps with custom themes and unique elements to match your p
 
 🎯 **Global Styling** - Apply consistent styles across all elements
 
-🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
+🔧 **elements** - 44+ styled component wrappers with validation
 
 ⚡ **st_yled studio** - Use the accompanying app to test your layout styling
 
@@ -61,7 +61,8 @@ st_yled.text("Styled Text", color="#2c3e50", font_size="18px")
 
 - [Installation & Setup](#installation) - Get started quickly
 - [API Reference](#api-reference) - Core functions and usage
-- [Component Examples](#enhanced-components) - Basic component styling
+- [st_yled Components](#st_yled-components) - New component examples
+- [Element Examples](#elements) - Basic element styling
 - [Styling Properties](#styling-properties) - Supported CSS properties
 - [Configuration](#configuration) - Advanced configuration options
 
@@ -106,11 +107,49 @@ st_yled.set("header", "color", "#2c3e50")
 st_yled.set("header", "font_size", "24px")
 ```
 
-## <a name="enhanced-components"></a>🔧 Enhanced Components
+## <a name="st_yled-components"></a>🎨 st_yled Components
 
-St_yled provides enhanced versions of Streamlit components with additional styling parameters:
+st_yled provides new custom components that extend Streamlit's functionality with pre-built UI patterns.
+A full list of new st_yled components can be found here: [st_yled component docs](https://st-styled.evo-byte.com/components/)
 
-### Text Components
+### Card Components
+```python
+# Badge card with icon and styled badge
+st_yled.badge_card_one(
+    badge_text="New",
+    badge_icon=":material/star:",
+    title="Featured Item",
+    text="Check out this amazing feature",
+)
+```
+
+### Layout Components
+```python
+# Sticky header that stays visible while scrolling
+st_yled.sticky_header(
+    "My App Title",
+    background_color="#ffffff",
+    border_bottom="2px solid #e0e0e0"
+)
+```
+
+
+### Input Components
+```python
+# Split button with dropdown actions
+st_yled.split_button(
+    primary_label="Save",
+    actions=["Save as Draft", "Save and Publish", "Save as Template"]
+)
+```
+
+> **See [st_yled component docs](https://st-styled.evo-byte.com/components/) for full list and detailed documentation**
+
+## <a name="elements"></a>🔧 elements
+
+St_yled provides enhanced versions of Streamlit elements with additional styling parameters:
+
+### Text Elements
 ```python
 st_yled.title("My Title", color="#2c3e50", font_size="2.5rem")
 st_yled.header("Section Header", color="#3498db")
@@ -120,7 +159,7 @@ st_yled.markdown("**Bold text**", color="#e74c3c")
 st_yled.caption("Small caption", color="#95a5a6", font_size="14px")
 ```
 
-### Interactive Components
+### Interactive Elements
 ```python
 st_yled.button("Click Me", background_color="#e74c3c", color="white")
 st_yled.text_input("Name", background_color="#f8f9fa", color="#2c3e50")
@@ -128,7 +167,7 @@ st_yled.selectbox("Choose", options=["A", "B"], background_color="#f8f9fa")
 st_yled.slider("Value", 0, 100, color="#2ecc71")
 ```
 
-### Layout Components
+### Layout Elements
 ```python
 # Styled containers (only background_color and border properties supported)
 with st_yled.container(
@@ -143,9 +182,9 @@ with st_yled.container(
 col1, col2 = st.columns(2)
 ```
 
-### Status Components
+### Status Elements
 ```python
-# Status components with styling (only color property supported)
+# Status elements with styling (only color property supported)
 st_yled.success(
     "Success message",
     color="#155724"
@@ -167,16 +206,16 @@ st_yled.error(
 )
 ```
 
-## 🎨 Component Coverage
+## 🎨 Element Coverage
 
-St_yled supports **43 styled components** with comprehensive CSS property support:
+St_yled supports **43 styled elements** with comprehensive CSS property support:
 
-- **Text Components (9)**: title, header, subheader, text, markdown, caption, code, latex, json
-- **Interactive Components (16)**: button, download_button, text_input, text_area, number_input, selectbox, multiselect, slider, select_slider, checkbox, radio, toggle, color_picker, file_uploader, pills, form_submit_button
-- **Layout Components (3)**: container, expander, tabs
-- **Status Components (4)**: success, info, warning, error
-- **Data Components (4)**: table, metric, progress, status
-- **Chat Components (1)**: chat_message
+- **Text Elements (9)**: title, header, subheader, text, markdown, caption, code, latex, json
+- **Interactive Elements (16)**: button, download_button, text_input, text_area, number_input, selectbox, multiselect, slider, select_slider, checkbox, radio, toggle, color_picker, file_uploader, pills, form_submit_button
+- **Layout Elements (3)**: container, expander, tabs
+- **Status Elements (4)**: success, info, warning, error
+- **Data Elements (4)**: table, metric, progress, status
+- **Chat Elements (1)**: chat_message
 
 Check the [st_yled element docs](https://st-styled.evo-byte.com/elements/) for more information
 

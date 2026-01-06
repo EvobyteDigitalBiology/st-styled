@@ -37,17 +37,9 @@ st_yled.init()
 # With custom CSS file
 st_yled.init(css_path="styles/custom.css")
 
-# With validation mode
-st_yled.init(validation_mode="permissive")
-
-# With theme
-st_yled.init(theme="dark")
-
 # Full configuration
 st_yled.init(
     css_path="styles/app.css",
-    validation_mode="strict",
-    theme="professional"
 )
 ```
 
@@ -113,42 +105,6 @@ st_yled.set("container", "padding", "20px")
 
 ---
 
-### st_yled.get_global_styles()
-
-Retrieve current global styling configuration.
-
-```python
-def get_global_styles() -> Dict[str, Dict[str, str]]
-```
-
-**Returns:** Dictionary of component types and their applied styles
-
-**Example:**
-
-```python
-# Get all current global styles
-styles = st_yled.get_global_styles()
-print(styles)
-
-# Output:
-# {
-#   "button": {
-#     "background_color": "#007bff",
-#     "color": "white",
-#     "border_radius": "6px"
-#   },
-#   "text": {
-#     "font_family": "Arial, sans-serif",
-#     "color": "#2c3e50"
-#   }
-# }
-
-# Check specific component styles
-button_styles = styles.get("button", {})
-if "background_color" in button_styles:
-    print(f"Button color: {button_styles['background_color']}")
-```
-
 ---
 
 ## Validation System
@@ -156,85 +112,6 @@ if "background_color" in button_styles:
 ### Validation Modes
 
 st_yled includes a comprehensive validation system for CSS properties:
-
-#### Strict Mode (Default)
-
-```python
-st_yled.init(validation_mode="strict")
-
-# Raises ValidationError for invalid properties
-st_yled.button("Test", color="invalid-color")  # ❌ Raises error
-```
-
-#### Permissive Mode
-
-```python
-st_yled.init(validation_mode="permissive")
-
-# Shows warning but continues execution
-st_yled.button("Test", color="invalid-color")  # ⚠️ Shows warning
-```
-
-#### Bypass Mode
-
-```python
-st_yled.init(validation_mode="bypass")
-
-# No validation performed (fastest performance)
-st_yled.button("Test", color="invalid-color")  # ✅ No validation
-```
-
-### Validation Functions
-
-#### validate_css_property()
-
-```python
-def validate_css_property(property_name: str,
-                         value: str) -> Tuple[bool, str]
-```
-
-Validate a CSS property and value combination.
-
-**Parameters:**
-- `property_name` (str) - CSS property name
-- `value` (str) - CSS property value
-
-**Returns:** Tuple of (is_valid: bool, error_message: str)
-
-**Example:**
-```python
-# Validate color property
-is_valid, error = st_yled.validate_css_property("color", "#3498db")
-print(f"Valid: {is_valid}")  # True
-
-# Validate invalid property
-is_valid, error = st_yled.validate_css_property("color", "invalid")
-print(f"Valid: {is_valid}, Error: {error}")  # False, "Invalid color format"
-```
-
-#### get_supported_properties()
-
-```python
-def get_supported_properties() -> Dict[str, List[str]]
-```
-
-Get list of all supported CSS properties by category.
-
-**Returns:** Dictionary mapping property categories to property lists
-
-**Example:**
-```python
-properties = st_yled.get_supported_properties()
-
-print("Color properties:", properties["color"])
-# ['color', 'background_color', 'border_color']
-
-print("Typography properties:", properties["typography"])
-# ['font_size', 'font_weight', 'font_family', 'line_height']
-
-print("Spacing properties:", properties["spacing"])
-# ['margin', 'padding', 'margin_top', 'padding_left']
-```
 
 ---
 
@@ -282,94 +159,18 @@ Configure st_yled behavior with environment variables:
 
 ```bash
 # CSS file path
-export ST_STYLED_CSS_PATH="path/to/custom.css"
+export ST_STYLED_BYPASS_VALIDATION="true"
 
 # Validation mode
-export ST_STYLED_VALIDATION_MODE="permissive"
+export ST_STYLED_STRICT_VALIDATION="false"
 
-# Default theme
-export ST_STYLED_THEME="dark"
-
-# Enable debug mode
-export ST_STYLED_DEBUG="true"
 ```
 
 **Using in Python:**
 
-```python
-import os
-
-st_yled.init(
-    css_path=os.getenv("ST_STYLED_CSS_PATH"),
-    validation_mode=os.getenv("ST_STYLED_VALIDATION_MODE", "strict"),
-    theme=os.getenv("ST_STYLED_THEME")
-)
-```
-
 ---
 
 ## Advanced Features
-
-### Custom CSS Classes
-
-Apply custom CSS classes to components:
-
-```python
-# Add custom CSS class
-st_yled.text(
-    "Custom styled text",
-    css_class="my-custom-class",
-    custom_css="""
-    .my-custom-class {
-        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-    }
-    """
-)
-```
-
-### Theme Management
-
-```python
-# Create custom theme
-custom_theme = {
-    "button": {
-        "background_color": "#6366f1",
-        "color": "white",
-        "border_radius": "8px"
-    },
-    "text": {
-        "color": "#1f2937",
-        "font_family": "Inter, sans-serif"
-    }
-}
-
-# Apply theme
-st_yled.apply_theme(custom_theme)
-
-# Save theme for reuse
-st_yled.save_theme("my_theme", custom_theme)
-
-# Load saved theme
-st_yled.load_theme("my_theme")
-```
-
-### Performance Monitoring
-
-```python
-# Enable performance monitoring
-st_yled.init(debug=True)
-
-# Get performance metrics
-metrics = st_yled.get_performance_metrics()
-print(f"CSS injection time: {metrics['css_injection_time']}ms")
-print(f"Components rendered: {metrics['components_rendered']}")
-print(f"Validation time: {metrics['validation_time']}ms")
-```
-
----
 
 
 ## Migration Guide
@@ -450,13 +251,10 @@ create_styled_button("Cancel", "secondary")
 
 ### Further Reading
 
-- **[Component Reference](../elements/index.md)** - Detailed component documentation
+- **[Elements Reference](../elements/index.md)** - Detailed component documentation
 - **[Examples Gallery](../examples/index.md)** - Practical usage examples
 - **[Getting Started Guide](../getting-started/installation.md)** - Basic setup and usage
 
-### Advanced Topics
-
-- **[Performance Optimization](../examples/advanced-examples/dashboard-demo.md)**
 
 ### Community Resources
 

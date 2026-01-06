@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## unreleased
+
+### Added
+
+- Components: split-button, redirect, badge card one, image card one, sticky header
+- New styling option: Padding for st_yled.container and st_yled.expander
+- New styling option: Label / value formatting for st_yled.metric
+- Color converted module to lighten or darken colors
+
+### Changed
+
+- Extracting caller path for component key navigation
+- All constants are in a separate module
+- CSS validation exceptions for height property for components which support height by default
+- Add a button category in components category
+
+- Fix: Align font to icon for toggle and checkbox
+
+### Removed
 
 ## v0.2.1 - [2025-12-05]
 

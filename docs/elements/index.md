@@ -45,8 +45,6 @@ Display and format text, code and formulas with advanced styling options.
 
 - [`latex`](text-elements.md#latex)
 
-
----
 ---
 
 ### [🔘 Button Elements](button-elements.md)
