@@ -581,17 +581,17 @@
     "text": {
         "css": {
             "color": {
-                ".stText div": {
+                ".stText span": {
                     "color": null
                 }
             },
             "font_size": {
-                ".stText div": {
+                ".stText span": {
                     "font-size": null
                 }
             },
             "font_weight": {
-                ".stText div": {
+                ".stText span": {
                     "font-weight": null
                 }
             }
@@ -1267,7 +1267,7 @@
             }
         },
         "category": "input",
-        "example": "st_yled.date_input(\"Pick Date\", **kwargs)"
+        "example": "st_yled.date_input(label=\"Pick a Date\", value=\"2024-08-01\", **kwargs)"
     },
     "time_input": {
         "css": {
