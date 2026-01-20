@@ -1,7 +1,8 @@
+import typing
 import streamlit as st
 from typing import Literal
 
-
+@typing.no_type_check
 def card_base(
     key: str,
     width: Literal["stretch", "content"] | int = 300,
