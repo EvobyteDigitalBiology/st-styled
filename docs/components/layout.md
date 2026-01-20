@@ -8,7 +8,7 @@ Advanced layout components for better page structure and navigation in your Stre
 
 A header component that remains fixed at the top when scrolling.
 
-![Sticky Header](https://evo-byte.com/wp-content/uploads/2026/01/sticky_header.webp)
+![Sticky Header](https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_example_2.png)
 
 ### Description
 

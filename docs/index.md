@@ -1,11 +1,19 @@
+New in **st_yled 0.3**: Container & expander padding, metric styling, more components
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/01/260120_New_Components.webp)
 
-![st_yled Components Examples](assets/st_yled_font_weight_preview.png)
 
-# st_yled - Streamlit Styling Made Simple
 
-Streamlit is great - but styling individual elements is a hassle.
+<br>
 
-**st_yled solves this by providing a simple way for styling Streamlit elements and many new components to upgrade your apps**
+# Streamlit Component Style Library
+
+- **Custom styling** for most elements: background colors, font size and more
+
+- **New components** like cards for stunning apps, built faster
+
+- [**st_yled studio**](https://styled-studio.streamlit.app/): Configure component styles interactively
+
+Streamlit is great - but styling individual elements is a hassle. st_yled solves this by providing a simple way for styling Streamlit elements and many new components to upgrade your apps.
 
 ---
 
