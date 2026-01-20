@@ -25,8 +25,8 @@
         "docs_url": "https://st-styled.evo-byte.com/components/layout/#sticky-header",
         "category": "layout",
         "version": "1.0.0",
-        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header.webp",
-        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header.webp",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_crop.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_example_2.png",
         "code_examples":
             [{
                 "title": "Basic Sticky Header",
