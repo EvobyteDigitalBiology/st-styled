@@ -181,6 +181,58 @@ if enabled:
 
 ---
 
+## Step 5: Add Custom Components
+
+Enhance your app with pre-built custom components:
+
+```python
+st_yled.header("✨ Custom Components", color="#16a085")
+
+# Create columns for component display
+comp_col1, comp_col2, comp_col3 = st.columns(3)
+
+with comp_col1:
+    # Badge card for featured content
+    st_yled.badge_card_one(
+        badge_text="New",
+        badge_icon=":material/star:",
+        title="Featured Item",
+        text="Check out our latest feature with enhanced styling",
+        background_color="#f8f9fa",
+        border_color="#dee2e6",
+        border_style="solid",
+        border_width=1,
+        width=280
+    )
+
+with comp_col2:
+    # Image card for visual content
+    st_yled.image_card_one(
+        image_path="https://picsum.photos/300/200",
+        title="Sample Project",
+        text="Beautiful image cards for portfolios and galleries",
+        width=280,
+        card_shadow=True,
+        title_font_size=18
+    )
+
+with comp_col3:
+    # Another badge card with different styling
+    st_yled.badge_card_one(
+        badge_text="Hot",
+        badge_icon=":material/local_fire_department:",
+        title="Popular Choice",
+        text="Most viewed item this week",
+        background_color="#fff3cd",
+        border_color="#ffc107",
+        border_style="solid",
+        border_width=2,
+        width=280
+    )
+```
+
+---
+
 ## Step 6: Add Global Styling
 
 Apply consistent styling across all components on the page.

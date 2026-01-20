@@ -1,0 +1,91 @@
+{
+    "badge_card_one" : {
+        "name": "Badge Card One",
+        "preview_description": "A card with editable badge",
+        "description": "A card component with a badge at the top-left corner",
+        "usage_pattern": "Use this component to highlight special features, promotions, or status indicators. Perfect for showcasing new items, featured content, sale badges, or premium offerings in a visually appealing card format.",
+        "docs_url": "https://st-styled.evo-byte.com/components/cards/#badge-card-one",
+        "category": "cards",
+        "version": "1.0.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/badge_card_1.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/badge_card_1.webp",
+        "code_examples":
+            [{
+                    "title": "Basic Badge Card",
+                    "code": "st_yled.badge_card_one(\n    badge_text=\"New\",\n    badge_icon=\":material/star:\",\n    title=\"Badge Card\",\n    text=\"A card with a badge\",\n    width=240,\n    title_font_size=20,\n    background_color=\"#F6F6F6\",\n    border_color=\"grey\",\n    border_style=\"solid\",\n    border_width=1,\n    key=\"badge-card-1\",\n)"
+                }],
+        "code_copy_template": "st_yled.badge_card_one(badge_text=\"\", title=\"\", text=\"\")"
+    },
+
+    "sticky_header" : {
+        "name": "Sticky Header",
+        "preview_description": "A fixed header that stays at the top while scrolling.",
+        "description": "A header component that remains fixed at the top when scrolling. Can be used like a container for navigation bars, buttons or links.",
+        "usage_pattern": "Use this component when you need navigation, branding, or key actions to remain visible as users scroll through long pages. Ideal for dashboards, data exploration tools, or multi-section applications where persistent navigation improves user experience.",
+        "docs_url": "https://st-styled.evo-byte.com/components/layout/#sticky-header",
+        "category": "layout",
+        "version": "1.0.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_crop.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_example_2.png",
+        "code_examples":
+            [{
+                "title": "Basic Sticky Header",
+                "code": "with st_yled.sticky_header(\n    height=\"56px\",\n    background_color=\"#FFFFFF\",\n    vertical_alignment=\"center\",\n    horizontal_alignment=\"left\",\n    padding=\"0px 32px\",\n    gap=\"medium\",\n    key=\"sticky-header-1\"\n):\n    st.title(\"My App\")\n    st.button(\"Menu\")"
+            }],
+        "code_copy_template": "st_yled.sticky_header()"
+    },
+
+    "image_card_one" : {
+        "name": "Image Card One",
+        "preview_description": "A card with image at the top",
+        "description": "A card component with an image at the top",
+        "usage_pattern": "Use this component to display visual content like products, portfolio items, blog posts, or team members. Perfect for creating galleries, catalogs, or any content where images play a central role in conveying information.",
+        "docs_url": "https://st-styled.evo-byte.com/components/cards/#image-card-one",
+        "category": "cards",
+        "version": "1.0.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/image_card_one-e1767624394929.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/image_card_one-1.webp",
+        "code_examples":
+            [{
+                "title": "Basic Image Card",
+                "code": "st_yled.image_card_one(\n    image_path=\"https://example.com/image.jpg\",\n    title=\"Image Card\",\n    text=\"A card with an image at the top\",\n    width=300,\n    title_font_size=18,\n    background_color=\"#FFFFFF\",\n    card_shadow=True,\n    border_color=\"#E0E0E0\",\n    border_style=\"solid\",\n    border_width=1,\n    key=\"image-card-1\",\n)"
+            }],
+        "code_copy_template": "st_yled.image_card_one(image_url=\"/path/to/image.png\", title=\"Card Title\", text=\"Card Text\")"
+    },
+
+    "redirect" : {
+        "name": "Redirect",
+        "preview_description": "Programmatically redirect to any URL",
+        "description": "Redirect to a new URL through code",
+        "usage_pattern": "Use this component when you need to programmatically redirect users to another page or external URL. Ideal for post-authentication flows, conditional navigation, redirecting after form submissions, or linking to external resources based on user actions.",
+        "docs_url": "https://st-styled.evo-byte.com/components/navigation/#redirect",
+        "category": "navigation",
+        "version": "1.0.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/redirect_logo.png",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/redirect_logo.png",
+        "code_examples":
+            [{
+                "title": "Basic Redirect",
+                "code": "st_yled.redirect(\"https://redirect-url.com\")"
+            }],
+        "code_copy_template": "st_yled.redirect(\"https://redirect-url.com\")"
+    },
+
+    "split_button" : {
+        "name": "Split Button",
+        "preview_description": "A button with dropdown menu options",
+        "description": "A button with a dropdown menu for multiple actions",
+        "usage_pattern": "Use this component when you have a primary action with related secondary options. Perfect for save/submit buttons with variations (Save Draft, Save & Close), export buttons with multiple formats, or any action where users frequently need to choose between similar operations.",
+        "docs_url": "https://st-styled.evo-byte.com/components/input/#split-button",
+        "category": "input",
+        "version": "1.0.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/split_button_image.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/split_button_expanded.webp",
+        "code_examples":
+            [{
+                "title": "Basic Split Button",
+                "code": "st_yled.split_button(\n    label=\"Save\",\n    options=[\"Save Draft\", \"Save & Close\", \"Save & New\"],\n    icon=\":material/save:\",\n    color=\"#FFFFFF\",\n    background_color=\"#1976D2\",\n    radius=\"20px\",\n    key=\"split-button-1\",\n)"
+            }],
+        "code_copy_template": "st_yled.split_button(label=\"\", options=[\"1\", \"2\"])"
+    }
+}

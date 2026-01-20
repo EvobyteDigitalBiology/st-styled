@@ -45,6 +45,20 @@ Display and format text, code and formulas with advanced styling options.
 
 - [`latex`](text-elements.md#latex)
 
+---
+
+### [🔘 Button Elements](button-elements.md)
+Interactive buttons for user actions with extensive styling options.
+
+**Available Elements:**
+
+- [`button`](button-elements.md#button)
+
+- [`download_button`](button-elements.md#download_button)
+
+- [`link_button`](button-elements.md#link_button)
+
+- [`form_submit_button`](button-elements.md#form_submit_button)
 
 ---
 
@@ -52,12 +66,6 @@ Display and format text, code and formulas with advanced styling options.
 Interactive widgets for user input with enhanced visual styling.
 
 **Available Elements:**
-
-- [`button`](input-elements.md#button)
-
-- [`download_button`](input-elements.md#download_button)
-
-- [`link_button`](input-elements.md#link_button)
 
 - [`selectbox`](input-elements.md#selectbox)
 

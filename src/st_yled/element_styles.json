@@ -37,7 +37,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", **kwargs)"
     },
     "button_primary": {
@@ -78,7 +78,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"primary\", **kwargs)"
     },
     "button_secondary": {
@@ -119,7 +119,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"secondary\", **kwargs)"
     },
     "button_tertiary": {
@@ -160,7 +160,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"tertiary\", **kwargs)"
     },
     "download_button": {
@@ -201,7 +201,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", **kwargs)"
     },
     "download_button_primary": {
@@ -242,7 +242,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"primary\", **kwargs)"
     },
     "download_button_secondary": {
@@ -283,7 +283,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"secondary\", **kwargs)"
     },
     "download_button_tertiary": {
@@ -324,7 +324,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.download_button(\"Download\", data=\"sample\", type=\"tertiary\", **kwargs)"
     },
     "link_button": {
@@ -365,7 +365,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", **kwargs)"
     },
     "link_button_primary": {
@@ -406,7 +406,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"primary\", **kwargs)"
     },
     "link_button_secondary": {
@@ -447,7 +447,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"secondary\", **kwargs)"
     },
     "link_button_tertiary": {
@@ -488,7 +488,7 @@
                 }
             }
         },
-        "category": "input",
+        "category": "button",
         "example": "st_yled.link_button(\"Visit Link\", url=\"https://example.com\", type=\"tertiary\", **kwargs)"
     },
     "title": {
@@ -581,17 +581,17 @@
     "text": {
         "css": {
             "color": {
-                ".stText div": {
+                ".stText span": {
                     "color": null
                 }
             },
             "font_size": {
-                ".stText div": {
+                ".stText span": {
                     "font-size": null
                 }
             },
             "font_weight": {
-                ".stText div": {
+                ".stText span": {
                     "font-weight": null
                 }
             }
@@ -712,9 +712,39 @@
                 }
             },
             "font_weight": {
-                ".stMetric label div": {
+                ".stMetric label div p": {
                     "font-weight": null
                 },
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-weight": null
+                }
+            },
+            "label_color": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stMetric label[data-testid=\"stMetricLabel\"] p": {
+                    "font-weight": null
+                }
+            },
+            "value_color": {
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "color": null
+                }
+            },
+            "value_font_size": {
+                ".stMetric div[data-testid=\"stMetricValue\"]": {
+                    "font-size": null
+                }
+            },
+            "value_font_weight": {
                 ".stMetric div[data-testid=\"stMetricValue\"]": {
                     "font-weight": null
                 }
@@ -759,6 +789,12 @@
             "font_size": {
                 ".stCheckbox label p": {
                     "font-size": null
+                },
+                ".stCheckbox > label": {
+                    "align-items": "center"
+                },
+                ".stCheckbox > label > span": {
+                    "margin": "0px"
                 }
             },
             "font_weight": {
@@ -1100,13 +1136,19 @@
                 }
             },
             "color": {
-                ".stCheckbox label p": {
+                ".stCheckbox > label p": {
                     "color": null
                 }
             },
             "font_size": {
-                ".stCheckbox label p": {
+                ".stCheckbox > label p": {
                     "font-size": null
+                },
+                ".stCheckbox > label": {
+                    "align-items": "center"
+                },
+                ".stCheckbox > label > div": {
+                    "margin": "0px"
                 }
             },
             "font_weight": {
@@ -1225,7 +1267,7 @@
             }
         },
         "category": "input",
-        "example": "st_yled.date_input(\"Pick Date\", **kwargs)"
+        "example": "st_yled.date_input(label=\"Pick a Date\", value=\"2024-08-01\", **kwargs)"
     },
     "time_input": {
         "css": {
@@ -1707,6 +1749,11 @@
                     "color": null
                 }
             },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
+                }
+            },
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentSuccess\"] p": {
                     "font-size": null
@@ -1741,6 +1788,11 @@
             "color": {
                 ".stAlert div[data-testid=\"stAlertContentInfo\"] p": {
                     "color": null
+                }
+            },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
                 }
             },
             "font_size": {
@@ -1779,6 +1831,11 @@
                     "color": null
                 }
             },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
+                }
+            },
             "font_size": {
                 ".stAlert div[data-testid=\"stAlertContentWarning\"] p": {
                     "font-size": null
@@ -1813,6 +1870,11 @@
             "color": {
                 ".stAlert div[data-testid=\"stAlertContentError\"] p": {
                     "color": null
+                }
+            },
+            "background_color": {
+                ".stAlert div[data-testid=\"stAlertContainer\"]": {
+                    "background-color": null
                 }
             },
             "font_size": {
@@ -1893,7 +1955,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_primary": {
         "css": {
@@ -1933,7 +1995,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_secondary": {
         "css": {
@@ -1973,7 +2035,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "form_submit_button_tertiary": {
         "css": {
@@ -2013,7 +2075,7 @@
                 }
             }
         },
-        "category": "input"
+        "category": "button"
     },
     "expander": {
         "css": {
@@ -2040,18 +2102,53 @@
             "border_style": {
                 ".stExpander > details": {
                     "border-style": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "border-style": null
                 }
             },
             "border_color": {
                 ".stExpander > details": {
+                    "border-color": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
                     "border-color": null
                 }
             },
             "border_width": {
                 ".stExpander > details": {
                     "border-width": null
+                },
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "border-width": null
+                }
+            },
+            "padding" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding": null
+                }
+            },
+            "padding_left" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-left": null
+                }
+            },
+            "padding_right" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-right": null
+                }
+            },
+            "padding_top" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-top": null
+                }
+            },
+            "padding_bottom" : {
+                ".stExpander > details > div[data-testid=\"stExpanderDetails\"]": {
+                    "padding-bottom": null
                 }
             }
+
         },
         "category": "layout",
         "example": "st_yled.expander(\"Click to expand\", **kwargs)"
@@ -2230,6 +2327,31 @@
             "border_width": {
                 "": {
                     "border-width": null
+                }
+            },
+            "padding" : {
+                "": {
+                    "padding": null
+                }
+            },
+            "padding_left" : {
+                "": {
+                    "padding-left": null
+                }
+            },
+            "padding_right" : {
+                "": {
+                    "padding-right": null
+                }
+            },
+            "padding_top" : {
+                "": {
+                    "padding-top": null
+                }
+            },
+            "padding_bottom" : {
+                "": {
+                    "padding-bottom": null
                 }
             }
         },

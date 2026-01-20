@@ -1,5 +1,3 @@
-import json
-from pathlib import Path
 from typing import Any, Optional
 import re
 import warnings
@@ -10,27 +8,53 @@ import streamlit as st
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
 from st_yled.validation import ValidationError  # type: ignore
-
-dirpath = Path(__file__).parent
-
-with (dirpath / "element_styles.json").open() as f:
-    ELEMENT_STYLES = json.load(f)
+from st_yled import constants  # type: ignore
 
 
-def extract_caller_path_hash() -> str:
+def extract_caller_path_hash_init() -> str:
     traceback_stack = traceback.extract_stack()
 
-    exec_line = False
     caller_path = ""
     # Traverse traceback in reverse order
     for line in traceback_stack[::-1]:
-        if exec_line:
+        if isinstance(line.line, str) and (".init()" in line.line):
             caller_path = line.filename
             break
-        if isinstance(line.line, str) and line.line.startswith(
-            "exec(code, module.__dict__)"
-        ):
-            exec_line = True
+
+    if caller_path == "":
+        warnings.warn("Could not extract caller path from traceback.")
+
+    return str(hash(caller_path))
+
+
+def extract_caller_path_hash(offset: int = 2) -> str:
+    """
+    offet: Number of stack frames to go up from the generate_component_key call
+    Typically 2 for st_yled elements and 1 for custom components
+    """
+
+    traceback_stack = traceback.extract_stack()
+
+    caller_path = ""
+    target_ix = None
+    # Traverse traceback in reverse order
+    ix = 0
+    for line in traceback_stack[::-1]:
+        # Skip if line.line is empty
+        if not isinstance(line.line, str):
+            continue
+        if line.line == "":
+            continue
+
+        # Plus 2 upstream to get to caller of generate_component_key for st_yled elements
+        if "generate_component_key" in line.line:
+            target_ix = ix + offset
+
+        if ix == target_ix:
+            caller_path = line.filename
+            break
+
+        ix += 1
 
     if caller_path == "":
         warnings.warn("Could not extract caller path from traceback.")
@@ -56,12 +80,12 @@ def get_element_style(element_name: str) -> dict:
                     "background-color": None
     """
 
-    return ELEMENT_STYLES[element_name]
+    return constants.ELEMENT_STYLES[element_name]
 
 
 def get_stylable_elements(include_variants: bool = True) -> list[str]:
     """
-    Get a list of all stylable component names from ELEMENT_STYLES.
+    Get a list of all stylable component names from constants.ELEMENT_STYLES.
 
     Args:
         include_variants: If True, includes variants like 'button_primary', 'button_secondary'.
@@ -77,12 +101,12 @@ def get_stylable_elements(include_variants: bool = True) -> list[str]:
         ['button', 'button_primary', 'button_secondary', 'caption', ...]
     """
     if include_variants:
-        return sorted(ELEMENT_STYLES.keys())
+        return sorted(constants.ELEMENT_STYLES.keys())
 
     # Filter out variants ending with _primary, _secondary, _tertiary
     variant_pattern = re.compile(r".*_(primary|secondary|tertiary)$")
     base_elements = [
-        key for key in ELEMENT_STYLES.keys() if not variant_pattern.match(key)
+        key for key in constants.ELEMENT_STYLES.keys() if not variant_pattern.match(key)
     ]
     return sorted(base_elements)
 
@@ -121,7 +145,7 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
         }
     """
     # Get all elements (always include variants to find them)
-    all_elements = sorted(ELEMENT_STYLES.keys())
+    all_elements = sorted(constants.ELEMENT_STYLES.keys())
 
     # Group by category and base element
     categories: dict[str, dict[str, list[str]]] = {}
@@ -132,10 +156,10 @@ def get_stylable_elements_by_category() -> dict[str, dict[str, list[str]]]:
     )
 
     for element in all_elements:
-        if element not in ELEMENT_STYLES:
+        if element not in constants.ELEMENT_STYLES:
             continue
 
-        category = ELEMENT_STYLES[element].get("category", "unknown")
+        category = constants.ELEMENT_STYLES[element].get("category", "unknown")
 
         # Check if this is a variant or base element
         match = variant_pattern.match(element)
@@ -183,11 +207,11 @@ def get_element_variants(element_name: str) -> list[str]:
         A list of variant names (e.g., ['primary', 'secondary', 'tertiary']).
     """
     variants = []
-    if element_name not in ELEMENT_STYLES:
+    if element_name not in constants.ELEMENT_STYLES:
         value_error_msg = f"Element '{element_name}' not found in stylable elements."
         raise ValueError(value_error_msg)
 
-    for element in ELEMENT_STYLES:
+    for element in constants.ELEMENT_STYLES:
         if element.startswith(f"{element_name}_"):
             match = re.match(
                 rf"{re.escape(element_name)}_(primary|secondary|tertiary)$", element
@@ -198,10 +222,13 @@ def get_element_variants(element_name: str) -> list[str]:
     return variants
 
 
-def generate_component_key() -> str:
+def generate_component_key(type: str = "element") -> str:
     """Generate a unique component key for st_yled components."""
 
-    caller_hash = extract_caller_path_hash()
+    if type == "element":
+        caller_hash = extract_caller_path_hash()
+    elif type == "custom_component":
+        caller_hash = extract_caller_path_hash(offset=1)
 
     if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
         error_msg = "Session State not initialized for st_yled component key generation.\n\nWas st_yled.init() called?"
@@ -222,34 +249,50 @@ def get_css_properties_from_args(
 
     css_properties: dict[str, dict[str, str]] = {}
 
-    if component_type in ELEMENT_STYLES:
+    if component_type in constants.ELEMENT_STYLES:
         # Return dict of css properties and selectors for component
-        style_mappings = ELEMENT_STYLES[component_type]["css"]
+        style_mappings = constants.ELEMENT_STYLES[component_type]["css"]
 
         args_to_remove = []
 
-        # Loop over component arguments and check if those are in style mappings
+        # Separate args into priority and non-priority
+        priority_args = []
+        non_priority_args = []
+
         for comp_arg in component_kwargs:
-            # Comp arg eg.g background_color
             if comp_arg in style_mappings:
                 args_to_remove.append(comp_arg)
-                # Get css selectors for css property as a dict
-                css_for_selectors = style_mappings[comp_arg]
+                # Check if arg contains any priority tag
+                has_priority = any(
+                    priority_tag in comp_arg
+                    for priority_tag in constants.CSS_PRIORITY_TAGS
+                )
+                if has_priority:
+                    priority_args.append(comp_arg)
+                else:
+                    non_priority_args.append(comp_arg)
 
-                # [css_selector] > dict(css_property: css_value or None)
-                for sel, sel_css in css_for_selectors.items():
-                    # Update css values for selector. If css_value is set, then take over, else set comp_val
-                    new_sel_css = {}
-                    for k, v in sel_css.items():
-                        if v is None:
-                            new_sel_css[k] = component_kwargs[comp_arg]
-                        else:
-                            new_sel_css[k] = v
+        # Process non-priority args first, then priority args
+        # This ensures priority args can override non-priority ones
+        for comp_arg in non_priority_args + priority_args:
+            # Comp arg eg.g background_color
+            # Get css selectors for css property as a dict
+            css_for_selectors = style_mappings[comp_arg]
 
-                    if sel in css_properties:
-                        css_properties[sel].update(new_sel_css)
+            # [css_selector] > dict(css_property: css_value or None)
+            for sel, sel_css in css_for_selectors.items():
+                # Update css values for selector. If css_value is set, then take over, else set comp_val
+                new_sel_css = {}
+                for k, v in sel_css.items():
+                    if v is None:
+                        new_sel_css[k] = component_kwargs[comp_arg]
                     else:
-                        css_properties[sel] = new_sel_css
+                        new_sel_css[k] = v
+
+                if sel in css_properties:
+                    css_properties[sel].update(new_sel_css)
+                else:
+                    css_properties[sel] = new_sel_css
     else:
         msg = f"Component type '{component_type}' not found. Are you sure this component exists?"
         raise ValueError(msg)

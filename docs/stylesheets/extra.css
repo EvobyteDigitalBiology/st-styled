@@ -9,6 +9,7 @@ h1 {
     font-weight: 700 !important;
     font-size: 39px !important;
     color: #2A4159 !important;
+    margin-bottom: 24px !important;
 }
 
 h2 {
@@ -62,4 +63,14 @@ h3 {
 .banner-link:hover {
   background-color: #FF4B4B !important;
   color: #FFFFFF !important;
+}
+
+.md-content__inner p > a {
+  text-decoration: underline;
+}
+
+.md-content img[alt="st_yled New Components"] {
+  border: solid 1px #2A4159;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

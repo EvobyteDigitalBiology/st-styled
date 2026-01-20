@@ -1,11 +1,19 @@
+New in **st_yled 0.3**: Container & expander padding, metric styling, more components
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/01/260120_New_Components.webp)
 
-![st_yled Components Examples](assets/st_yled_font_weight_preview.png)
 
-# st_yled - Streamlit Styling Made Simple
 
-Streamlit is great - but styling individual elements is a hassle.
+<br>
 
-**st_yled solves this by providing a simple way for styling Streamlit elements and components**
+# Streamlit Component Style Library
+
+- **Custom styling** for most elements: background colors, font size and more
+
+- **New components** like cards for stunning apps, built faster
+
+- [**st_yled studio**](https://styled-studio.streamlit.app/): Configure component styles interactively
+
+Streamlit is great - but styling individual elements is a hassle. st_yled solves this by providing a simple way for styling Streamlit elements and many new components to upgrade your apps.
 
 ---
 
@@ -13,7 +21,7 @@ Streamlit is great - but styling individual elements is a hassle.
 
 ### 0. Check st_yled studio
 
-[**st_yled studio**](https://styled-studio.streamlit.app/) is a free app to test and optimize your Streamlit layouts and UI styling.
+[**st_yled studio**](https://styled-studio.streamlit.app/) is a free app to test and optimize your Streamlit layouts, UI styling and explore new components.
 Your directly export your layouting into your Streamlit app using st_yled together with the studio app.
 
 Here is the [link to st_yled studio](https://styled-studio.streamlit.app/)
@@ -41,6 +49,14 @@ st_yled.button("Styled Button", color="white")
 
 # Or the color of the title
 st_yled.title("Welcome!", color="#57cf1cff")
+
+# Add st_yled components - like a badge card
+st_yled.badge_card_one(
+    badge_text="New",
+    badge_icon=":material/star:",
+    title="Featured Item",
+    text="Check out this amazing feature",
+)
 ```
 
 ### 3. Run your app
@@ -94,11 +110,12 @@ Here is the [link to st_yled studio](https://styled-studio.streamlit.app/)
 
 Once optimized, you can export your app layout and save in the `.streamlit` folder of your app. st_yled will automatically make use of your custom layout.
 
-### Comprehensive Validation
-st_yled validates all CSS properties and provides helpful error messages, preventing common styling mistakes and ensuring your app looks great across different browsers.
+### Component Library
 
-### Production Ready
-Built with enterprise applications in mind, st_yled includes performance optimizations, error handling, and extensive testing to ensure reliability in production environments.
+st_yled components speed up your app development and provide new functions and layouts.
+
+### Comprehensive Validation, Production Ready
+st_yled validates all CSS properties and provides helpful error messages, preventing common styling mistakes and ensuring your app looks great across different browsers.
 
 ---
 
@@ -108,12 +125,15 @@ Ready to transform your Streamlit apps? Choose your learning path:
 
 - **New to st_yled?** → [Installation Guide](getting-started/installation.md)
 - **Want to see examples?** → [Examples Gallery](examples/index.md)
+- **More components** → [st_yled components](components/index.md)
 - **Need specific elements?** → [Component Reference](elements/index.md)
 - **Advanced usage?** → [API Documentation](api/index.md)
 
 ---
 
 ## Key Features
+
+✨ **New Components** - Access ready-to-use components like badge cards
 
 🎨 **CSS Integration** - Load custom CSS files and apply styles seamlessly
 
@@ -122,8 +142,6 @@ Ready to transform your Streamlit apps? Choose your learning path:
 🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
 
 ⚡ **st_yled studio** - Use the accompanying app to test your layout styling
-
-📄 **MIT Licensed** for commercial and open source use
 
 ---
 

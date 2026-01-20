@@ -6,12 +6,11 @@ Get st_yled up and running in your Streamlit application in just a few minutes.
 
 ## Prerequisites
 
-- **Python 3.10+** - st_yled requires modern Python features
-- **Streamlit 1.42+** - Latest Streamlit version for optimal compatibility
+- **Python 3.10+**
+- **Streamlit 1.47+** - Latest Streamlit version for optimal compatibility
 ---
 
 ## Installation
-
 
 
 ### Option 1: Install from PyPI (Recommended)
