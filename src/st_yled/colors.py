@@ -1,11 +1,10 @@
 import colorsys
-import json
 import re
 from st_yled import constants
 
+
 class InvalidColorError(ValueError):
     """Raised when an invalid color value is provided."""
-    pass
 
 
 def _normalize_hex(color: str) -> str:
@@ -55,11 +54,7 @@ def _hsl_to_rgb(h: int, s: int, l: int) -> tuple[int, int, int]:
     else:
         r, g, b = c, 0, x
 
-    return (
-        round((r + m) * 255),
-        round((g + m) * 255),
-        round((b + m) * 255)
-    )
+    return (round((r + m) * 255), round((g + m) * 255), round((b + m) * 255))
 
 
 def rgb_to_hex(r: int, g: int, b: int, a: float | None = None) -> str:
@@ -79,11 +74,13 @@ def rgb_to_hex(r: int, g: int, b: int, a: float | None = None) -> str:
         InvalidColorError: If values are out of range
     """
     if not (0 <= r <= 255 and 0 <= g <= 255 and 0 <= b <= 255):
-        raise InvalidColorError(f"RGB values must be in range 0-255: r={r}, g={g}, b={b}")
+        msg = f"RGB values must be in range 0-255: r={r}, g={g}, b={b}"
+        raise InvalidColorError(msg)
 
     if a is not None:
         if not (0 <= a <= 1):
-            raise InvalidColorError(f"Alpha value must be in range 0-1: a={a}")
+            msg = f"Alpha value must be in range 0-1: a={a}"
+            raise InvalidColorError(msg)
         alpha_hex = f"{round(a * 255):02X}"
         return f"#{r:02X}{g:02X}{b:02X}{alpha_hex}"
 
@@ -107,11 +104,14 @@ def hsl_to_hex(h: int, s: int, l: int, a: float | None = None) -> str:
         InvalidColorError: If values are out of range
     """
     if not (0 <= h <= 360):
-        raise InvalidColorError(f"Hue must be in range 0-360: h={h}")
+        msg = f"Hue must be in range 0-360: h={h}"
+        raise InvalidColorError(msg)
     if not (0 <= s <= 100):
-        raise InvalidColorError(f"Saturation must be in range 0-100: s={s}")
+        msg = f"Saturation must be in range 0-100: s={s}"
+        raise InvalidColorError(msg)
     if not (0 <= l <= 100):
-        raise InvalidColorError(f"Lightness must be in range 0-100: l={l}")
+        msg = f"Lightness must be in range 0-100: l={l}"
+        raise InvalidColorError(msg)
 
     r, g, b = _hsl_to_rgb(h, s, l)
     return rgb_to_hex(r, g, b, a)
@@ -132,7 +132,8 @@ def named_to_hex(color: str) -> str:
     """
     color_lower = color.lower()
     if color_lower not in constants.CSS_COLOR_NAMES_HEX:
-        raise InvalidColorError(f"Unknown color name: {color}")
+        msg = f"Unknown color name: {color}"
+        raise InvalidColorError(msg)
 
     hex_value = constants.CSS_COLOR_NAMES_HEX[color_lower]
     return hex_value.upper() if hex_value.startswith("#") else f"#{hex_value.upper()}"
@@ -195,8 +196,7 @@ def to_hex(color: str) -> str:
     if constants.COLOR_PATTERNS["rgba"].match(color):
         # Extract RGBA values
         match = re.search(
-            r"rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)",
-            color
+            r"rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)", color
         )
         if match:
             r, g, b = int(match.group(1)), int(match.group(2)), int(match.group(3))
@@ -215,8 +215,7 @@ def to_hex(color: str) -> str:
     if constants.COLOR_PATTERNS["hsla"].match(color):
         # Extract HSLA values
         match = re.search(
-            r"hsla\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*,\s*([\d.]+)\s*\)",
-            color
+            r"hsla\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*,\s*([\d.]+)\s*\)", color
         )
         if match:
             h, s, l = int(match.group(1)), int(match.group(2)), int(match.group(3))
@@ -228,12 +227,8 @@ def to_hex(color: str) -> str:
         return named_to_hex(color)
 
     # If no pattern matched, raise error
-    raise InvalidColorError(
-        f"Invalid color format: {color}. "
-        "Supported formats: hex (#RGB, #RRGGBB, #RRGGBBAA), "
-        "rgb(r,g,b), rgba(r,g,b,a), hsl(h,s%,l%), hsla(h,s%,l%,a), "
-        "or CSS color names."
-    )
+    msg = f"Invalid color format: {color}. Supported formats: hex (#RGB, #RRGGBB, #RRGGBBAA), rgb(r,g,b), rgba(r,g,b,a), hsl(h,s%,l%), hsla(h,s%,l%,a), or CSS color names."
+    raise InvalidColorError(msg)
 
 
 def adjust_lightness(hex_color: str, factor: float) -> str:
@@ -261,20 +256,29 @@ def adjust_lightness(hex_color: str, factor: float) -> str:
         "#66B3FF"
     """
     if not -1.0 <= factor <= 1.0:
-        raise InvalidColorError(f"Factor must be in range -1.0 to 1.0: factor={factor}")
+        msg = f"Factor must be in range -1.0 to 1.0: factor={factor}"
+        raise InvalidColorError(msg)
 
     # Remove the # prefix
-    hex_color = hex_color.lstrip('#')
+    hex_color = hex_color.lstrip("#")
 
     # Check if alpha channel is present
     has_alpha = len(hex_color) == 8
 
     # Extract RGB and optional alpha
     if has_alpha:
-        r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+        r, g, b = (
+            int(hex_color[0:2], 16),
+            int(hex_color[2:4], 16),
+            int(hex_color[4:6], 16),
+        )
         alpha_hex = hex_color[6:8]
     else:
-        r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+        r, g, b = (
+            int(hex_color[0:2], 16),
+            int(hex_color[2:4], 16),
+            int(hex_color[4:6], 16),
+        )
         alpha_hex = None
 
     # Convert RGB to HLS (Hue, Lightness, Saturation)
@@ -322,10 +326,11 @@ def update_opacity(color: str, factor: float) -> str:
     """
 
     if not -1.0 <= factor <= 1.0:
-        raise InvalidColorError(f"Factor must be in range -1.0 to 1.0: factor={factor}")
+        msg = f"Factor must be in range -1.0 to 1.0: factor={factor}"
+        raise InvalidColorError(msg)
 
     # Remove the # prefix
-    hex_color = color.lstrip('#')
+    hex_color = color.lstrip("#")
 
     # Extract RGB and existing alpha
     if len(hex_color) == 8:
@@ -335,7 +340,8 @@ def update_opacity(color: str, factor: float) -> str:
         rgb_hex = hex_color
         current_alpha = 1.0  # Fully opaque if no alpha specified
     else:
-        raise InvalidColorError(f"Invalid hex color format: #{hex_color}")
+        msg = f"Invalid hex color format: #{hex_color}"
+        raise InvalidColorError(msg)
 
     # Adjust opacity and clamp to valid range
     new_opacity = max(0.0, min(1.0, current_alpha + factor))

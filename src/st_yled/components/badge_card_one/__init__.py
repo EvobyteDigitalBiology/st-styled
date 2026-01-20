@@ -13,10 +13,10 @@ import st_yled.elements as ste
 from st_yled.styler import generate_component_key  # type: ignore
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
-from st_yled.validation import ValidationError  # type: ignore
 from st_yled.components.base import card_base  # type: ignore
 
 __version__ = "0.1.0"
+
 
 def badge_card_one(
     badge_text: str,
@@ -30,7 +30,9 @@ def badge_card_one(
     border_width: Optional[int] = None,
     border_color: Optional[str] = None,
     border_style: Optional[str] = None,
-    badge_color: Literal["red", "orange", "yellow", "blue", "green", "violet", "gray", "grey", "primary"] = "primary",
+    badge_color: Literal[
+        "red", "orange", "yellow", "blue", "green", "violet", "gray", "grey", "primary"
+    ] = "primary",
     title_font_size: Optional[int] = None,
     title_font_weight: Optional[str] = None,
     title_color: Optional[str] = None,
@@ -109,7 +111,9 @@ def badge_card_one(
     strict_mode = ValidationConfig.get_strict_mode()
 
     # Set default background color from theme or fallback
-    background_color = background_color or st.get_option("theme.secondaryBackgroundColor") or "#f0f2f6"
+    background_color = (
+        background_color or st.get_option("theme.secondaryBackgroundColor") or "#f0f2f6"
+    )
     base_radius = st.get_option("theme.baseRadius") or "0.5rem"
 
     # Prepare styling kwargs for validation
@@ -117,46 +121,46 @@ def badge_card_one(
         "background_color": background_color,
         "border_width": border_width,
         "border_color": border_color,
-        "border_style": border_style
+        "border_style": border_style,
     }
 
     title_css_kwargs = {
         "font_size": title_font_size,
         "font_weight": title_font_weight,
-        "color": title_color
+        "color": title_color,
     }
 
     text_css_kwargs = {
         "font_size": text_font_size,
         "font_weight": text_font_weight,
-        "color": text_color
+        "color": text_color,
     }
 
     # Validate styling parameters if not bypassed
     if not bypass_validation:
         css_kwargs = validate_styling_kwargs(
-            component_type='badge_card_1',
+            component_type="badge_card_1",
             kwargs=css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
         title_css_kwargs = validate_styling_kwargs(
-            component_type='badge_card_1_title',
+            component_type="badge_card_1_title",
             kwargs=title_css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
         text_css_kwargs = validate_styling_kwargs(
-            component_type='badge_card_1_text',
+            component_type="badge_card_1_text",
             kwargs=text_css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
     # Generate unique key for component
-    key = key or generate_component_key(type='custom_component')
+    key = key or generate_component_key(type="custom_component")
 
     title_key = f"{key}_title"
     text_key = f"{key}_text"
@@ -190,7 +194,7 @@ def badge_card_one(
         box_shadow=box_shadow,
         padding="1rem",
         border_radius=base_radius,
-        gap="0.5rem"
+        gap="0.5rem",
     )
 
     # Populate card with badge, title, and text

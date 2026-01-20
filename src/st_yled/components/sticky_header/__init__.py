@@ -13,17 +13,19 @@ import st_yled.elements as ste
 from st_yled.styler import generate_component_key  # type: ignore
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
-from st_yled.validation import ValidationError  # type: ignore
 
 __version__ = "0.1.0"
 
-def sticky_header(height: int | str = '56px',
-                  background_color: str | None = None,
-                  vertical_alignment: Literal["top", "center", "bottom"] = "center",
-                  horizontal_alignment: Literal["left", "center", "right"] = "left",
-                  padding: str = "0px 32px",
-                  gap: Literal["small", "medium", "large"] = "small",
-                  key: str | None = None) -> ste.container:
+
+def sticky_header(
+    height: int | str = "56px",
+    background_color: str | None = None,
+    vertical_alignment: Literal["top", "center", "bottom"] = "center",
+    horizontal_alignment: Literal["left", "center", "right"] = "left",
+    padding: str = "0px 32px",
+    gap: Literal["small", "medium", "large"] = "small",
+    key: str | None = None,
+):
     """Create a sticky header container that remains fixed at the top of the page.
 
     This function creates a header container that stays fixed at the top of the Streamlit
@@ -65,19 +67,21 @@ def sticky_header(height: int | str = '56px',
     bypass_validation = ValidationConfig.is_validation_bypassed()
     strict_mode = ValidationConfig.get_strict_mode()
 
-    background_color = background_color or st.get_option("theme.primaryColor") or "#ff4b4b"
+    background_color = (
+        background_color or st.get_option("theme.primaryColor") or "#ff4b4b"
+    )
 
     # run validation for vertical alignment and background color
     css_kwargs = {
         "height": height,
         "background_color": background_color,
-        "padding": padding
-        }
+        "padding": padding,
+    }
 
     # Validate styling parameters if not bypassed
     if not bypass_validation:
         css_kwargs = validate_styling_kwargs(
-            component_type='sticky_header',
+            component_type="sticky_header",
             kwargs=css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
@@ -87,10 +91,11 @@ def sticky_header(height: int | str = '56px',
     background_color = css_kwargs["background_color"]
     padding = css_kwargs["padding"]
 
-    key = key or generate_component_key(type='custom_component')
+    key = key or generate_component_key(type="custom_component")
     header_bg_key = f"{key}-bg"
 
-    st.html(f"""
+    st.html(
+        f"""
     <style>
     .st-key-{header_bg_key} {{
         position: absolute;
@@ -113,26 +118,25 @@ def sticky_header(height: int | str = '56px',
         background-color: transparent;
     }}
     </style>
-    """)
+    """
+    )
 
     sticky_header_bg = ste.container(
         key=header_bg_key,
         background_color=background_color,
         padding="0px",
-        border_width="0px"
+        border_width="0px",
     )
 
     with sticky_header_bg:
         st.write("")
 
-    sticky_header = st_yled.container(
+    return st_yled.container(
         key=key,
         horizontal=True,
         vertical_alignment=vertical_alignment,
-        horizontal_alignment = horizontal_alignment,
+        horizontal_alignment=horizontal_alignment,
         width="stretch",
         padding=padding,
-        gap=gap
+        gap=gap,
     )
-
-    return sticky_header

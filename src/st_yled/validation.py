@@ -7,6 +7,7 @@ import os
 
 from st_yled import constants
 
+
 class ValidationError(ValueError):
     """Raised when validation fails for styling parameters."""
 
@@ -120,10 +121,10 @@ class CSSValidator:
         parts = value.split()
 
         # Check number of values
-        if not allow_multiple and len(parts) > 1:
+        if not allow_multiple and (len(parts) > 1):
             return False
 
-        if allow_multiple and len(parts) > 4:
+        if allow_multiple and (len(parts) > 4):
             return False
 
         if len(parts) == 0:
@@ -159,10 +160,16 @@ class StyleValidator:
         "border_style": CSSValidator.is_valid_border_style,
         # Padding properties
         "padding": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=True),
-        "padding_left": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
-        "padding_right": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "padding_left": lambda v: CSSValidator.is_valid_padding(
+            v, allow_multiple=False
+        ),
+        "padding_right": lambda v: CSSValidator.is_valid_padding(
+            v, allow_multiple=False
+        ),
         "padding_top": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
-        "padding_bottom": lambda v: CSSValidator.is_valid_padding(v, allow_multiple=False),
+        "padding_bottom": lambda v: CSSValidator.is_valid_padding(
+            v, allow_multiple=False
+        ),
         "height": CSSValidator.is_valid_length,
         "value_color": CSSValidator.is_valid_color,
         "label_color": CSSValidator.is_valid_color,
@@ -204,7 +211,9 @@ class StyleValidator:
     @classmethod
     def normalize_font_weight(cls, prop_name: str, prop_value: Any) -> str:
         """Normalize font-weight values."""
-        if (prop_name.endswith("font_weight")) and (prop_value in constants.CSS_FONT_WEIGHTS):
+        if (prop_name.endswith("font_weight")) and (
+            prop_value in constants.CSS_FONT_WEIGHTS
+        ):
             # Map font weight names to numeric
             return constants.CSS_FONT_WEIGHTS[prop_value]
 
@@ -275,7 +284,12 @@ class StyleValidator:
                 f"or four values ('8px 16px 24px 32px' for top, right, bottom, left). "
                 f"Supported units: px, rem, em. Integers are auto-converted to px."
             )
-        elif prop_name in ["padding_left", "padding_right", "padding_top", "padding_bottom"]:
+        elif prop_name in [
+            "padding_left",
+            "padding_right",
+            "padding_top",
+            "padding_bottom",
+        ]:
             return (
                 f"Invalid padding value '{prop_value}' for property '{prop_name}'. "
                 f"Expected format: single value with unit ('8px', '1rem', '2em'). "
@@ -351,7 +365,10 @@ class StyleValidator:
                 continue
 
             # Exceptions for special cases of css keywords like height and width, which can be set for components like
-            if component_type in ['container', 'text_area', 'code'] and prop_name == "height":
+            if (
+                component_type in ["container", "text_area", "code"]
+                and prop_name == "height"
+            ):
                 continue
 
             # TODO Add width when needed

@@ -10,12 +10,11 @@ from st_yled import styler  # type: ignore
 from st_yled.elements import *  # type: ignore # noqa: F403
 
 # Import custom components
-from st_yled.components.streamlit_split_button import split_button  # type: ignore
-from st_yled.components.streamlit_redirect import redirect  # type: ignore
-from st_yled.components.sticky_header import sticky_header  # type: ignore
-from st_yled.components.badge_card_one import badge_card_one  # type: ignore
-from st_yled.components.image_card_one import image_card_one  # type: ignore
-
+from st_yled.components.streamlit_split_button import split_button  # type: ignore # noqa: F401
+from st_yled.components.streamlit_redirect import redirect  # type: ignore # noqa: F401
+from st_yled.components.sticky_header import sticky_header  # type: ignore # noqa: F401
+from st_yled.components.badge_card_one import badge_card_one  # type: ignore # noqa: F401
+from st_yled.components.image_card_one import image_card_one  # type: ignore # noqa: F401
 
 __version__ = "0.3.0"
 

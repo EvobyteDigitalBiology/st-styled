@@ -2,6 +2,7 @@ import streamlit as st
 
 __version__ = "0.1.0"
 
+
 def redirect(url: str):
     """Redirect to a new URL
 
@@ -15,4 +16,6 @@ def redirect(url: str):
     Args:
         url (str): The URL to redirect to. External websites must contain protocol (http:// or https://)
     """
-    st.markdown(f'<meta http-equiv="refresh" content="0; url={url}">', unsafe_allow_html=True)
+    st.markdown(
+        f'<meta http-equiv="refresh" content="0; url={url}">', unsafe_allow_html=True
+    )

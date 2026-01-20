@@ -34,7 +34,7 @@ COLOR_PATTERNS = {
     ),
 }
 
-CSS_NAMED_COLORS = set(list(CSS_COLOR_NAMES_HEX.keys()) + ['transparent'])
+CSS_NAMED_COLORS = set(list(CSS_COLOR_NAMES_HEX.keys()) + ["transparent"])
 
 CSS_LENGTH_UNITS = {
     "px",

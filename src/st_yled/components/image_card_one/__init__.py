@@ -4,7 +4,7 @@ This module provides an image card component that displays an image at the top
 with a title and text content below in a styled card container. The component
 supports extensive customization of styling, colors, and typography.
 """
-from typing import Optional
+from typing import Optional, Literal
 
 import streamlit as st
 
@@ -12,17 +12,17 @@ import st_yled.elements as ste
 from st_yled.styler import generate_component_key  # type: ignore
 from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
-from st_yled.validation import ValidationError  # type: ignore
 from st_yled.components.base import card_base  # type: ignore
 
 __version__ = "0.1.0"
+
 
 def image_card_one(
     image_path: str,
     title: str,
     text: str,
-    width: int | str = 300,
-    height: int | str = "content",
+    width: Literal["stretch", "content"] | int = 300,
+    height: Literal["stretch", "content"] | int = "content",
     background_color: Optional[str] = None,
     card_shadow: bool = True,
     border_width: Optional[int] = None,
@@ -35,7 +35,7 @@ def image_card_one(
     text_font_weight: Optional[str] = None,
     text_color: Optional[str] = None,
     key: Optional[str] = None,
-) -> ste.container:
+):
     """Create an image card component with an image, title, and text content.
 
     This function creates a styled card container that displays an image at the top,
@@ -104,7 +104,9 @@ def image_card_one(
     strict_mode = ValidationConfig.get_strict_mode()
 
     # Set default background color from theme or fallback
-    background_color = background_color or st.get_option("theme.secondaryBackgroundColor") or "#f0f2f6"
+    background_color = (
+        background_color or st.get_option("theme.secondaryBackgroundColor") or "#f0f2f6"
+    )
     base_radius = st.get_option("theme.baseRadius") or "0.5rem"
 
     # Prepare styling kwargs for validation
@@ -112,46 +114,46 @@ def image_card_one(
         "background_color": background_color,
         "border_width": border_width,
         "border_color": border_color,
-        "border_style": border_style
-        }
+        "border_style": border_style,
+    }
 
     title_css_kwargs = {
         "font_size": title_font_size,
         "font_weight": title_font_weight,
-        "color": title_color
-        }
+        "color": title_color,
+    }
 
     text_css_kwargs = {
         "font_size": text_font_size,
         "font_weight": text_font_weight,
-        "color": text_color
-        }
+        "color": text_color,
+    }
 
     # Validate styling parameters if not bypassed
     if not bypass_validation:
         css_kwargs = validate_styling_kwargs(
-            component_type='image_card_1',
+            component_type="image_card_1",
             kwargs=css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
         title_css_kwargs = validate_styling_kwargs(
-            component_type='image_card_1_title',
+            component_type="image_card_1_title",
             kwargs=title_css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
         text_css_kwargs = validate_styling_kwargs(
-            component_type='image_card_1_text',
+            component_type="image_card_1_text",
             kwargs=text_css_kwargs,
             strict=strict_mode,
             bypass_validation=False,
         )
 
     # Generate unique keys for component and text container
-    key = key or generate_component_key(type='custom_component')
+    key = key or generate_component_key(type="custom_component")
     key_text_container = f"{key}-text-container"
     key_subheader = f"{key}_subheader"
     key_markdown = f"{key}_markdown"
@@ -174,7 +176,7 @@ def image_card_one(
         box_shadow=box_shadow,
         padding="0px",
         border_radius=base_radius,
-        gap="0px"
+        gap="0px",
     )
 
     # Add custom CSS to round the corners of the text container
@@ -193,10 +195,12 @@ def image_card_one(
         st.image(image_path, width="stretch")
 
         # Create text container with title and description
-        with ste.container(background_color=background_color,
-                               padding="1rem",
-                               key=key_text_container,
-                               height='stretch'):
+        with ste.container(
+            background_color=background_color,
+            padding="1rem",
+            key=key_text_container,
+            height="stretch",
+        ):
             ste.subheader(title, **title_css_kwargs, key=key_subheader)
             ste.markdown(text, **text_css_kwargs, key=key_markdown)
 
@@ -206,7 +210,6 @@ def image_card_one(
 if __name__ == "__main__":
     # If this file is run directly, we can test our component in a simple
     # Streamlit app.
-
 
     title = "Boat Trips 2026"
     text = "Your adventure starts here! Book your boat trip now and explore the beautiful waterways with us. Don't miss out on an unforgettable experience."

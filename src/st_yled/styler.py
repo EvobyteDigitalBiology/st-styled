@@ -1,5 +1,3 @@
-import json
-from pathlib import Path
 from typing import Any, Optional
 import re
 import warnings
@@ -14,7 +12,6 @@ from st_yled import constants  # type: ignore
 
 
 def extract_caller_path_hash_init() -> str:
-
     traceback_stack = traceback.extract_stack()
 
     caller_path = ""
@@ -29,10 +26,11 @@ def extract_caller_path_hash_init() -> str:
 
     return str(hash(caller_path))
 
+
 def extract_caller_path_hash(offset: int = 2) -> str:
     """
-        offet: Number of stack frames to go up from the generate_component_key call
-        Typically 2 for st_yled elements and 1 for custom components
+    offet: Number of stack frames to go up from the generate_component_key call
+    Typically 2 for st_yled elements and 1 for custom components
     """
 
     traceback_stack = traceback.extract_stack()
@@ -42,7 +40,6 @@ def extract_caller_path_hash(offset: int = 2) -> str:
     # Traverse traceback in reverse order
     ix = 0
     for line in traceback_stack[::-1]:
-
         # Skip if line.line is empty
         if not isinstance(line.line, str):
             continue
@@ -50,7 +47,7 @@ def extract_caller_path_hash(offset: int = 2) -> str:
             continue
 
         # Plus 2 upstream to get to caller of generate_component_key for st_yled elements
-        if ("generate_component_key" in line.line):
+        if "generate_component_key" in line.line:
             target_ix = ix + offset
 
         if ix == target_ix:
@@ -63,31 +60,6 @@ def extract_caller_path_hash(offset: int = 2) -> str:
         warnings.warn("Could not extract caller path from traceback.")
 
     return str(hash(caller_path))
-
-    # traceback_stack = traceback.extract_stack()
-
-    # exec_line = False
-    # caller_path = ""
-    # # Traverse traceback in reverse order
-    # for line in traceback_stack[::-1]:
-
-    #     # if isinstance(line.line, str):
-    #     #     print(f"LINE: {line.line}")
-    #     #     print(f"FILENAME: {line.filename}")
-
-    #     if exec_line:
-    #         caller_path = line.filename
-    #         #print(f"CALLER PATH: {caller_path}")
-    #         break
-    #     if isinstance(line.line, str) and line.line.startswith(
-    #         "exec(code, module.__dict__)"
-    #     ):
-    #         exec_line = True
-
-    # if caller_path == "":
-    #     warnings.warn("Could not extract caller path from traceback.")
-
-    # return str(hash(caller_path))
 
 
 def get_element_style(element_name: str) -> dict:
@@ -250,12 +222,12 @@ def get_element_variants(element_name: str) -> list[str]:
     return variants
 
 
-def generate_component_key(type: str = 'element') -> str:
+def generate_component_key(type: str = "element") -> str:
     """Generate a unique component key for st_yled components."""
 
-    if type == 'element':
+    if type == "element":
         caller_hash = extract_caller_path_hash()
-    elif type == 'custom_component':
+    elif type == "custom_component":
         caller_hash = extract_caller_path_hash(offset=1)
 
     if f"st-yled-comp-{caller_hash}-counter" not in st.session_state:
