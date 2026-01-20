@@ -5,6 +5,7 @@ with a title and text content below in a styled card container. The component
 supports extensive customization of styling, colors, and typography.
 """
 from typing import Optional, Literal
+import typing
 
 import streamlit as st
 
@@ -17,6 +18,7 @@ from st_yled.components.base import card_base  # type: ignore
 __version__ = "0.1.0"
 
 
+@typing.no_type_check
 def image_card_one(
     image_path: str,
     title: str,

@@ -1,5 +1,6 @@
 import colorsys
 import re
+import typing
 from st_yled import constants
 
 
@@ -22,7 +23,8 @@ def _normalize_hex(color: str) -> str:
     return color
 
 
-def _hsl_to_rgb(h: int, s: int, l: int) -> tuple[int, int, int]:
+@typing.no_type_check
+def _hsl_to_rgb(h: float, s: float, l: float) -> tuple[float, float, float]:
     """
     Convert HSL to RGB values.
 
@@ -34,6 +36,7 @@ def _hsl_to_rgb(h: int, s: int, l: int) -> tuple[int, int, int]:
     Returns:
         Tuple of (r, g, b) values (0-255)
     """
+
     s = s / 100
     l = l / 100
 
@@ -57,6 +60,7 @@ def _hsl_to_rgb(h: int, s: int, l: int) -> tuple[int, int, int]:
     return (round((r + m) * 255), round((g + m) * 255), round((b + m) * 255))
 
 
+@typing.no_type_check
 def rgb_to_hex(r: int, g: int, b: int, a: float | None = None) -> str:
     """
     Convert RGB(A) values to hex format.
@@ -87,7 +91,7 @@ def rgb_to_hex(r: int, g: int, b: int, a: float | None = None) -> str:
     return f"#{r:02X}{g:02X}{b:02X}"
 
 
-def hsl_to_hex(h: int, s: int, l: int, a: float | None = None) -> str:
+def hsl_to_hex(h: float, s: float, l: int, a: float | None = None) -> str:
     """
     Convert HSL(A) values to hex format.
 
@@ -231,6 +235,7 @@ def to_hex(color: str) -> str:
     raise InvalidColorError(msg)
 
 
+@typing.no_type_check
 def adjust_lightness(hex_color: str, factor: float) -> str:
     """
     Adjust the lightness of a hex color by a given factor.

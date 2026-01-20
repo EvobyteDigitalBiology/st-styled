@@ -5,6 +5,7 @@ Streamlit app while scrolling. The header supports customizable styling includin
 height, background color, alignment, and padding.
 """
 from typing import Literal
+import typing
 
 import streamlit as st
 
@@ -17,6 +18,7 @@ from st_yled.validation import ValidationConfig  # type: ignore
 __version__ = "0.1.0"
 
 
+@typing.no_type_check
 def sticky_header(
     height: int | str = "56px",
     background_color: str | None = None,

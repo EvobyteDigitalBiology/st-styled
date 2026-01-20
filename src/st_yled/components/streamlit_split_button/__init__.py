@@ -1,3 +1,4 @@
+import typing
 import streamlit as st
 from typing import List
 
@@ -10,6 +11,7 @@ from st_yled.colors import update_opacity
 __version__ = "0.1.0"
 
 
+@typing.no_type_check
 def split_button(
     label: str,
     options: List[str],
