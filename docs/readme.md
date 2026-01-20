@@ -1,4 +1,4 @@
-# st_yled - Advanced Streamlit Styling
+# st_yled - Streamlit Styling and Components
 
 [![CI](https://github.com/EvobyteDigitalBiology/st-styled/workflows/CI/badge.svg)](https://github.com/EvobyteDigitalBiology/st-styled/actions)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -8,14 +8,24 @@
 
 <br>
 
-![st_yled Components Examples](assets/st_yled_font_weight_preview.png)
+New in **st_yled 0.3**: Container & expander padding, metric styling, more components
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/01/260120_New_Components.webp)
 
 <br>
+
 
 **st_yled** provides styling capabilities and improved components for Streamlit applications.
 Style your Streamlit apps with custom themes and unique elements to match your personal tone or corporate brand.
 
-> **Check the [st_yled studio](https://styled-studio.streamlit.app/) app to configure your layouts and custom elements.**
+- **Custom styling** for most elements: background colors, font size and more
+
+- **New components** like cards for stunning apps, built faster
+
+- [**st_yled studio**](https://styled-studio.streamlit.app/) app to configure your layouts and custom elements.
+
+<br>
+
+> **Check the offical st_yled docs** https://st-styled.evo-byte.com/
 
 
 ## ✨ Features
@@ -24,9 +34,13 @@ Style your Streamlit apps with custom themes and unique elements to match your p
 
 🎯 **Global Styling** - Apply consistent styles across all elements
 
-🔧 **elements** - 44+ styled component wrappers with validation
+🔧 **Elements** - 44+ styled component wrappers with validation
+
+🔧 **New Components** - 5+ new components like cards, headers or buttons
 
 ⚡ **st_yled studio** - Use the accompanying app to test your layout styling
+
+
 
 ## 🚀 Quick Start
 
@@ -52,6 +66,14 @@ st_yled.set("button", "border_style", "solid")
 # Use enhanced components with styling
 st_yled.button("Styled Button", background_color="#4ecdc4", color="white")
 st_yled.text("Styled Text", color="#2c3e50", font_size="18px")
+
+# Add st_yled components - like a badge card
+st_yled.badge_card_one(
+    badge_text="New",
+    badge_icon=":material/star:",
+    title="Featured Item",
+    text="Check out this amazing feature",
+)
 ```
 
 ## 📚 Documentation
@@ -66,7 +88,7 @@ st_yled.text("Styled Text", color="#2c3e50", font_size="18px")
 - [Styling Properties](#styling-properties) - Supported CSS properties
 - [Configuration](#configuration) - Advanced configuration options
 
-## <a name="api-reference"></a>📖 API Reference
+## <a id="api-reference"></a>📖 API Reference
 
 ### Core Functions
 
@@ -107,7 +129,7 @@ st_yled.set("header", "color", "#2c3e50")
 st_yled.set("header", "font_size", "24px")
 ```
 
-## <a name="st_yled-components"></a>🎨 st_yled Components
+## <a id="st_yled-components"></a>🎨 st_yled Components
 
 st_yled provides new custom components that extend Streamlit's functionality with pre-built UI patterns.
 A full list of new st_yled components can be found here: [st_yled component docs](https://st-styled.evo-byte.com/components/)
@@ -145,7 +167,7 @@ st_yled.split_button(
 
 > **See [st_yled component docs](https://st-styled.evo-byte.com/components/) for full list and detailed documentation**
 
-## <a name="elements"></a>🔧 elements
+## <a id="elements"></a>🔧 Elements
 
 St_yled provides enhanced versions of Streamlit elements with additional styling parameters:
 
@@ -243,7 +265,7 @@ os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"
 ```
 
 
-## <a name="styling-properties">🎨 Styling Properties
+## <a id="styling-properties"></a>🎨 Styling Properties
 
 ### Color Properties
 - **Valid formats:** Hex (`#ff0000`), RGB (`rgb(255,0,0)`), HSL (`hsl(0,100%,50%)`), Named (`red`)
@@ -256,6 +278,8 @@ os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"
 ### Border Properties
 - **Styles:** `solid`, `dashed`, `dotted`, `double`, ...
 - **Examples:** `border`, `border_radius`, `border_width`, `border_style`
+
+<br>
 
 > **See [Component Reference](https://st-styled.evo-byte.com/elements/) for complete property details.**
 

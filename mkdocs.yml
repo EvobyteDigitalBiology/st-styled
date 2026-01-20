@@ -30,17 +30,26 @@ nav:
   - Getting Started:
     - getting-started/installation.md
     - getting-started/first-app.md
+    - getting-started/component-examples.md
     - getting-started/basic-styling.md
     - getting-started/global-styling.md
-  - st_yled Elements:
+  - Elements:
     - elements/index.md
     - Text: elements/text-elements.md
+    - Buttons: elements/button-elements.md
     - Input: elements/input-elements.md
     - Data: elements/data-elements.md
     - Layout: elements/layout-elements.md
     - Status: elements/status-elements.md
+  - New Components:
+    - components/index.md
+    - Cards: components/cards.md
+    - Layout: components/layout.md
+    - Navigation: components/navigation.md
+    - Input: components/input.md
   - Examples:
     - examples/index.md
+    - Component Showcase: examples/component-showcase.md
     - Basic:
       - examples/basic-examples/simple-styling.md
     - Advanced:
