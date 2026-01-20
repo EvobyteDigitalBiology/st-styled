@@ -17,7 +17,7 @@ from st_yled.components.badge_card_one import badge_card_one  # type: ignore
 from st_yled.components.image_card_one import image_card_one  # type: ignore
 
 
-__version__ = "0.1.0"
+__version__ = "0.3.0"
 
 
 def init(css_path: Optional[str] = None, reset_tracebacklimit: bool = True) -> None:
