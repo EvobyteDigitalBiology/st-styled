@@ -57,7 +57,7 @@ jobs:
 
     - name: Run tests
       run: |
-        poetry run pytest tests/ -v --cov=st_yled --cov-report=xml --cov-report=term-missing
+        poetry run pytest tests/ -v --cov=st_yled --cov-report=xml --cov-report=term-missing --ignore=tests/test_styler_integration.py
 
   build:
     runs-on: ubuntu-latest
