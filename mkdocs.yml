@@ -90,3 +90,6 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/EvobyteDigitalBiology/st-styled
+  analytics:
+    provider: google
+    property: G-Q5VBRVXCMF
