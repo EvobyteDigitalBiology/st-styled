@@ -8,6 +8,8 @@ Planned checks in this single test case:
 5. Verify dismiss action keeps tooltip hidden after clicking close.
 """
 
+# flake8: noqa
+
 from __future__ import annotations
 
 from playwright.sync_api import Page, expect
@@ -52,15 +54,17 @@ def test_tooltip_argument_semantics_and_dismiss_behavior(page: Page) -> None:
     )
 
     hidden_display = hidden.evaluate("el => getComputedStyle(el).display")
-    assert hidden_display == "none", (
-        f"Expected hidden tooltip display to be none, got {hidden_display}."
-    )
+    assert (
+        hidden_display == "none"
+    ), f"Expected hidden tooltip display to be none, got {hidden_display}."
 
     close_button = page.locator("#close-test-basic")
     expect(close_button).to_be_visible()
     close_button.click()
 
-    baseline_display_after_close = baseline.evaluate("el => getComputedStyle(el).display")
+    baseline_display_after_close = baseline.evaluate(
+        "el => getComputedStyle(el).display"
+    )
     assert baseline_display_after_close == "none", (
         "Expected baseline tooltip to be hidden after close click, "
         f"got display={baseline_display_after_close}."
