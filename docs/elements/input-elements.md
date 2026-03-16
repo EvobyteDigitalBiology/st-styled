@@ -7,6 +7,8 @@ Interactive input components allow users to interact with your Streamlit applica
 - [selectbox](#selectbox) - Dropdown selection with styling options
 - [radio](#radio) - Radio button groups with custom styling
 - [multiselect](#multiselect) - Multiple selection component with styling
+- [pills](#pills) - Pill-style segmented choices with styling
+- [segmented_control](#segmented_control) - Segmented selection control with styling
 - [checkbox](#checkbox) - Checkbox with custom styling options
 - [text_input](#text_input) - Text input fields with comprehensive styling
 - [text_area](#text_area) - Multi-line text input with styling options
@@ -18,6 +20,7 @@ Interactive input components allow users to interact with your Streamlit applica
 - [color_picker](#color_picker) - Color selection with styling options
 - [file_uploader](#file_uploader) - File upload component with custom styling
 - [camera_input](#camera_input) - Camera input with styling options
+- [audio_input](#audio_input) - Audio recorder input with styling options
 
 ---
 
@@ -46,6 +49,9 @@ option = st_yled.selectbox(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ### radio
 **Streamlit equivalent:** `st.radio()`
@@ -66,6 +72,9 @@ choice = st_yled.radio(
 - `background_color` - Background color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
 - `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -92,6 +101,67 @@ selections = st_yled.multiselect(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+
+---
+
+### pills
+**Streamlit equivalent:** `st.pills()`
+
+Pill-style segmented choices with custom styling.
+
+```python
+selection = st_yled.pills(
+    "Choose",
+    ["A", "B", "C"],
+    color="#2c3e50",
+    border_color="#007bff"
+)
+```
+
+**Supported Styling Properties:**
+
+- `background_color` - Background color (hex, rgb, named colors)
+- `color` - Text color (hex, rgb, named colors)
+- `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `border_style` - Border style (solid, dashed, dotted, none)
+- `border_color` - Border color (hex, rgb, named colors)
+- `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+
+---
+
+### segmented_control
+**Streamlit equivalent:** `st.segmented_control()`
+
+Segmented selection control with custom styling.
+
+```python
+selection = st_yled.segmented_control(
+    "Pick",
+    ["X", "Y", "Z"],
+    color="#2c3e50",
+    background_color="#f8f9fa"
+)
+```
+
+**Supported Styling Properties:**
+
+- `background_color` - Background color (hex, rgb, named colors)
+- `color` - Text color (hex, rgb, named colors)
+- `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `border_style` - Border style (solid, dashed, dotted, none)
+- `border_color` - Border color (hex, rgb, named colors)
+- `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -145,6 +215,9 @@ name = st_yled.text_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -171,6 +244,9 @@ content = st_yled.text_area(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -198,6 +274,9 @@ value = st_yled.number_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -221,6 +300,10 @@ value = st_yled.slider(
 
 - `color` - Text and track color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -243,6 +326,9 @@ size = st_yled.select_slider(
 - `color` - Text and track color (hex, rgb, named colors)
 - `font_size` - Font size (px, rem, em, %, or integer as px)
 - `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -270,6 +356,9 @@ date = st_yled.date_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -295,6 +384,9 @@ time = st_yled.time_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -320,6 +412,9 @@ datetime = st_yled.datetime_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -347,6 +442,9 @@ color = st_yled.color_picker(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -373,6 +471,9 @@ file = st_yled.file_uploader(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 
@@ -397,6 +498,36 @@ photo = st_yled.camera_input(
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+
+---
+
+### audio_input
+**Streamlit equivalent:** `st.audio_input()`
+
+Audio recorder input with styling options.
+
+```python
+audio = st_yled.audio_input(
+    "Record audio",
+    color="#2c3e50",
+    border_color="#6c757d"
+)
+```
+
+**Supported Styling Properties:**
+
+- `color` - Text and icon color (hex, rgb, named colors)
+- `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `border_style` - Border style (solid, dashed, dotted, none)
+- `border_color` - Border color (hex, rgb, named colors)
+- `border_width` - Border width (px, rem, em, or integer as px)
+- `label_color` - Label text color only (hex, rgb, named colors)
+- `label_font_size` - Label text size only (px, rem, em, %, or integer as px)
+- `label_font_weight` - Label font weight only (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
 
 ---
 

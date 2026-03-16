@@ -42,6 +42,15 @@ Enhanced input components with advanced functionality.
 
 ---
 
+### [ℹ️ Status Components](status.md)
+Components for surfacing contextual information and lightweight feedback.
+
+**Available Components:**
+
+- [Tooltip](status.md#tooltip) - Dismissible information boxes for inline guidance and notices
+
+---
+
 ## Using Custom Components
 
 All custom components are accessible through the `st_yled` namespace:
