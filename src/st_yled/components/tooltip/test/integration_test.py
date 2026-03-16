@@ -8,11 +8,9 @@ Planned checks in this single test case:
 5. Verify dismiss action keeps tooltip hidden after clicking close.
 """
 
-# flake8: noqa
-
 from __future__ import annotations
 
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect  # type: ignore
 
 BASE_URL = "http://localhost:8512"
 
