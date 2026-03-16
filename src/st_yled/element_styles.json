@@ -655,7 +655,7 @@
     "table": {
         "css": {
             "background_color": {
-                ".stTable": {
+                ".stTable > div": {
                     "background-color": null
                 }
             },
@@ -842,6 +842,21 @@
                 ".stRadio label p": {
                     "font-weight": null
                 }
+            },
+            "label_color": {
+                ".stRadio label[data-testid=\"stWidgetLabel\"] p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stRadio label[data-testid=\"stWidgetLabel\"] p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stRadio label[data-testid=\"stWidgetLabel\"] p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -885,6 +900,21 @@
             "border_width": {
                 ".stMultiSelect > div > div > div": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stMultiSelect label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stMultiSelect label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stMultiSelect label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -939,6 +969,21 @@
                 ".stSelectbox > div > div": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stSelectbox label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stSelectbox label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stSelectbox label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -989,6 +1034,21 @@
                 ".stButtonGroup button[kind=\"pills\"]": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stButtonGroup label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stButtonGroup label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stButtonGroup label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1005,7 +1065,7 @@
                 }
             },
             "background_color": {
-                ".stButtonGroup div button": {
+                ".stButtonGroup div button:not([kind=\"segmented_controlActive\"])": {
                     "background-color": null
                 }
             },
@@ -1038,6 +1098,21 @@
             "border_width": {
                 ".stButtonGroup div button": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stButtonGroup label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stButtonGroup label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stButtonGroup label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -1081,6 +1156,21 @@
                 ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
                     "font-weight": null
                 }
+            },
+            "label_color": {
+                ".stSlider label": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stSlider label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stSlider label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1121,6 +1211,21 @@
                     "font-weight": null
                 },
                 ".stSlider div[data-testid=\"stSliderTickBar\"] div": {
+                    "font-weight": null
+                }
+            },
+            "label_color": {
+                ".stSlider label": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stSlider label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stSlider label p": {
                     "font-weight": null
                 }
             }
@@ -1211,6 +1316,21 @@
                 ".stNumberInput > div[data-testid=\"stNumberInputContainer\"]": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stNumberInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stNumberInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stNumberInput label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1264,6 +1384,21 @@
                 ".stDateInput > div > div[data-baseweb=\"input\"]": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stDateInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stDateInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stDateInput label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1283,10 +1418,7 @@
                 }
             },
             "background_color": {
-                ".stTimeInput > div > div > div": {
-                    "background-color": null
-                },
-                ".stTimeInput > div > div button": {
+                ".stTimeInput > div > div": {
                     "background-color": null
                 }
             },
@@ -1319,6 +1451,21 @@
             "border_width": {
                 ".stTimeInput > div > div": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stTimeInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stTimeInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stTimeInput label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -1372,6 +1519,21 @@
             "border_width": {
                 ".stDateTimeInput > div > div[data-baseweb=\"input\"]": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stDateTimeInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stDateTimeInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stDateTimeInput label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -1429,6 +1591,21 @@
                 ".stTextArea > div[data-baseweb=\"textarea\"]": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stTextArea label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stTextArea label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stTextArea label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1478,6 +1655,21 @@
             "border_width": {
                 ".stTextInput > div[data-baseweb=\"input\"]": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stTextInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stTextInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stTextInput label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -1585,6 +1777,21 @@
                 ".stFileUploader section": {
                     "border-width": null
                 }
+            },
+            "label_color": {
+                ".stFileUploader label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stFileUploader label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stFileUploader label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1620,6 +1827,21 @@
             "border_width": {
                 ".stColorPicker > div > div": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stColorPicker label": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stColorPicker label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stColorPicker label p": {
+                    "font-weight": null
                 }
             }
         },
@@ -1698,6 +1920,21 @@
                     "border-right-width": null,
                     "border-left-width": null
                 }
+            },
+            "label_color": {
+                ".stCameraInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stCameraInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stCameraInput label p": {
+                    "font-weight": null
+                }
             }
         },
         "category": "input",
@@ -1736,6 +1973,21 @@
             "border_width": {
                 ".stAudioInput  > div": {
                     "border-width": null
+                }
+            },
+            "label_color": {
+                ".stAudioInput label p": {
+                    "color": null
+                }
+            },
+            "label_font_size": {
+                ".stAudioInput label p": {
+                    "font-size": null
+                }
+            },
+            "label_font_weight": {
+                ".stAudioInput label p": {
+                    "font-weight": null
                 }
             }
         },

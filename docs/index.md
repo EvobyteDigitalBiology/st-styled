@@ -1,5 +1,5 @@
-New in **st_yled 0.3**: Container & expander padding, metric styling, more components
-![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/01/260120_New_Components.webp)
+New in **st_yled 0.4**: Tooltip component & Text Input Styling
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/03/260316_New_Components.png)
 
 
 

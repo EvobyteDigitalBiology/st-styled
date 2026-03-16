@@ -8,8 +8,8 @@
 
 <br>
 
-New in **st_yled 0.3**: Container & expander padding, metric styling, more components
-![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/01/260120_New_Components.webp)
+New in **st_yled 0.4**: Tooltip component & Text Input Styling
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/03/260316_New_Components.png)
 
 <br>
 
@@ -36,7 +36,7 @@ Style your Streamlit apps with custom themes and unique elements to match your p
 
 🔧 **Elements** - 44+ styled component wrappers with validation
 
-🔧 **New Components** - 5+ new components like cards, headers or buttons
+🔧 **New Components** - 6+ new components like cards, headers or buttons
 
 ⚡ **st_yled studio** - Use the accompanying app to test your layout styling
 

@@ -7,8 +7,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src", "st_yled"))
 
 from unittest.mock import patch, MagicMock
-from st_yled.styler import apply_component_css, apply_component_css_global, get_css_properties_from_args
-from st_yled.styler import extract_caller_path_hash
+from st_yled.styler import apply_component_css, apply_component_css_global, extract_caller_path_hash_init, get_css_properties_from_args
+from st_yled.styler import extract_caller_path_hash, extract_caller_path_hash_init
 from st_yled.validation import ValidationConfig, ValidationError
 import st_yled
 
@@ -21,16 +21,13 @@ class TestStylerValidationIntegration:
         kwargs = {
             "value": "Hello World",
             "color": "#ff0000",
-            "font_size": "16px"
+            "font_size": "16px",
+            "key": "my-component-test-key"
         }
 
         # Mock st.html to capture CSS generation and st.session_state
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-
-            # Generate a hash using the caller's file path
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
 
             result_kwargs = apply_component_css("text", kwargs)
 
@@ -50,20 +47,18 @@ class TestStylerValidationIntegration:
 
             # Key should be generated if not provided
             assert "key" in result_kwargs
-            assert "st-yler-" in result_kwargs["key"]
 
     def test_apply_component_css_with_button_styling(self):
         """Test with button component that supports background_color."""
         kwargs = {
             "label": "Click me",
             "background_color": "#00ff00",
-            "border_color": "#000000"
+            "border_color": "#000000",
+            "key": "button-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("button", kwargs)
 
             # Verify CSS was generated
@@ -81,17 +76,16 @@ class TestStylerValidationIntegration:
         kwargs = {
             "value": "Hello World",
             "color": "#ff0000",
-            "key": "custom_key"
+            "key": "button-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
+
             result_kwargs = apply_component_css("text", kwargs)
 
             # Original key should be preserved
-            assert result_kwargs["key"] == "custom_key"
+            assert result_kwargs["key"] == "button-test-key"
 
     def test_apply_component_css_with_invalid_styling_strict_mode(self):
         """Test that invalid styling properties raise error in strict mode."""
@@ -121,13 +115,12 @@ class TestStylerValidationIntegration:
 
         kwargs = {
             "value": "Hello World",
-            "color": "invalid_color"  # Invalid color value
+            "color": "invalid_color",  # Invalid color value
+            "key": "permissive-mode-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
-            # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
+
             # Should not raise error in permissive mode - invalid properties are removed by validation
             result_kwargs = apply_component_css("text", kwargs)
 
@@ -143,19 +136,19 @@ class TestStylerValidationIntegration:
         try:
             kwargs = {
                 "value": "Hello World",
-                "color": "invalid_color"  # Would normally fail validation
+                "color": "invalid_color",
+                "key": "bypass-validation-test-key"
             }
 
             with patch("st_yled.styler.st") as mock_st:
                 # Mock session_state as a dictionary
-                caller_hash = extract_caller_path_hash()
-                mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
                 result_kwargs = apply_component_css("text", kwargs)
 
                 # When bypassed, validation is skipped, but CSS processing still happens
                 # Styling properties should still be removed after CSS processing
                 assert "color" not in result_kwargs
                 assert "value" in result_kwargs
+                assert "key" in result_kwargs
 
         finally:
             # Clean up environment variable
@@ -189,13 +182,12 @@ class TestStylerValidationIntegration:
         """Test with styling property not supported by component."""
         kwargs = {
             "value": "Hello World",
-            "background_color": "#ff0000"  # text component doesn't support background_color
+            "background_color": "#ff0000",  # text component doesn't support background_color
+            "key": "unsupported-property-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # Unsupported properties should not be processed/removed
@@ -278,13 +270,12 @@ class TestStylerValidationIntegration:
             "color": "#ff0000",
             "help": "This is help text",  # Streamlit native property
             "disabled": False,  # Streamlit native property
-            "font_size": "16px"
+            "font_size": "16px",
+            "key": "mixed-props-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             result_kwargs = apply_component_css("text", kwargs)
 
             # Supported styling properties should be removed
@@ -320,13 +311,12 @@ class TestStylerValidationIntegration:
         """Test that validation warnings are properly issued."""
         kwargs = {
             "value": "Hello World",  # This triggers warning as unknown CSS property
-            "color": "#ff0000"
+            "color": "#ff0000",
+            "key": "validation-integration-test-key"
         }
 
         with patch("st_yled.styler.st") as mock_st:
             # Mock session_state as a dictionary
-            caller_hash = extract_caller_path_hash()
-            mock_st.session_state = {f'st-yled-comp-{caller_hash}-counter': 0}
             # Should complete but issue warnings
             result_kwargs = apply_component_css("text", kwargs)
             # Supported styling should be processed

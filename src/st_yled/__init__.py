@@ -15,8 +15,9 @@ from st_yled.components.streamlit_redirect import redirect  # type: ignore # noq
 from st_yled.components.sticky_header import sticky_header  # type: ignore # noqa: F401
 from st_yled.components.badge_card_one import badge_card_one  # type: ignore # noqa: F401
 from st_yled.components.image_card_one import image_card_one  # type: ignore # noqa: F401
+from st_yled.components.tooltip import tooltip  # type: ignore # noqa: F401
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 
 def init(css_path: Optional[str] = None, reset_tracebacklimit: bool = True) -> None:

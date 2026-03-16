@@ -6,7 +6,7 @@
         "usage_pattern": "Use this component to highlight special features, promotions, or status indicators. Perfect for showcasing new items, featured content, sale badges, or premium offerings in a visually appealing card format.",
         "docs_url": "https://st-styled.evo-byte.com/components/cards/#badge-card-one",
         "category": "cards",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/badge_card_1.webp",
         "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/badge_card_1.webp",
         "code_examples":
@@ -16,7 +16,6 @@
                 }],
         "code_copy_template": "st_yled.badge_card_one(badge_text=\"\", title=\"\", text=\"\")"
     },
-
     "sticky_header" : {
         "name": "Sticky Header",
         "preview_description": "A fixed header that stays at the top while scrolling.",
@@ -24,7 +23,7 @@
         "usage_pattern": "Use this component when you need navigation, branding, or key actions to remain visible as users scroll through long pages. Ideal for dashboards, data exploration tools, or multi-section applications where persistent navigation improves user experience.",
         "docs_url": "https://st-styled.evo-byte.com/components/layout/#sticky-header",
         "category": "layout",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_crop.webp",
         "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/sticky_header_example_2.png",
         "code_examples":
@@ -34,7 +33,6 @@
             }],
         "code_copy_template": "st_yled.sticky_header()"
     },
-
     "image_card_one" : {
         "name": "Image Card One",
         "preview_description": "A card with image at the top",
@@ -42,7 +40,7 @@
         "usage_pattern": "Use this component to display visual content like products, portfolio items, blog posts, or team members. Perfect for creating galleries, catalogs, or any content where images play a central role in conveying information.",
         "docs_url": "https://st-styled.evo-byte.com/components/cards/#image-card-one",
         "category": "cards",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/image_card_one-e1767624394929.webp",
         "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/image_card_one-1.webp",
         "code_examples":
@@ -52,7 +50,6 @@
             }],
         "code_copy_template": "st_yled.image_card_one(image_url=\"/path/to/image.png\", title=\"Card Title\", text=\"Card Text\")"
     },
-
     "redirect" : {
         "name": "Redirect",
         "preview_description": "Programmatically redirect to any URL",
@@ -60,7 +57,7 @@
         "usage_pattern": "Use this component when you need to programmatically redirect users to another page or external URL. Ideal for post-authentication flows, conditional navigation, redirecting after form submissions, or linking to external resources based on user actions.",
         "docs_url": "https://st-styled.evo-byte.com/components/navigation/#redirect",
         "category": "navigation",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/redirect_logo.png",
         "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/redirect_logo.png",
         "code_examples":
@@ -70,15 +67,14 @@
             }],
         "code_copy_template": "st_yled.redirect(\"https://redirect-url.com\")"
     },
-
     "split_button" : {
         "name": "Split Button",
         "preview_description": "A button with dropdown menu options",
-        "description": "A button with a dropdown menu for multiple actions",
+        "description": "A button with a dropdown menu for multiple actions. NOTE: In Streamlit version 1.55, the dropdown width is very narrow, due to a UI update. We are working on a fix for this issue.",
         "usage_pattern": "Use this component when you have a primary action with related secondary options. Perfect for save/submit buttons with variations (Save Draft, Save & Close), export buttons with multiple formats, or any action where users frequently need to choose between similar operations.",
         "docs_url": "https://st-styled.evo-byte.com/components/input/#split-button",
         "category": "input",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/split_button_image.webp",
         "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/01/split_button_expanded.webp",
         "code_examples":
@@ -87,5 +83,22 @@
                 "code": "st_yled.split_button(\n    label=\"Save\",\n    options=[\"Save Draft\", \"Save & Close\", \"Save & New\"],\n    icon=\":material/save:\",\n    color=\"#FFFFFF\",\n    background_color=\"#1976D2\",\n    radius=\"20px\",\n    key=\"split-button-1\",\n)"
             }],
         "code_copy_template": "st_yled.split_button(label=\"\", options=[\"1\", \"2\"])"
+    },
+    "tooltip" : {
+        "name": "Tooltip",
+        "preview_description": "A pop-up box providing information anywhere on the page",
+        "description": "A tooltip is a dismissible pop-up box that appears when a user hovers over an element, providing additional information or context. The tooltip can be positioned anywhere on the page.",
+        "usage_pattern": "Use this component to provide additional information or context for elements without cluttering the interface. The close buttons allow users to dismiss the tooltip easily.",
+        "docs_url": "https://st-styled.evo-byte.com/components/status/#tooltip",
+        "category": "status",
+        "version": "0.1.0",
+        "preview_image_url": "https://evo-byte.com/wp-content/uploads/2026/03/st_yled_tooltip_frontpage.webp",
+        "main_image_url": "https://evo-byte.com/wp-content/uploads/2026/03/st_yled_tooltip_frontpage_site.webp",
+        "code_examples":
+            [{
+                "title": "Basic Tooltip",
+                "code": "st_yled.tooltip(\n    title=\"Quick Hint\",\n    text=\"Use st_yled for better layouts\",\n    background_color=\"#ff4b4b\",\n    title_color=\"#ffffff\",\n    text_color=\"#ffffff\",\n    key=\"tooltip-1\",\n)"
+            }],
+        "code_copy_template": "st_yled.tooltip(title=\"Title\", text=\"Example Text\")"
     }
 }
