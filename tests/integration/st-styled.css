@@ -1,0 +1,10 @@
+.stButton:has(button[kind="secondary"]) > button {
+  border-style: none;
+  color: #ffffff;
+  background-color: #1aa61a;
+}
+
+.stButton:has(button[kind="secondary"]) > button p {
+  font-size: 16.0px;
+  font-weight: 600;
+}
