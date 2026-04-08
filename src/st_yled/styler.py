@@ -17,7 +17,8 @@ def extract_caller_path_hash_init() -> str:
     caller_path = ""
     # Traverse traceback in reverse order
     for line in traceback_stack[::-1]:
-        if isinstance(line.line, str) and (".init()" in line.line):
+        # Extract the location of the init script call
+        if isinstance(line.line, str) and (".init(" in line.line):
             caller_path = line.filename
             break
 
