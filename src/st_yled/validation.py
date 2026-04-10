@@ -479,28 +479,60 @@ def validate_styling_kwargs(
 class ValidationConfig:
     """Global configuration for styling validation."""
 
+    # Default bypass mode when no env var and no init override are set.
+    DEFAULT_BYPASS_VALIDATION = False
+
     # Default validation mode
     DEFAULT_STRICT_MODE = False
+
+    # Runtime values set via st_yled.init(...)
+    INIT_BYPASS_VALIDATION: Optional[bool] = None
+    INIT_STRICT_MODE: Optional[bool] = None
 
     # Whether to show validation warnings
     SHOW_WARNINGS = True
 
     # Environment variable to bypass validation
     BYPASS_ENV_VAR = "ST_STYLED_BYPASS_VALIDATION"
+    STRICT_ENV_VAR = "ST_STYLED_STRICT_VALIDATION"
+
+    @classmethod
+    def set_init_validation_mode(cls, bypass: bool, strict: bool) -> None:
+        """Set validation behavior configured via st_yled.init(...)."""
+        cls.INIT_BYPASS_VALIDATION = bypass
+        cls.INIT_STRICT_MODE = strict
+
+    @classmethod
+    def reset_init_validation_mode(cls) -> None:
+        """Reset init-driven validation mode to unset state.
+
+        This helper is primarily intended for test cleanup.
+        """
+        cls.INIT_BYPASS_VALIDATION = None
+        cls.INIT_STRICT_MODE = None
 
     @classmethod
     def is_validation_bypassed(cls) -> bool:
-        """Check if validation should be bypassed based on environment."""
-        return os.getenv(cls.BYPASS_ENV_VAR, "").lower() in ("true", "1", "yes")
+        """Resolve bypass mode with precedence: env var > init override > default."""
+        bypass_env = os.getenv(cls.BYPASS_ENV_VAR, "").lower()
+        if bypass_env in ("true", "1", "yes"):
+            return True
+        if bypass_env in ("false", "0", "no"):
+            return False
+        if cls.INIT_BYPASS_VALIDATION is not None:
+            return cls.INIT_BYPASS_VALIDATION
+        return cls.DEFAULT_BYPASS_VALIDATION
 
     @classmethod
     def get_strict_mode(cls) -> bool:
-        """Get current strict mode setting."""
-        strict_env = os.getenv("ST_STYLED_STRICT_VALIDATION", "").lower()
+        """Resolve strict mode with precedence: env var > init override > default."""
+        strict_env = os.getenv(cls.STRICT_ENV_VAR, "").lower()
         if strict_env in ("true", "1", "yes"):
             return True
         elif strict_env in ("false", "0", "no"):
             return False
+        if cls.INIT_STRICT_MODE is not None:
+            return cls.INIT_STRICT_MODE
         return cls.DEFAULT_STRICT_MODE
 
 
