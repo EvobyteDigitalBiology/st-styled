@@ -423,6 +423,18 @@ def button(*args, **kwargs):
 apply_docstring(button, st.button, "button")
 
 
+def menu_button(*args, **kwargs):
+    if "type" in kwargs:
+        btn_selector = f'menu_button_{kwargs["type"]}'
+    else:
+        btn_selector = "menu_button"
+
+    kwargs = styler.apply_component_css(btn_selector, kwargs)
+    return st.menu_button(*args, **kwargs)
+
+apply_docstring(menu_button, st.menu_button, "menu_button")
+
+
 def download_button(*args, **kwargs):
     if "type" in kwargs:
         btn_selector = f'download_button_{kwargs["type"]}'
