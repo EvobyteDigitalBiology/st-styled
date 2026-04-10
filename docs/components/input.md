@@ -14,6 +14,8 @@ A button with a dropdown menu for multiple actions.
 
 A button with a dropdown menu for multiple actions, combining a primary action with related secondary options.
 
+For Streamlit `>= 1.56`, `split_button` uses `st.menu_button` for the dropdown trigger. In `v0.4.1`, dropdown menu width behavior was refined to reduce overly narrow menus.
+
 ### Usage Pattern
 
 Use this component when you have a primary action with related secondary options. Perfect for save/submit buttons with variations (Save Draft, Save & Close), export buttons with multiple formats, or any action where users frequently need to choose between similar operations.

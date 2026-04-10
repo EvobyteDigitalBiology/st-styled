@@ -92,12 +92,15 @@ st_yled.badge_card_one(
 
 ### Core Functions
 
-#### `st_yled.init(css_path=None)`
+#### `st_yled.init(css_path=None, bypass_css_validation=False, strict_css_validation=False, reset_tracebacklimit=True)`
 
 Initialize st_yled with CSS styling.
 
 **Parameters:**
 - `css_path` (str, optional): Path to custom CSS file. If not provided, looks for `.streamlit/st-styled.css`
+- `bypass_css_validation` (bool, optional): Skip CSS validation in `st_yled` when set to `True`
+- `strict_css_validation` (bool, optional): Raise errors for invalid CSS values when set to `True`
+- `reset_tracebacklimit` (bool, optional): Improve traceback depth for CSS-path related debugging
 
 **Example:**
 ```python
@@ -106,7 +109,15 @@ st_yled.init()
 
 # Load custom CSS file
 st_yled.init("path/to/custom.css")
+
+# Configure validation behavior
+st_yled.init(
+    bypass_css_validation=False,
+    strict_css_validation=True,
+)
 ```
+
+Validation precedence is: environment variables (`ST_STYLED_BYPASS_VALIDATION`, `ST_STYLED_STRICT_VALIDATION`) > `init(...)` arguments > class defaults.
 
 #### `st_yled.set(component, property, value)`
 

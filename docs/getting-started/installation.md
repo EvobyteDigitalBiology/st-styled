@@ -7,7 +7,7 @@ Get st_yled up and running in your Streamlit application in just a few minutes.
 ## Prerequisites
 
 - **Python 3.10+**
-- **Streamlit 1.47+** - Latest Streamlit version for optimal compatibility
+- **Streamlit 1.52+** - Latest Streamlit version for optimal compatibility
 ---
 
 ## Installation
@@ -132,6 +132,8 @@ You can adapt the path of the default css file by providing the path argument `s
 - Verify CSS file path: `.streamlit/st-styled.css`
 
 - Try manual CSS loading: `st_yled.init(css_path="path/to/your.css")`
+
+- Keep `reset_tracebacklimit=True` (default) to preserve useful traceback context when debugging custom CSS path issues
 
 **ImportError: No module named 'st_yled'**
 

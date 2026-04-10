@@ -166,7 +166,7 @@ st_yled.init()  # Required before using components
 st_yled.set_validation(False)
 
 # New (v1.0.0)
-st_yled.init(validation_mode="bypass")
+st_yled.init(bypass_css_validation=True)
 ```
 
 #### New Features to Adopt
@@ -191,9 +191,9 @@ st_yled.apply_theme(theme)
 3. **Enhanced Validation**
 ```python
 # Choose validation mode based on needs
-st_yled.init(validation_mode="strict")    # Development
-st_yled.init(validation_mode="permissive") # Testing
-st_yled.init(validation_mode="bypass")     # Production
+st_yled.init(strict_css_validation=True)      # Development
+st_yled.init(strict_css_validation=False)     # Testing
+st_yled.init(bypass_css_validation=True)      # Production
 ```
 
 ### From Vanilla Streamlit
@@ -260,15 +260,15 @@ Three-tier validation ensures CSS quality:
 
 ```python
 # Development: Strict validation catches errors early
-st_yled.init(validation_mode="strict")
+st_yled.init(strict_css_validation=True)
 st_yled.button("Test", color="invalid")  # ❌ ValidationError
 
 # Testing: Permissive mode shows warnings but continues
-st_yled.init(validation_mode="permissive")
+st_yled.init(strict_css_validation=False)
 st_yled.button("Test", color="invalid")  # ⚠️ Warning logged, continues
 
 # Production: Bypass validation for maximum performance
-st_yled.init(validation_mode="bypass")
+st_yled.init(bypass_css_validation=True)
 st_yled.button("Test", color="invalid")  # ✅ No validation overhead
 ```
 

@@ -5,6 +5,7 @@ Button elements provide interactive controls for user actions in your Streamlit 
 ## Available Elements
 
 - [button](#button) - Interactive buttons with extensive styling and state management
+- [menu_button](#menu_button) - Menu button with stylable dropdown trigger
 - [download_button](#download_button) - Download buttons with custom styling for file downloads
 - [link_button](#link_button) - External link buttons with custom appearance
 - [form_submit_button](#form_submit_button) - Form submission buttons with styling options
@@ -70,6 +71,43 @@ For **global styling** of individual button types use the following accessors
 st_yled.set("button_primary", "background_color", "lightblue")
 st_yled.set("button_secondary", "background_color", "lightblue")
 st_yled.set("button_tertiary", "background_color", "lightblue")
+```
+
+---
+
+## menu_button
+**Streamlit equivalent:** `st.menu_button()`
+
+Menu button for grouped actions with button-like styling support.
+
+> Requires Streamlit `>= 1.56`.
+
+```python
+choice = st_yled.menu_button(
+    "Actions",
+    options=["Export CSV", "Export PDF", "Archive"],
+    type="primary",
+    background_color="#ff4b4b",
+    color="#ffffff",
+)
+```
+
+**Supported Styling Properties:**
+
+- `background_color` - Button background color (hex, rgb, named colors)
+- `color` - Text color (hex, rgb, named colors)
+- `font_size` - Font size (px, rem, em, %, or integer as px)
+- `font_weight` - Font weight (100-900, thin, extra-light, light, normal, medium, semi-bold, bold, extra-bold, black)
+- `border_style` - Border style (solid, dashed, dotted, none)
+- `border_color` - Border color (hex, rgb, named colors)
+- `border_width` - Border width (px, rem, em, or integer as px)
+
+For **global styling** of individual menu button types use:
+
+```python
+st_yled.set("menu_button_primary", "background_color", "lightblue")
+st_yled.set("menu_button_secondary", "background_color", "lightblue")
+st_yled.set("menu_button_tertiary", "background_color", "lightblue")
 ```
 
 ---
