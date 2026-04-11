@@ -202,7 +202,7 @@
             }
         },
         "category": "button",
-        "example": "st_yled.menu_button(\"Style Me\", **kwargs)"
+        "example": "st_yled.menu_button(\"Style Me\", options = [\"Green\", \"Blue\"], **kwargs)"
     },
     "menu_button_primary": {
         "css": {
@@ -243,7 +243,7 @@
             }
         },
         "category": "button",
-        "example": "st_yled.menu_button(\"Style Me\", type=\"primary\", **kwargs)"
+        "example": "st_yled.menu_button(\"Style Me\", type=\"primary\", options = [\"Green\", \"Blue\"], **kwargs)"
     },
     "menu_button_secondary": {
         "css": {
@@ -284,7 +284,7 @@
             }
         },
         "category": "button",
-        "example": "st_yled.menu_button(\"Style Me\", type=\"secondary\", **kwargs)"
+        "example": "st_yled.menu_button(\"Style Me\", type=\"secondary\", options = [\"Green\", \"Blue\"], **kwargs)"
     },
     "menu_button_tertiary": {
         "css": {
@@ -325,7 +325,7 @@
             }
         },
         "category": "button",
-        "example": "st_yled.menu_button(\"Style Me\", type=\"tertiary\", **kwargs)"
+        "example": "st_yled.menu_button(\"Style Me\", type=\"tertiary\", options = [\"Green\", \"Blue\"], **kwargs)"
     },
     "download_button": {
         "css": {
