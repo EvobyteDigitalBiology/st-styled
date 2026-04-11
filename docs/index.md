@@ -5,7 +5,7 @@ New in **st_yled 0.4**: Tooltip component & Text Input Styling
 
 <br>
 
-# Streamlit Component Style Library
+# Streamlit Component Styling
 
 - **Custom styling** for most elements: background colors, font size and more
 

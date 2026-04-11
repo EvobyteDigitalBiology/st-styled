@@ -52,10 +52,15 @@ st_yled.init(
 ```
 
 **Notes:**
+
 - Must be called before using any st_yled components
+
 - Can be called multiple times to reload CSS or change settings
+
 - Automatically loads CSS from `.streamlit/st-styled.css` if it exists
+
 - Validation precedence is: environment variables > `init(...)` arguments > class defaults
+
 - Environment variables: `ST_STYLED_BYPASS_VALIDATION`, `ST_STYLED_STRICT_VALIDATION`
 
 ---
@@ -79,7 +84,9 @@ def set(component_type: str,
 **Returns:** None
 
 **Raises:**
+
 - `ValidationError` - If property name or value is invalid
+
 - `ComponentError` - If component type is not supported
 
 **Examples:**
