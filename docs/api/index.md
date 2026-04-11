@@ -12,15 +12,17 @@ Initialize the st_yled styling system and load CSS configurations.
 
 ```python
 def init(css_path: Optional[str] = None,
-         validation_mode: str = "strict",
-         theme: Optional[str] = None) -> None
+         bypass_css_validation: bool = False,
+         strict_css_validation: bool = False,
+         reset_tracebacklimit: bool = True) -> None
 ```
 
 **Parameters:**
 
 - `css_path` (str, optional) - Path to custom CSS file. If not provided, looks for `.streamlit/st-styled.css`
-- `validation_mode` (str, default="strict") - Validation behavior: `"strict"`, `"permissive"`, or `"bypass"`
-- `theme` (str, optional) - Pre-built theme to apply: `"light"`, `"dark"`, `"professional"`
+- `bypass_css_validation` (bool, default=False) - Skip CSS value validation in `st_yled` when `True`
+- `strict_css_validation` (bool, default=False) - Raise `ValidationError` for invalid CSS values when `True`
+- `reset_tracebacklimit` (bool, default=True) - Reset traceback depth for clearer custom CSS path debugging
 
 **Returns:** None
 
@@ -37,16 +39,29 @@ st_yled.init()
 # With custom CSS file
 st_yled.init(css_path="styles/custom.css")
 
+# Enable strict validation
+st_yled.init(strict_css_validation=True)
+
 # Full configuration
 st_yled.init(
     css_path="styles/app.css",
+    bypass_css_validation=False,
+    strict_css_validation=True,
+    reset_tracebacklimit=True,
 )
 ```
 
 **Notes:**
+
 - Must be called before using any st_yled components
+
 - Can be called multiple times to reload CSS or change settings
+
 - Automatically loads CSS from `.streamlit/st-styled.css` if it exists
+
+- Validation precedence is: environment variables > `init(...)` arguments > class defaults
+
+- Environment variables: `ST_STYLED_BYPASS_VALIDATION`, `ST_STYLED_STRICT_VALIDATION`
 
 ---
 
@@ -69,7 +84,9 @@ def set(component_type: str,
 **Returns:** None
 
 **Raises:**
+
 - `ValidationError` - If property name or value is invalid
+
 - `ComponentError` - If component type is not supported
 
 **Examples:**

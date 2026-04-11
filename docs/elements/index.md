@@ -54,6 +54,8 @@ Interactive buttons for user actions with extensive styling options.
 
 - [`button`](button-elements.md#button)
 
+- [`menu_button`](button-elements.md#menu_button)
+
 - [`download_button`](button-elements.md#download_button)
 
 - [`link_button`](button-elements.md#link_button)

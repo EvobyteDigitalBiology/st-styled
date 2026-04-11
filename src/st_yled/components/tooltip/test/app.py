@@ -27,7 +27,7 @@ tooltip(
     top="80px",
     left="40px",
     background_color="white",
-    shadow="0 4px 10px rgba(0, 0, 0, 0.2)",
+    shadow=True,
     show=True,
     key="test-basic",
 )
@@ -40,7 +40,7 @@ tooltip(
     top="130px",
     left="70px",
     background_color="#ffe082",
-    shadow="none",
+    shadow=False,
     show=True,
     key="test-variant",
 )

@@ -1,4 +1,5 @@
 import typing
+import re
 import streamlit as st
 from typing import List
 
@@ -8,7 +9,216 @@ from st_yled.colors import adjust_lightness
 from st_yled.colors import to_hex
 from st_yled.colors import update_opacity
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
+
+
+def _is_streamlit_version_gte_1_56() -> bool:
+    """Return True when Streamlit version is greater than or equal to 1.56."""
+    version_string = getattr(st, "__version__", "0.0.0")
+    version_parts = [int(part) for part in re.findall(r"\d+", version_string)]
+    if len(version_parts) < 2:
+        return False
+    major, minor = version_parts[0], version_parts[1]
+    return (major, minor) >= (1, 56)
+
+
+def _apply_css_for_selectbox_branch(
+    key: str,
+    primary_color: str,
+    color: str,
+    radius: int | str,
+    primary_hover_color: str,
+    primary_hover_shadow: str,
+) -> None:
+    """Apply split button CSS for legacy selectbox rendering."""
+    st.html(
+        f"""
+    <style>
+    .st-key-{key} {{
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+    }}
+
+    .st-key-{key}-button button {{
+        width: max-content;
+        padding-left: 16px;
+        padding-right: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin: 0px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: {radius};
+        border-bottom-left-radius: {radius};
+        background-color: {primary_color};
+        border: none;
+    }}
+
+    .st-key-{key}-button button p,
+    .st-key-{key}-button button span,
+    .st-key-{key}-button button svg
+    {{
+        color: {color};
+    }}
+
+    .st-key-{key}-button button:hover {{
+        background-color: {primary_hover_color};
+    }}
+
+    .st-key-{key}-selectbox {{
+        width: max-content;
+    }}
+
+    .st-key-{key}-selectbox > div > div > div {{
+        background-color: {primary_color};
+        border-color: {primary_color};
+        border-top-right-radius: {radius};
+        border-bottom-right-radius: {radius};
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }}
+
+    .st-key-{key}-selectbox > div > div > div:hover {{
+        background-color: {primary_hover_color};
+        border-color: {primary_hover_color};
+    }}
+
+    .st-key-{key}-selectbox > div > div > div:active {{
+        background-color: {primary_color};
+        border-color: {primary_color};
+    }}
+
+    .st-key-{key}-selectbox div[data-testid="stSelectbox"]:has(input:focus) > div > div {{
+        box-shadow: {primary_hover_shadow} 0px 0px 0px 0.2rem;
+        background-color: {primary_hover_color};
+    }}
+
+    .st-key-{key}-selectbox > div > div > div > div:has(svg) {{
+        padding-right: 11px;
+        padding-left: 9px;
+    }}
+
+    .st-key-{key}-selectbox svg {{
+        color: {color};
+    }}
+
+    .st-key-{key}-selectbox svg[title="Clear value"]  {{
+        display: none;
+    }}
+
+    .st-key-{key}-selectbox div[data-baseweb="select"] > div > div > div:not(:has(input))  {{
+        display: none;
+    }}
+
+    .st-key-{key}-selectbox div[data-baseweb="select"] > div > div:has(input)  {{
+        background-color: red;
+        padding: 0px;
+        width: 0px;
+        min-width: 0px;
+        flex-grow: 0;
+    }}
+
+    div[data-baseweb="popover"] div ul {{
+       min-width: 160px;
+    }}
+
+    .st-key-{key}-selectbox div[data-testid="stSelectbox"]:has(input:disabled) > div > div {{
+        background-color: transparent;
+        border-color: {primary_hover_color};
+    }}
+
+    </style>
+    """
+    )
+
+
+def _apply_css_for_menu_button_branch(
+    key: str,
+    primary_color: str,
+    color: str,
+    radius: int | str,
+    primary_hover_color: str,
+    primary_hover_shadow: str,
+) -> None:
+    """Apply split button CSS for Streamlit menu_button rendering."""
+    st.html(
+        f"""
+    <style>
+    .st-key-{key} {{
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+    }}
+
+    .st-key-{key}-button button {{
+        width: max-content;
+        padding-left: 16px;
+        padding-right: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin: 0px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: {radius};
+        border-bottom-left-radius: {radius};
+        background-color: {primary_color};
+        border: none;
+    }}
+
+    .st-key-{key}-button button p,
+    .st-key-{key}-button button span,
+    .st-key-{key}-button button svg
+    {{
+        color: {color};
+    }}
+
+    .st-key-{key}-button button:hover {{
+        background-color: {primary_hover_color};
+    }}
+
+    .st-key-{key}-menu-button button {{
+        width: max-content;
+        min-width: 40px;
+        padding-left: 9px;
+        padding-right: 9px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin: 0px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-top-right-radius: {radius};
+        border-bottom-right-radius: {radius};
+        background-color: {primary_color};
+        border: none;
+    }}
+
+    .st-key-{key}-menu-button button > div {{
+        margin: 0px;
+    }}
+
+    .st-key-{key}-menu-button button p,
+    .st-key-{key}-menu-button button span,
+    .st-key-{key}-menu-button button svg
+    {{
+        color: {color};
+    }}
+
+    .st-key-{key}-menu-button button:hover {{
+        background-color: {primary_hover_color};
+    }}
+
+    .st-key-{key}-menu-button button:focus-visible {{
+        box-shadow: {primary_hover_shadow} 0px 0px 0px 0.2rem;
+    }}
+
+    div[data-baseweb="popover"] div ul {{
+       min-width: 160px;
+    }}
+
+    </style>
+    """
+    )
 
 
 @typing.no_type_check
@@ -86,106 +296,26 @@ def split_button(
     primary_hover_color = adjust_lightness(primary_color, -0.15)
     primary_hover_shadow = update_opacity(primary_color, -0.5)
 
-    # Apply CSS to style the button and selectbox to look like a split button
-    st.html(
-        f"""
-    <style>
-    .st-key-{key} {{
-        display: flex;
-        flex-direction: row;
-        gap: 2px;
-    }}
+    use_menu_button = _is_streamlit_version_gte_1_56()
 
-    .st-key-{key} button {{
-        width: max-content;
-        padding-left: 16px;
-        padding-right: 12px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        margin: 0px;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border-top-left-radius: {radius};
-        border-bottom-left-radius: {radius};
-        background-color: {primary_color};
-        border: none;
-    }}
-
-    .st-key-{key} button p,
-    .st-key-{key} button span
-    {{
-        color: {color};
-    }}
-
-    .st-key-{key} button:hover {{
-        background-color: {primary_hover_color};
-    }}
-
-    .st-key-{key}-selectbox {{
-        width: max-content;
-    }}
-
-    .st-key-{key}-selectbox > div > div > div {{
-        background-color: {primary_color};
-        border-color: {primary_color};
-        border-top-right-radius: {radius};
-        border-bottom-right-radius: {radius};
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-    }}
-
-    .st-key-{key}-selectbox > div > div > div:hover {{
-        background-color: {primary_hover_color};
-        border-color: {primary_hover_color};
-    }}
-
-    .st-key-{key}-selectbox > div > div > div:active {{
-        background-color: {primary_color};
-        border-color: {primary_color};
-    }}
-
-    .st-key-{key}-selectbox div[data-testid="stSelectbox"]:has(input:focus) > div > div {{
-        box-shadow: {primary_hover_shadow} 0px 0px 0px 0.2rem;
-        background-color: {primary_hover_color};
-    }}
-
-    .st-key-{key}-selectbox > div > div > div > div:has(svg) {{
-        padding-right: 11px;
-        padding-left: 9px;
-    }}
-
-    .st-key-{key}-selectbox svg {{
-        color: {color};
-    }}
-
-    .st-key-{key}-selectbox svg[title="Clear value"]  {{
-        display: none;
-    }}
-
-    .st-key-{key}-selectbox div[data-baseweb="select"] > div > div > div:not(:has(input))  {{
-        display: none;
-    }}
-
-    .st-key-{key}-selectbox div[data-baseweb="select"] > div > div:has(input)  {{
-        background-color: red;
-        padding: 0px;
-        width: 0px;
-        min-width: 0px;
-        flex-grow: 0;
-    }}
-
-    div[data-baseweb="popover"] div ul {{
-       min-width: 160px;
-    }}
-
-    .st-key-{key}-selectbox div[data-testid="stSelectbox"]:has(input:disabled) > div > div {{
-        background-color: transparent;
-        border-color: {primary_hover_color};
-    }}
-
-    </style>
-    """
-    )
+    if use_menu_button:
+        _apply_css_for_menu_button_branch(
+            key=key,
+            primary_color=primary_color,
+            color=color,
+            radius=radius,
+            primary_hover_color=primary_hover_color,
+            primary_hover_shadow=primary_hover_shadow,
+        )
+    else:
+        _apply_css_for_selectbox_branch(
+            key=key,
+            primary_color=primary_color,
+            color=color,
+            radius=radius,
+            primary_hover_color=primary_hover_color,
+            primary_hover_shadow=primary_hover_shadow,
+        )
 
     # Place button and selectbox in a horizontal container
     with main_container:
@@ -198,16 +328,26 @@ def split_button(
         ):
             return_value = label
 
-        select_value = st.selectbox(
-            label="split-button",
-            options=options,
-            key=f"{key}-selectbox",
-            label_visibility="collapsed",
-            index=None,
-        )
+        if use_menu_button:
+            menu_value = st.menu_button(
+                label="",
+                options=options,
+                type="primary",
+                key=f"{key}-menu-button",
+            )
+            if not return_value and menu_value:
+                return_value = menu_value
+        else:
+            select_value = st.selectbox(
+                label="split-button",
+                options=options,
+                key=f"{key}-selectbox",
+                label_visibility="collapsed",
+                index=None,
+            )
 
-        if not return_value and select_value:
-            return_value = select_value
+            if not return_value and select_value:
+                return_value = select_value
 
     return return_value
 

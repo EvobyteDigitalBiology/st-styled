@@ -128,10 +128,14 @@ class TestStylerValidationIntegration:
             assert "color" not in result_kwargs
             assert "value" in result_kwargs
 
+
+
     def test_apply_component_css_bypass_validation(self):
         """Test that validation can be bypassed via environment variable."""
         # Set bypass environment variable
         os.environ["ST_STYLED_BYPASS_VALIDATION"] = "true"
+        # Set strict mode to ensure validation would normally raise error if not bypassed
+        os.environ["ST_STYLED_STRICT_VALIDATION"] = "true"
 
         try:
             kwargs = {
@@ -153,6 +157,47 @@ class TestStylerValidationIntegration:
         finally:
             # Clean up environment variable
             os.environ.pop("ST_STYLED_BYPASS_VALIDATION", None)
+            os.environ.pop("ST_STYLED_STRICT_VALIDATION", None)
+
+    def test_apply_component_css_strict_env_overrides_init(self):
+        """Environment strict mode should override init-provided strict mode."""
+        ValidationConfig.set_init_validation_mode(bypass=False, strict=True)
+        os.environ["ST_STYLED_STRICT_VALIDATION"] = "true"
+
+        try:
+            kwargs = {
+                "value": "Hello World",
+                "color": "invalid_color",
+                "key": "strict-env-overrides-init-test-key",
+            }
+
+            from st_yled.validation import ValidationError as VE
+
+            with pytest.raises(VE, match="Invalid color value 'invalid_color'"):
+                apply_component_css("text", kwargs)
+        finally:
+            os.environ.pop("ST_STYLED_STRICT_VALIDATION", None)
+            ValidationConfig.reset_init_validation_mode()
+
+    def test_apply_component_css_strict(self):
+        """Environment strict mode should override init-provided strict mode."""
+        ValidationConfig.set_init_validation_mode(bypass=False, strict=True)
+
+        try:
+            kwargs = {
+                "value": "Hello World",
+                "color": "invalid_color",
+                "key": "strict-env-overrides-init-test-key",
+            }
+
+            from st_yled.validation import ValidationError as VE
+
+            with pytest.raises(VE, match="Invalid color value 'invalid_color'"):
+                apply_component_css("text", kwargs)
+        finally:
+            os.environ.pop("ST_STYLED_STRICT_VALIDATION", None)
+            ValidationConfig.reset_init_validation_mode()
+
 
     def test_apply_component_css_no_styling_properties(self):
         """Test component with no styling properties."""

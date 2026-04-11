@@ -246,11 +246,26 @@ class TestValidationIntegration:
 class TestValidationConfig:
     """Test validation configuration."""
 
+    def teardown_method(self):
+        """Reset mutable validation config state after each test."""
+        ValidationConfig.reset_init_validation_mode()
+        os.environ.pop(ValidationConfig.BYPASS_ENV_VAR, None)
+        os.environ.pop(ValidationConfig.STRICT_ENV_VAR, None)
+
     def test_default_config(self):
         """Test default configuration values."""
+        assert not ValidationConfig.DEFAULT_BYPASS_VALIDATION
         assert not ValidationConfig.DEFAULT_STRICT_MODE
         assert ValidationConfig.SHOW_WARNINGS
         assert ValidationConfig.BYPASS_ENV_VAR == "ST_STYLED_BYPASS_VALIDATION"
+
+    def test_bypass_precedence_env_over_init(self):
+        """Environment variable must take precedence over init bypass setting."""
+        ValidationConfig.set_init_validation_mode(bypass=True, strict=False)
+        assert ValidationConfig.is_validation_bypassed() is True
+
+        with patch.dict(os.environ, {ValidationConfig.BYPASS_ENV_VAR: "false"}):
+            assert ValidationConfig.is_validation_bypassed() is False
 
     def test_bypass_environment_detection(self):
         """Test bypass detection from environment variables."""

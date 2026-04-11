@@ -163,6 +163,170 @@
         "category": "button",
         "example": "st_yled.button(\"Style Me\", type=\"tertiary\", **kwargs)"
     },
+    "menu_button": {
+        "css": {
+            "background_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"] p": {
+                    "font-size": null
+                }
+            },
+            "font_weight": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"] p": {
+                    "font-weight": null
+                }
+            },
+            "border_style": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-width": null
+                }
+            }
+        },
+        "category": "button",
+        "example": "st_yled.menu_button(\"Style Me\", options = [\"Green\", \"Blue\"], **kwargs)"
+    },
+    "menu_button_primary": {
+        "css": {
+            "background_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"] p": {
+                    "font-size": null
+                }
+            },
+            "font_weight": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"] p": {
+                    "font-weight": null
+                }
+            },
+            "border_style": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"primary\"]": {
+                    "border-width": null
+                }
+            }
+        },
+        "category": "button",
+        "example": "st_yled.menu_button(\"Style Me\", type=\"primary\", options = [\"Green\", \"Blue\"], **kwargs)"
+    },
+    "menu_button_secondary": {
+        "css": {
+            "background_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"] p": {
+                    "font-size": null
+                }
+            },
+            "font_weight": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"] p": {
+                    "font-weight": null
+                }
+            },
+            "border_style": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"secondary\"]": {
+                    "border-width": null
+                }
+            }
+        },
+        "category": "button",
+        "example": "st_yled.menu_button(\"Style Me\", type=\"secondary\", options = [\"Green\", \"Blue\"], **kwargs)"
+    },
+    "menu_button_tertiary": {
+        "css": {
+            "background_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"]": {
+                    "background-color": null
+                }
+            },
+            "color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"]": {
+                    "color": null
+                }
+            },
+            "font_size": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"] p": {
+                    "font-size": null
+                }
+            },
+            "font_weight": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"] p": {
+                    "font-weight": null
+                }
+            },
+            "border_style": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"]": {
+                    "border-style": null
+                }
+            },
+            "border_color": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"]": {
+                    "border-color": null
+                }
+            },
+            "border_width": {
+                "button[data-testid=\"stMenuButtonButton\"][kind=\"tertiary\"]": {
+                    "border-width": null
+                }
+            }
+        },
+        "category": "button",
+        "example": "st_yled.menu_button(\"Style Me\", type=\"tertiary\", options = [\"Green\", \"Blue\"], **kwargs)"
+    },
     "download_button": {
         "css": {
             "background_color": {

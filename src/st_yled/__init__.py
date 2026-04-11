@@ -8,6 +8,7 @@ import streamlit as st
 
 from st_yled import styler  # type: ignore
 from st_yled.elements import *  # type: ignore # noqa: F403
+from st_yled.validation import ValidationConfig  # type: ignore
 
 # Import custom components
 from st_yled.components.streamlit_split_button import split_button  # type: ignore # noqa: F401
@@ -17,11 +18,21 @@ from st_yled.components.badge_card_one import badge_card_one  # type: ignore # n
 from st_yled.components.image_card_one import image_card_one  # type: ignore # noqa: F401
 from st_yled.components.tooltip import tooltip  # type: ignore # noqa: F401
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 
-def init(css_path: Optional[str] = None, reset_tracebacklimit: bool = True) -> None:
+def init(
+    css_path: Optional[str] = None,
+    bypass_css_validation: bool = False,
+    strict_css_validation: bool = False,
+    reset_tracebacklimit: bool = True,
+) -> None:
     """Initialize st_yled with CSS styling."""
+
+    ValidationConfig.set_init_validation_mode(
+        bypass=bypass_css_validation,
+        strict=strict_css_validation,
+    )
 
     if reset_tracebacklimit:
         sys.tracebacklimit = 1000
