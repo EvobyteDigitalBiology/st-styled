@@ -8,6 +8,9 @@ from st_yled import constants  # type: ignore
 # Display and Magic Components
 # ==============================================================================
 
+# Check Streamlit version
+streamlit_version = tuple(map(int, st.__version__.split(".")[:2]))
+
 
 def apply_docstring(func: object, st_func: object, component_name: str) -> None:
     """Apply enhanced docstring with stylable properties to a function.
@@ -422,18 +425,20 @@ def button(*args, **kwargs):
 
 apply_docstring(button, st.button, "button")
 
+if streamlit_version >= (1, 56):
 
-def menu_button(*args, **kwargs):
-    if "type" in kwargs:
-        btn_selector = f'menu_button_{kwargs["type"]}'
-    else:
-        btn_selector = "menu_button"
+    def menu_button(*args, **kwargs):
+        """Menu button wrapper with conditional support for Streamlit >= 1.56."""
 
-    kwargs = styler.apply_component_css(btn_selector, kwargs)
-    return st.menu_button(*args, **kwargs)
+        if "type" in kwargs:
+            btn_selector = f'menu_button_{kwargs["type"]}'
+        else:
+            btn_selector = "menu_button"
 
+        kwargs = styler.apply_component_css(btn_selector, kwargs)
+        return st.menu_button(*args, **kwargs)
 
-apply_docstring(menu_button, st.menu_button, "menu_button")
+    apply_docstring(menu_button, st.menu_button, "menu_button")  # type: ignore[attr-defined]
 
 
 def download_button(*args, **kwargs):
