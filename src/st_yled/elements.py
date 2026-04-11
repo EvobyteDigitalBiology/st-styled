@@ -432,6 +432,7 @@ def menu_button(*args, **kwargs):
     kwargs = styler.apply_component_css(btn_selector, kwargs)
     return st.menu_button(*args, **kwargs)
 
+
 apply_docstring(menu_button, st.menu_button, "menu_button")
 
 
