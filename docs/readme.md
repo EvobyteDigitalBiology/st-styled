@@ -265,6 +265,17 @@ St_yled includes a comprehensive parameter validation system:
 
 ### Configuration
 
+
+**In init call**
+```python
+st_yled.init(
+    bypass_css_validation: bool = False,
+    strict_css_validation: bool = True,
+)
+```
+
+
+**Through environment variables**
 ```python
 import os
 
