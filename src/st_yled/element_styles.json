@@ -740,7 +740,7 @@
             }
         },
         "category": "text",
-        "example": "st_yled.markdown(\"**Bold Text**\", **kwargs)"
+        "example": "st_yled.markdown(\"Sample Text\", **kwargs)"
     },
     "text": {
         "css": {
