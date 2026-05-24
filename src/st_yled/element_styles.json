@@ -35,6 +35,16 @@
                 ".stButton:has(button[kind=\"secondary\"]) > button": {
                     "border-width": null
                 }
+            },
+            "padding": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "padding": null
+                }
+            },
+            "height": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "height": null
+                }
             }
         },
         "category": "button",
@@ -75,6 +85,16 @@
             "border_width": {
                 ".stButton:has(button[kind=\"primary\"]) > button": {
                     "border-width": null
+                }
+            },
+            "padding": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "padding": null
+                }
+            },
+            "height": {
+                ".stButton:has(button[kind=\"primary\"]) > button": {
+                    "height": null
                 }
             }
         },
@@ -117,6 +137,16 @@
                 ".stButton:has(button[kind=\"secondary\"]) > button": {
                     "border-width": null
                 }
+            },
+            "padding": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "padding": null
+                }
+            },
+            "height": {
+                ".stButton:has(button[kind=\"secondary\"]) > button": {
+                    "height": null
+                }
             }
         },
         "category": "button",
@@ -157,6 +187,16 @@
             "border_width": {
                 ".stButton:has(button[kind=\"tertiary\"]) > button": {
                     "border-width": null
+                }
+            },
+            "padding": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "padding": null
+                }
+            },
+            "height": {
+                ".stButton:has(button[kind=\"tertiary\"]) > button": {
+                    "height": null
                 }
             }
         },
