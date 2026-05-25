@@ -1,9 +1,70 @@
 import re
 import json
 from pathlib import Path
+from typing import Any
 
 
 dirpath = Path(__file__).parent
+TEMPLATE_CONFIG_PATH = dirpath / "template_config.toml"
+
+with TEMPLATE_CONFIG_PATH.open() as f:
+    TEMPLATE_CONFIG_TOML = f.read()
+
+
+def validate_theme_structure(theme_name: str, theme_data: dict[str, Any]) -> None:
+    """Validate that a theme file matches the required schema."""
+
+    required_root_keys = ("defaultTheme", "lightTheme", "darkTheme")
+    for key in required_root_keys:
+        if key not in theme_data:
+            msg = f"Theme '{theme_name}' is missing required key '{key}'."
+            raise ValueError(msg)
+
+    if theme_data["defaultTheme"] not in {"lightTheme", "darkTheme"}:
+        msg = (
+            f"Theme '{theme_name}' has invalid defaultTheme "
+            f"'{theme_data['defaultTheme']}'."
+        )
+        raise ValueError(msg)
+
+    for variant_name in ("lightTheme", "darkTheme"):
+        variant_data = theme_data[variant_name]
+        if not isinstance(variant_data, dict):
+            msg = f"Theme '{theme_name}' section '{variant_name}' must be a dictionary."
+            raise ValueError(msg)
+
+        for section_name in ("main", "sidebar", "components"):
+            if section_name not in variant_data:
+                msg = (
+                    f"Theme '{theme_name}' section '{variant_name}' is missing "
+                    f"required key '{section_name}'."
+                )
+                raise ValueError(msg)
+            if not isinstance(variant_data[section_name], dict):
+                msg = (
+                    f"Theme '{theme_name}' section '{variant_name}.{section_name}' "
+                    "must be a dictionary."
+                )
+                raise ValueError(msg)
+
+
+def load_themes() -> dict[str, dict[str, Any]]:
+    """Load built-in themes from the themes directory."""
+
+    themes: dict[str, dict[str, Any]] = {}
+    themes_dir = dirpath / "themes"
+
+    if not themes_dir.exists():
+        return themes
+
+    for theme_path in sorted(themes_dir.glob("*.json")):
+        with theme_path.open() as f:
+            theme_data = json.load(f)
+
+        validate_theme_structure(theme_path.stem, theme_data)
+        themes[theme_path.stem] = theme_data
+
+    return themes
 
 # Load elements
 with (dirpath / "element_styles.json").open() as f:
@@ -16,6 +77,11 @@ with (dirpath / "css_color_names.json").open() as f:
 
 with (dirpath / "components.json").open() as f:
     COMPONENTS = json.load(f)
+
+THEMES = load_themes()
+
+# Backwards-compatible alias while the rest of the package migrates.
+STYLE_TEMPLATES = THEMES
 
 # Color format patterns
 COLOR_PATTERNS = {
