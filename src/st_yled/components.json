@@ -86,7 +86,7 @@
     },
     "tooltip" : {
         "name": "Tooltip",
-        "preview_description": "A pop-up box providing information anywhere on the page",
+        "preview_description": "A dismissable pop-up box anywhere on the page",
         "description": "A tooltip is a dismissible pop-up box that appears when a user hovers over an element, providing additional information or context. The tooltip can be positioned anywhere on the page.",
         "usage_pattern": "Use this component to provide additional information or context for elements without cluttering the interface. The close buttons allow users to dismiss the tooltip easily.",
         "docs_url": "https://st-styled.evo-byte.com/components/status/#tooltip",
