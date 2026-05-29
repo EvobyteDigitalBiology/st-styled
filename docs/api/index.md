@@ -8,10 +8,12 @@ Complete reference for all st_yled functions, parameters, and configuration opti
 
 ### st_yled.init()
 
-Initialize the st_yled styling system and load CSS configurations.
+Initialize st_yled, optionally apply a built-in theme template, and load CSS.
 
 ```python
 def init(css_path: Optional[str] = None,
+         theme: Optional[str] = None,
+         disable_light_dark_mode: bool = False,
          bypass_css_validation: bool = False,
          strict_css_validation: bool = False,
          reset_tracebacklimit: bool = True) -> None
@@ -20,6 +22,8 @@ def init(css_path: Optional[str] = None,
 **Parameters:**
 
 - `css_path` (str, optional) - Path to custom CSS file. If not provided, looks for `.streamlit/st-styled.css`
+- `theme` (str, optional) - Name of a built-in theme template (for example: `"bauhaus"`)
+- `disable_light_dark_mode` (bool, default=False) - When `True`, applies only the selected default theme section and disables light/dark template switching
 - `bypass_css_validation` (bool, default=False) - Skip CSS value validation in `st_yled` when `True`
 - `strict_css_validation` (bool, default=False) - Raise `ValidationError` for invalid CSS values when `True`
 - `reset_tracebacklimit` (bool, default=True) - Reset traceback depth for clearer custom CSS path debugging
@@ -39,12 +43,20 @@ st_yled.init()
 # With custom CSS file
 st_yled.init(css_path="styles/custom.css")
 
+# With built-in theme template
+st_yled.init(theme="bauhaus")
+
+# Use defaultTheme only and disable light/dark mode mapping
+st_yled.init(theme="bauhaus", disable_light_dark_mode=True)
+
 # Enable strict validation
 st_yled.init(strict_css_validation=True)
 
 # Full configuration
 st_yled.init(
     css_path="styles/app.css",
+    theme="luxury_fintec",
+    disable_light_dark_mode=False,
     bypass_css_validation=False,
     strict_css_validation=True,
     reset_tracebacklimit=True,
@@ -57,7 +69,9 @@ st_yled.init(
 
 - Can be called multiple times to reload CSS or change settings
 
-- Automatically loads CSS from `.streamlit/st-styled.css` if it exists
+- If `theme` is set, st_yled updates Streamlit theme sections in `.streamlit/config.toml`
+
+- CSS loading order: explicit `css_path`, project `.streamlit/st-styled.css`, then home `~/.streamlit/st-styled.css`
 
 - Validation precedence is: environment variables > `init(...)` arguments > class defaults
 

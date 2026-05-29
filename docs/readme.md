@@ -8,8 +8,8 @@
 
 <br>
 
-New in **st_yled 0.4**: Tooltip component & Text Input Styling
-![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/03/260316_New_Components.png)
+New in **st_yled 0.5**: Beautiful Theme templates for effortless app design
+![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/05/theme_summary-scaled.webp)
 
 <br>
 
@@ -20,6 +20,8 @@ Style your Streamlit apps with custom themes and unique elements to match your p
 - **Custom styling** for most elements: background colors, font size and more
 
 - **New components** like cards for stunning apps, built faster
+
+- **Built-in theme templates** supporting light and dark mode
 
 - [**st_yled studio**](https://styled-studio.streamlit.app/) app to configure your layouts and custom elements.
 
@@ -74,6 +76,12 @@ st_yled.badge_card_one(
     title="Featured Item",
     text="Check out this amazing feature",
 )
+
+# Apply a built-in theme template (v0.5)
+st_yled.init(theme="bauhaus")
+
+# st_yled updates the Streamlit theme sections in .streamlit/config.toml
+# so theme colors are applied consistently in the app.
 ```
 
 ## 📚 Documentation
