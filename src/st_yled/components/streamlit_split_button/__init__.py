@@ -26,6 +26,7 @@ def _apply_css_for_selectbox_branch(
     key: str,
     primary_color: str,
     color: str,
+    font_size: str,
     radius: int | str,
     primary_hover_color: str,
     primary_hover_shadow: str,
@@ -59,7 +60,8 @@ def _apply_css_for_selectbox_branch(
     .st-key-{key}-button button span,
     .st-key-{key}-button button svg
     {{
-        color: {color};
+        color: {color} !important;
+        font-size: {font_size} !important;
     }}
 
     .st-key-{key}-button button:hover {{
@@ -100,7 +102,9 @@ def _apply_css_for_selectbox_branch(
     }}
 
     .st-key-{key}-selectbox svg {{
-        color: {color};
+        color: {color} !important;
+        font-size: {font_size} !important;
+        line-height: 1.6;
     }}
 
     .st-key-{key}-selectbox svg[title="Clear value"]  {{
@@ -137,6 +141,7 @@ def _apply_css_for_menu_button_branch(
     key: str,
     primary_color: str,
     color: str,
+    font_size: str,
     radius: int | str,
     primary_hover_color: str,
     primary_hover_shadow: str,
@@ -170,16 +175,27 @@ def _apply_css_for_menu_button_branch(
     .st-key-{key}-button button span,
     .st-key-{key}-button button svg
     {{
-        color: {color};
+        color: {color} !important;
+        font-size: {font_size} !important;
     }}
 
     .st-key-{key}-button button:hover {{
         background-color: {primary_hover_color};
     }}
 
+    .st-key-{key}-menu-button {{
+        height: stretch;
+    }}
+
+    .st-key-{key}-menu-button div {{
+        height: stretch;
+        align-items: center;
+    }}
+
     .st-key-{key}-menu-button button {{
         width: max-content;
         min-width: 40px;
+        height: stretch;
         padding-left: 9px;
         padding-right: 9px;
         padding-top: 4px;
@@ -201,7 +217,8 @@ def _apply_css_for_menu_button_branch(
     .st-key-{key}-menu-button button span,
     .st-key-{key}-menu-button button svg
     {{
-        color: {color};
+        color: {color} !important;
+        font-size: {font_size} !important;
     }}
 
     .st-key-{key}-menu-button button:hover {{
@@ -229,6 +246,7 @@ def split_button(
     color: str | None = None,
     background_color: str | None = None,
     radius: int | str = "20px",
+    font_size: str | None = None,
     key: str | None = None,
 ):
     """Create a split button component
@@ -277,8 +295,17 @@ def split_button(
     primary_color = background_color or st.get_option("theme.primaryColor") or "#ff4b4b"
     color = color or st.get_option("theme.textColor") or "#FFFFFF"
 
+    font_size = font_size or st.get_option("theme.baseFontSize") or "16px"
+    if isinstance(font_size, int):
+        font_size = f"{font_size}px"
+
     # Perform Validation for CSS values
-    css_kwargs = {"background_color": primary_color, "color": color, "radius": radius}
+    css_kwargs = {
+        "background_color": primary_color,
+        "color": color,
+        "radius": radius,
+        "font_size": font_size,
+    }
 
     if not bypass_validation:
         css_kwargs = validate_styling_kwargs(
@@ -291,6 +318,7 @@ def split_button(
     primary_color = css_kwargs["background_color"]
     color = css_kwargs["color"]
     radius = css_kwargs["radius"]
+    font_size = css_kwargs["font_size"]
 
     primary_color = to_hex(primary_color)
     primary_hover_color = adjust_lightness(primary_color, -0.15)
@@ -303,6 +331,7 @@ def split_button(
             key=key,
             primary_color=primary_color,
             color=color,
+            font_size=font_size,
             radius=radius,
             primary_hover_color=primary_hover_color,
             primary_hover_shadow=primary_hover_shadow,
@@ -312,6 +341,7 @@ def split_button(
             key=key,
             primary_color=primary_color,
             color=color,
+            font_size=font_size,
             radius=radius,
             primary_hover_color=primary_hover_color,
             primary_hover_shadow=primary_hover_shadow,
