@@ -9,7 +9,7 @@ from st_yled.colors import adjust_lightness
 from st_yled.colors import to_hex
 from st_yled.colors import update_opacity
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 
 def _is_streamlit_version_gte_1_56() -> bool:
