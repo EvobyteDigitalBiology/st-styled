@@ -1,5 +1,5 @@
-New in **st_yled 0.4**: Tooltip component & Text Input Styling
-![st_yled New Components](https://evo-byte.com/wp-content/uploads/2026/03/260316_New_Components.png)
+New in **st_yled 0.5**: Built-in theme templates with light and dark mode support
+![st_yled v0.5 Theme Templates](https://evo-byte.com/wp-content/uploads/2026/05/theme_summary-scaled.webp)
 
 
 
@@ -10,6 +10,8 @@ New in **st_yled 0.4**: Tooltip component & Text Input Styling
 - **Custom styling** for most elements: background colors, font size and more
 
 - **New components** like cards for stunning apps, built faster
+
+- **Built-in theme templates** with light and dark mode support in `st_yled.init(theme=...)`
 
 - [**st_yled studio**](https://styled-studio.streamlit.app/): Configure component styles interactively
 
@@ -142,6 +144,8 @@ Ready to transform your Streamlit apps? Choose your learning path:
 🔧 **Enhanced Elements** - 44+ styled component wrappers with validation
 
 ⚡ **st_yled studio** - Use the accompanying app to test your layout styling
+
+🌗 **Theme Templates (v0.5)** - Apply built-in light and dark theme pairs via `st_yled.init(theme="bauhaus")`
 
 ---
 

@@ -18,11 +18,13 @@ from st_yled.components.badge_card_one import badge_card_one  # type: ignore # n
 from st_yled.components.image_card_one import image_card_one  # type: ignore # noqa: F401
 from st_yled.components.tooltip import tooltip  # type: ignore # noqa: F401
 
-__version__ = "0.4.1"
+__version__ = "0.5.0"
 
 
 def init(
     css_path: Optional[str] = None,
+    theme: Optional[str] = None,
+    disable_light_dark_mode: bool = False,
     bypass_css_validation: bool = False,
     strict_css_validation: bool = False,
     reset_tracebacklimit: bool = True,
@@ -38,6 +40,9 @@ def init(
         sys.tracebacklimit = 1000
 
     caller_hash = styler.extract_caller_path_hash_init()
+
+    if theme is not None:
+        styler.apply_theme(theme, disable_light_dark_mode=disable_light_dark_mode)
 
     # Set session_state
     st.session_state[f"st-yled-comp-{caller_hash}-counter"] = 0

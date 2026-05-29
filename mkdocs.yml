@@ -33,6 +33,13 @@ nav:
     - getting-started/component-examples.md
     - getting-started/basic-styling.md
     - getting-started/global-styling.md
+  - Themes:
+    - themes/index.md
+    - Bauhaus: themes/bauhaus.md
+    - Luxury Fintec: themes/luxury-fintec.md
+    - Newspaper: themes/newspaper.md
+    - Playful Startup: themes/playful-startup.md
+    - Scandinavian: themes/scandinavian.md
   - Elements:
     - elements/index.md
     - Text: elements/text-elements.md

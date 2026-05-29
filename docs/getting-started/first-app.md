@@ -58,6 +58,18 @@ You should see a basic Streamlit app with a title.
 
 For most elements `st_yled.` and `st.` module prefixes can be used interchangably. This means `st_yled.title("My Title")` and `st.title("My First Styled App")` will produce the same output, but `st_yled.` will accept custom styling attributes.
 
+### Built-in Themes (v0.5)
+
+You can apply a built-in theme template directly in `st_yled.init()`:
+
+```python
+import st_yled
+
+st_yled.init(theme="bauhaus")
+```
+
+When a built-in theme is selected, st_yled updates the theme sections in `.streamlit/config.toml` so the app uses the template colors consistently.
+
 ---
 
 ## Step 2: Add a Styled Header
