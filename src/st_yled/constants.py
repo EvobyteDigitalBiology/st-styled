@@ -31,7 +31,7 @@ def validate_theme_structure(theme_name: str, theme_data: dict[str, Any]) -> Non
         variant_data = theme_data[variant_name]
         if not isinstance(variant_data, dict):
             msg = f"Theme '{theme_name}' section '{variant_name}' must be a dictionary."
-            raise ValueError(msg)
+            raise TypeError(msg)
 
         for section_name in ("main", "sidebar", "components"):
             if section_name not in variant_data:
@@ -45,7 +45,7 @@ def validate_theme_structure(theme_name: str, theme_data: dict[str, Any]) -> Non
                     f"Theme '{theme_name}' section '{variant_name}.{section_name}' "
                     "must be a dictionary."
                 )
-                raise ValueError(msg)
+                raise TypeError(msg)
 
 
 def load_themes() -> dict[str, dict[str, Any]]:
@@ -65,6 +65,7 @@ def load_themes() -> dict[str, dict[str, Any]]:
         themes[theme_path.stem] = theme_data
 
     return themes
+
 
 # Load elements
 with (dirpath / "element_styles.json").open() as f:

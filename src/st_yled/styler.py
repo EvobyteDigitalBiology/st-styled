@@ -36,7 +36,9 @@ def _quote_toml_value(value: Any) -> str:
     return f'"{escaped_value}"'
 
 
-def _flatten_theme_section(section_name: str, section_values: dict[str, Any]) -> dict[str, str]:
+def _flatten_theme_section(
+    section_name: str, section_values: dict[str, Any]
+) -> dict[str, str]:
     """Flatten a theme subsection into TOML-ready key/value pairs."""
 
     flattened: dict[str, str] = {}
@@ -132,9 +134,6 @@ def set_config_toml(template_config_toml: str, updated_themes: dict) -> str:
     form_type = None
     config_lines_update = []
 
-    theme_updates = []
-    theme_sidebar_updates = []
-
     for line in config_toml:
         line = line.rstrip("\n")
 
@@ -143,7 +142,7 @@ def set_config_toml(template_config_toml: str, updated_themes: dict) -> str:
             form_type = THEME_SECTION_HEADERS[stripped_line]
             config_lines_update.append(line)
             continue
-        elif line.startswith("["):
+        if line.startswith("["):
             form_type = None
 
         if form_type and re.match(r"^# [a-zA-Z]+ =$", line.strip()):
