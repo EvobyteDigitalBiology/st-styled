@@ -1,0 +1,96 @@
+{
+    "bauhaus" :
+    {
+        "defaultTheme": "lightTheme",
+        "lightTheme": {
+            "main": {
+                "primaryColor": "",
+                "backgroundColor": "",
+                "secondaryBackgroundColor": "",
+                "textColor": "",
+                "linkColor": "",
+                "codeBackgroundColor": "",
+                "dataframeBorderColor": "",
+                "dataframeHeaderBackgroundColor": "",
+                "borderColor": "",
+                "font": "",
+                "headingFont": "",
+                "baseFontSize": "",
+                "baseFontWeight": "",
+                "codeFont": "",
+                "codeFontSize": "",
+                "codeFontWeight": "",
+                "showWidgetBorder": "",
+                "showSidebarBorder": "",
+                "baseRadius": "",
+                "buttonRadius": ""
+            },
+            "sidebar": {
+                "primaryColor": "",
+                "backgroundColor": "",
+                "secondaryBackgroundColor": "",
+                "textColor": "",
+                "linkColor": "",
+                "codeBackgroundColor": "",
+                "dataframeBorderColor": "",
+                "dataframeHeaderBackgroundColor": "",
+                "borderColor": "",
+                "font": "",
+                "headingFont": "",
+                "codeFont": "",
+                "codeFontSize": "",
+                "codeFontWeight": "",
+                "showWidgetBorder": "",
+                "baseRadius": "",
+                "buttonRadius": ""
+            },
+            "components": {
+            }
+        },
+
+        "darkTheme": {
+            "main": {
+                "primaryColor": "",
+                "backgroundColor": "",
+                "secondaryBackgroundColor": "",
+                "textColor": "",
+                "linkColor": "",
+                "codeBackgroundColor": "",
+                "dataframeBorderColor": "",
+                "dataframeHeaderBackgroundColor": "",
+                "borderColor": "",
+                "font": "",
+                "headingFont": "",
+                "baseFontSize": "",
+                "baseFontWeight": "",
+                "codeFont": "",
+                "codeFontSize": "",
+                "codeFontWeight": "",
+                "showWidgetBorder": "",
+                "baseRadius": "",
+                "buttonRadius": ""
+            },
+            "sidebar": {
+                "primaryColor": "",
+                "backgroundColor": "",
+                "secondaryBackgroundColor": "",
+                "textColor": "",
+                "linkColor": "",
+                "codeBackgroundColor": "",
+                "dataframeBorderColor": "",
+                "dataframeHeaderBackgroundColor": "",
+                "borderColor": "",
+                "font": "",
+                "headingFont": "",
+                "codeFont": "",
+                "codeFontSize": "",
+                "codeFontWeight": "",
+                "showWidgetBorder": "",
+                "baseRadius": "",
+                "buttonRadius": ""
+            },
+            "components": {
+            }
+        }
+    }
+}

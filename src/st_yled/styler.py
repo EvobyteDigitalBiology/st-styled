@@ -1,7 +1,8 @@
+from pathlib import Path
 from typing import Any, Optional
 import re
-import warnings
 import traceback
+import warnings
 
 import streamlit as st
 
@@ -9,6 +10,190 @@ from st_yled.validation import validate_styling_kwargs  # type: ignore
 from st_yled.validation import ValidationConfig  # type: ignore
 from st_yled.validation import ValidationError  # type: ignore
 from st_yled import constants  # type: ignore
+
+
+THEME_SECTION_HEADERS = {
+    "[theme]": "theme",
+    "[theme.sidebar]": "theme-sidebar",
+    "[theme.light]": "theme-light",
+    "[theme.sidebar.light]": "theme-sidebar-light",
+    "[theme.dark]": "theme-dark",
+    "[theme.sidebar.dark]": "theme-sidebar-dark",
+}
+
+
+def _quote_toml_value(value: Any) -> str:
+    """Render a Python value as a TOML literal."""
+
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, (int, float)):
+        return str(value)
+    if isinstance(value, list):
+        return "[" + ", ".join(_quote_toml_value(item) for item in value) + "]"
+
+    escaped_value = str(value).replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped_value}"'
+
+
+def _flatten_theme_section(
+    section_name: str, section_values: dict[str, Any]
+) -> dict[str, str]:
+    """Flatten a theme subsection into TOML-ready key/value pairs."""
+
+    flattened: dict[str, str] = {}
+    for key, value in section_values.items():
+        flattened[f"{section_name}-{key}"] = _quote_toml_value(value)
+    return flattened
+
+
+def _build_updated_themes(
+    theme_data: dict[str, Any], disable_light_dark_mode: bool
+) -> dict[str, str]:
+    """Build TOML replacement values for the selected theme."""
+
+    theme_map: dict[str, str] = {}
+
+    if disable_light_dark_mode:
+        active_variant_name = theme_data["defaultTheme"]
+        active_variant = theme_data[active_variant_name]
+        theme_map.update(_flatten_theme_section("theme", active_variant["main"]))
+        theme_map.update(
+            _flatten_theme_section("theme-sidebar", active_variant["sidebar"])
+        )
+        return theme_map
+
+    light_variant = theme_data["lightTheme"]
+    dark_variant = theme_data["darkTheme"]
+    active_variant_name = theme_data["defaultTheme"]
+    active_variant = theme_data[active_variant_name]
+
+    theme_map.update(_flatten_theme_section("theme", active_variant["main"]))
+    theme_map.update(_flatten_theme_section("theme-sidebar", active_variant["sidebar"]))
+    theme_map.update(_flatten_theme_section("theme-light", light_variant["main"]))
+    theme_map.update(
+        _flatten_theme_section("theme-sidebar-light", light_variant["sidebar"])
+    )
+    theme_map.update(_flatten_theme_section("theme-dark", dark_variant["main"]))
+    theme_map.update(
+        _flatten_theme_section("theme-sidebar-dark", dark_variant["sidebar"])
+    )
+
+    return theme_map
+
+
+def _extract_theme_sections(config_text: str) -> str:
+    """Keep only the theme-related sections from a TOML document."""
+
+    theme_lines: list[str] = []
+    active_section: Optional[str] = None
+
+    for line in config_text.splitlines():
+        stripped_line = line.strip()
+        if stripped_line in THEME_SECTION_HEADERS:
+            active_section = THEME_SECTION_HEADERS[stripped_line]
+            theme_lines.append(line)
+            continue
+
+        if stripped_line.startswith("["):
+            active_section = None
+
+        if active_section is not None:
+            theme_lines.append(line)
+
+    return "\n".join(theme_lines).strip()
+
+
+def _strip_theme_sections(config_text: str) -> str:
+    """Remove any existing theme-related sections from a TOML document."""
+
+    preserved_lines: list[str] = []
+    active_section: Optional[str] = None
+
+    for line in config_text.splitlines():
+        stripped_line = line.strip()
+
+        if stripped_line in THEME_SECTION_HEADERS:
+            active_section = THEME_SECTION_HEADERS[stripped_line]
+            continue
+
+        if stripped_line.startswith("["):
+            active_section = None
+
+        if active_section is None:
+            preserved_lines.append(line)
+
+    return "\n".join(preserved_lines).strip()
+
+
+def set_config_toml(template_config_toml: str, updated_themes: dict) -> str:
+    """Replace theme placeholders in the template config file."""
+
+    config_toml = template_config_toml.splitlines()
+
+    form_type = None
+    config_lines_update = []
+
+    for line in config_toml:
+        line = line.rstrip("\n")
+
+        stripped_line = line.strip()
+        if stripped_line in THEME_SECTION_HEADERS:
+            form_type = THEME_SECTION_HEADERS[stripped_line]
+            config_lines_update.append(line)
+            continue
+        if line.startswith("["):
+            form_type = None
+
+        if form_type and re.match(r"^# [a-zA-Z]+ =$", line.strip()):
+            config_key = line.strip().replace("# ", "").replace(" =", "")
+            config_key_form = f"{form_type}-{config_key}"
+
+            if config_key_form in updated_themes:
+                key_line = f"{config_key} = {updated_themes[config_key_form]}"
+                config_lines_update.append(key_line)
+            else:
+                config_lines_update.append(line)
+        else:
+            config_lines_update.append(line)
+
+    return "\n".join(config_lines_update)
+
+
+def apply_theme(theme_name: str, disable_light_dark_mode: bool = False) -> None:
+    """Apply a named built-in theme to the local Streamlit config file."""
+
+    if st.session_state.get("st-yled-theme") == theme_name:
+        return
+
+    if theme_name not in constants.THEMES:
+        msg = f"Theme '{theme_name}' not found in built-in themes."
+        raise ValueError(msg)
+
+    theme_data = constants.THEMES[theme_name]
+    updated_themes = _build_updated_themes(theme_data, disable_light_dark_mode)
+
+    rendered_template = set_config_toml(constants.TEMPLATE_CONFIG_TOML, updated_themes)
+    theme_sections = _extract_theme_sections(rendered_template)
+
+    streamlit_dir = Path.cwd() / ".streamlit"
+    streamlit_dir.mkdir(parents=True, exist_ok=True)
+    config_path = streamlit_dir / "config.toml"
+
+    if config_path.exists():
+        existing_config = config_path.read_text()
+        preserved_config = _strip_theme_sections(existing_config)
+        if preserved_config and theme_sections:
+            merged_config = f"{preserved_config}\n\n{theme_sections}\n"
+        elif theme_sections:
+            merged_config = f"{theme_sections}\n"
+        else:
+            merged_config = f"{preserved_config}\n"
+    else:
+        merged_config = f"{theme_sections}\n"
+
+    config_path.write_text(merged_config)
+    st.session_state["st-yled-theme"] = theme_name
 
 
 def extract_caller_path_hash_init() -> str:
