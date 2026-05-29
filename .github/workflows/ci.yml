@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
-        streamlit-version: ["1.52.0", "1.53.0", "1.56.0"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        streamlit-version: ["1.52.0", "1.56.0", "1.57.0"]
 
     steps:
     - uses: actions/checkout@v4
@@ -28,6 +28,7 @@ jobs:
         version: latest
         virtualenvs-create: true
         virtualenvs-in-project: true
+
 
     - name: Load cached venv
       id: cached-poetry-dependencies
