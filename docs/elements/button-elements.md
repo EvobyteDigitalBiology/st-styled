@@ -30,6 +30,8 @@ clicked = st_yled.button("Click Me", background_color="#007bff", color="white")
 - `border_style` - Border style (solid, dashed, dotted, none)
 - `border_color` - Border color (hex, rgb, named colors)
 - `border_width` - Border width (px, rem, em, or integer as px)
+- `padding` - Internal button spacing (single or shorthand values like `10px` or `10px 20px`)
+- `height` - Button height (px, rem, em, %, or integer as px)
 
 **Button Types:**
 

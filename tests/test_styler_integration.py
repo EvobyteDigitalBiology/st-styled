@@ -49,11 +49,13 @@ class TestStylerValidationIntegration:
             assert "key" in result_kwargs
 
     def test_apply_component_css_with_button_styling(self):
-        """Test with button component that supports background_color."""
+        """Test with button component that supports background_color, padding, and height."""
         kwargs = {
             "label": "Click me",
             "background_color": "#00ff00",
             "border_color": "#000000",
+            "padding": "10px 20px",
+            "height": "42px",
             "key": "button-test-key"
         }
 
@@ -67,6 +69,8 @@ class TestStylerValidationIntegration:
             # Button styling properties should be removed
             assert "background_color" not in result_kwargs
             assert "border_color" not in result_kwargs
+            assert "padding" not in result_kwargs
+            assert "height" not in result_kwargs
 
             # Button properties should remain
             assert "label" in result_kwargs
