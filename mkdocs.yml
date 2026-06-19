@@ -64,6 +64,7 @@ nav:
   - API Reference:
     - api/index.md
   - About:
+    - EVOBYTE: about/about.md
     - ReadMe: readme.md
     - Changelog: changelog.md
     - License: license.md
