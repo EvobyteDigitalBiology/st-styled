@@ -366,7 +366,7 @@ class StyleValidator:
 
             # Exceptions for special cases of css keywords like height and width, which can be set for components like
             if (
-                component_type in ["container", "text_area", "code"]
+                component_type in ["container", "text_area", "code", "tabs", "metric"]
                 and prop_name == "height"
             ):
                 continue

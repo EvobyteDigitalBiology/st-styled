@@ -387,11 +387,13 @@ def plotly_chart(*args, **kwargs):
 apply_docstring(plotly_chart, st.plotly_chart, "plotly_chart")
 
 
-def bokeh_chart(*args, **kwargs):
-    return st.bokeh_chart(*args, **kwargs)
+if streamlit_version < (1, 59):
 
+    # Deprecated in Streamlit 1.59, but still available for backward compatibility
+    def bokeh_chart(*args, **kwargs):
+        return st.bokeh_chart(*args, **kwargs)
 
-apply_docstring(bokeh_chart, st.bokeh_chart, "bokeh_chart")
+    apply_docstring(bokeh_chart, st.bokeh_chart, "bokeh_chart")
 
 
 def pydeck_chart(*args, **kwargs):
@@ -404,14 +406,20 @@ apply_docstring(pydeck_chart, st.pydeck_chart, "pydeck_chart")
 def graphviz_chart(*args, **kwargs):
     return st.graphviz_chart(*args, **kwargs)
 
-
 apply_docstring(graphviz_chart, st.graphviz_chart, "graphviz_chart")
+
+
+if streamlit_version >= (1, 59):
+
+    def mermaid_chart(*args, **kwargs):
+        return st.mermaid_chart(*args, **kwargs)
+
+    apply_docstring(mermaid_chart, st.mermaid_chart, "mermaid_chart")
 
 
 # ==============================================================================
 # Input Widgets
 # ==============================================================================
-
 
 def button(*args, **kwargs):
     if "type" in kwargs:
@@ -855,6 +863,14 @@ def status(*args, **kwargs):
 
 
 apply_docstring(status, st.status, "status")
+
+
+if streamlit_version >= (1, 59):
+
+    def skeleton(*args, **kwargs):
+        return st.skeleton(*args, **kwargs)
+
+    apply_docstring(skeleton, st.skeleton, "skeleton")
 
 
 def toast(*args, **kwargs):

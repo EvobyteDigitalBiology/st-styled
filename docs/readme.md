@@ -249,7 +249,7 @@ st_yled.error(
 
 ## 🎨 Element Coverage
 
-St_yled supports **43 styled elements** with comprehensive CSS property support:
+St_yled supports > **43 styled elements** with comprehensive CSS property support:
 
 - **Text Elements (9)**: title, header, subheader, text, markdown, caption, code, latex, json
 - **Interactive Elements (16)**: button, download_button, text_input, text_area, number_input, selectbox, multiselect, slider, select_slider, checkbox, radio, toggle, color_picker, file_uploader, pills, form_submit_button
