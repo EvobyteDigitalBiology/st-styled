@@ -388,12 +388,11 @@ apply_docstring(plotly_chart, st.plotly_chart, "plotly_chart")
 
 
 if streamlit_version < (1, 59):
-
     # Deprecated in Streamlit 1.59, but still available for backward compatibility
     def bokeh_chart(*args, **kwargs):
         return st.bokeh_chart(*args, **kwargs)
 
-    apply_docstring(bokeh_chart, st.bokeh_chart, "bokeh_chart")
+    apply_docstring(bokeh_chart, st.bokeh_chart, "bokeh_chart")  # type: ignore
 
 
 def pydeck_chart(*args, **kwargs):
@@ -406,6 +405,7 @@ apply_docstring(pydeck_chart, st.pydeck_chart, "pydeck_chart")
 def graphviz_chart(*args, **kwargs):
     return st.graphviz_chart(*args, **kwargs)
 
+
 apply_docstring(graphviz_chart, st.graphviz_chart, "graphviz_chart")
 
 
@@ -414,12 +414,13 @@ if streamlit_version >= (1, 59):
     def mermaid_chart(*args, **kwargs):
         return st.mermaid_chart(*args, **kwargs)
 
-    apply_docstring(mermaid_chart, st.mermaid_chart, "mermaid_chart")
+    apply_docstring(mermaid_chart, st.mermaid_chart, "mermaid_chart")  # type: ignore
 
 
 # ==============================================================================
 # Input Widgets
 # ==============================================================================
+
 
 def button(*args, **kwargs):
     if "type" in kwargs:
@@ -446,7 +447,7 @@ if streamlit_version >= (1, 56):
         kwargs = styler.apply_component_css(btn_selector, kwargs)
         return st.menu_button(*args, **kwargs)
 
-    apply_docstring(menu_button, st.menu_button, "menu_button")  # type: ignore[attr-defined]
+    apply_docstring(menu_button, st.menu_button, "menu_button")  # type: ignore
 
 
 def download_button(*args, **kwargs):
