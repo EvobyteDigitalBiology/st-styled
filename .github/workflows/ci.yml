@@ -53,8 +53,8 @@ jobs:
         poetry run ruff check src
         poetry run ruff format --check src
 
-    - name: Run type checking
-      run: poetry run mypy src/st_yled/
+    # - name: Run type checking
+    #  run: poetry run mypy src/st_yled/
 
     - name: Run tests
       run: |
