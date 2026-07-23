@@ -1,5 +1,6 @@
 """Comprehensive tests for all elements in elements module."""
 
+
 import pytest
 import sys
 import os
@@ -7,11 +8,16 @@ from datetime import date, time
 from unittest.mock import patch, Mock
 import pandas as pd
 
+import streamlit as st
+
 # Add paths for imports
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src", "st_yled"))
 
 from st_yled import elements
+
+# Check Streamlit version
+streamlit_version = tuple(map(int, st.__version__.split(".")[:2]))
 
 
 class TestComponentImports:
@@ -108,6 +114,7 @@ class TestComponentImports:
     def test_plotly_chart_exists(self):
         assert callable(elements.plotly_chart)
 
+    @pytest.mark.skipif(streamlit_version >= (1, 59), reason="Bokeh chart removed in Streamlit >= 1.59")
     def test_bokeh_chart_exists(self):
         assert callable(elements.bokeh_chart)
 
